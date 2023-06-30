@@ -101,7 +101,99 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://github.com/damei6677/blog/2023/06/30/my-blog/" data-id="cljibjlca0001o04le4t4dd0g" data-title="my blog" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="https://github.com/damei6677/blog/2023/06/30/my-blog/" data-id="cljibnl7y0001804l1zfdah2t" data-title="my blog" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-ai/openGPT" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/06/30/ai/openGPT/" class="article-date">
+  <time class="dt-published" datetime="2023-06-30T06:32:05.648Z" itemprop="datePublished">2023-06-30</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h1><p><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/XwXsBVyQOwuAMcPMX2msHQ">https://mp.weixin.qq.com/s/XwXsBVyQOwuAMcPMX2msHQ</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://github.com/damei6677/blog/2023/06/30/ai/openGPT/" data-id="cljibnl810002804lg0j10alq" data-title="" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-ai/opencv" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/06/30/ai/opencv/" class="article-date">
+  <time class="dt-published" datetime="2023-06-30T06:32:05.632Z" itemprop="datePublished">2023-06-30</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="编译opencv"><a href="#编译opencv" class="headerlink" title="编译opencv"></a>编译opencv</h1><p><img src="/opencv.assets/1582900034614.png" alt="1582900034614"></p>
+<p>0.添加环境变量</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">C:\Qt\Qt5.10.1\5.10.1\mingw53_32\bin</span><br><span class="line">C:\Qt\Qt5.10.1\5.10.1\mingw53_32\lib</span><br><span class="line">C:\Qt\Qt5.10.1\Tools\mingw530_32\bin</span><br><span class="line">C:\Program Files\CMake\bin</span><br></pre></td></tr></table></figure>
+
+
+
+<p>1.cmake-gui选择源码目录与编译生成目录</p>
+<p>2.选择advanced</p>
+<p>3.选择编译器</p>
+<p><img src="/opencv.assets/508489-20171211170434477-1356570089.png" alt="img"></p>
+<p><img src="/opencv.assets/508489-20171211170434790-1156421554.png" alt="img"></p>
+<p>3.1 执行configure操作</p>
+<p>cmake工具会下载ffmpeg.dll库，由于服务器在国外下载很慢，经常下不下来。</p>
+<p>3.2.第三方库拷贝</p>
+<p>cmake工具点击stop，停止configure.</p>
+<p>在build目录下的3rdparty目录中新建ffmpeg文件，将</p>
+<p>opencv_ffmpeg.dll</p>
+<p>opencv_ffmpeg_64.dll</p>
+<p>两个库拷贝到这里。</p>
+<p>4.参数修改</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">设置参数</span></span><br><span class="line">CMAKE_MAKE_PROGRAM设置为你的mingw32-make地址</span><br><span class="line">CMAKE_INSTALL_PREFIX设置install地址，编译生成的文件存放的地址。</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">点选</span></span><br><span class="line">ENABLE_CXX11</span><br><span class="line">WITH_QT</span><br><span class="line">WITH_OPENGL</span><br></pre></td></tr></table></figure>
+
+
+
+<p>4.3 </p>
+<p>选择Qt库地址</p>
+<p><img src="/opencv.assets/1582900463446.png" alt="1582900463446"></p>
+<p>4.4 再测点击configure,此时界面没有红色提醒。点击Generate按钮，生成makefile文件，成功后，底下会提示Generating done；</p>
+<p>5.在build按住shift并且点击右键，打开命令窗口。</p>
+<p>执行mingw32-make.exe进行编译。</p>
+<p>编译完成运行mingw32-make.exe install,这样在指定目录下会生成bin、lib、include。</p>
+<h1 id="图像转换"><a href="#图像转换" class="headerlink" title="图像转换"></a>图像转换</h1><p>OpenCV3.0以后，图像采用Mat格式进行存储，Qt中图像存储采用的是QImage类，因此，如果需要再Qt中显示OpenCV处理过程中的图像，需要将Mat类对象表示的图像转换为QImage类对象表示的图像。同时，由Mat格式采用BGR的存储顺序，而QImage格式采用的是RGB存储顺序，因此，转换过程分为两步：</p>
+<pre><code>  1）存储格式转换：BGR --&gt; RGB；
+  2）类型转换：Mat类 ---&gt; QImage;
+</code></pre>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://github.com/damei6677/blog/2023/06/30/ai/opencv/" data-id="cljibnl820003804lg7gh9apn" data-title="" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -145,6 +237,14 @@
         
           <li>
             <a href="/2023/06/30/my-blog/">my blog</a>
+          </li>
+        
+          <li>
+            <a href="/2023/06/30/ai/openGPT/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2023/06/30/ai/opencv/">(no title)</a>
           </li>
         
       </ul>
