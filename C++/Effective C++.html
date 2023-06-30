@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Effective C++ 条款总结参考： C++进阶 一.让自己习惯C++1.视C++为一个语言联邦　　C++是一种包含许多特性的语言，因而不要把它视为一个单一语言。理解C++至少需要学习一下4个部分： ①C语言。C++仍以C为基础 ②objected-oriented C++。面向对象编程，类、封装、继承、多态 ③template  C++。C++泛型编程、模板元编程的基础 ④STL。容器、迭">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="https://github.com/damei6677/C++/Effective%20C++.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="Effective C++ 条款总结参考： C++进阶 一.让自己习惯C++1.视C++为一个语言联邦　　C++是一种包含许多特性的语言，因而不要把它视为一个单一语言。理解C++至少需要学习一下4个部分： ①C语言。C++仍以C为基础 ②objected-oriented C++。面向对象编程，类、封装、继承、多态 ③template  C++。C++泛型编程、模板元编程的基础 ④STL。容器、迭">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-10-08T06:26:56.980Z">
+<meta property="article:modified_time" content="2022-10-08T06:25:41.119Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/blog/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/blog/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/blog/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/blog/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/blog/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/blog/">Home</a>
+        
+          <a class="main-nav-link" href="/blog/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/blog/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://github.com/damei6677"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="page-" class="h-entry article article-type-page" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/blog/C++/Effective%20C++.html" class="article-date">
+  <time class="dt-published" datetime="2022-10-08T06:26:56.980Z" itemprop="datePublished">2022-10-08</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="Effective-C-条款总结"><a href="#Effective-C-条款总结" class="headerlink" title="Effective C++ 条款总结"></a><a target="_blank" rel="noopener" href="https://www.cnblogs.com/deepllz/p/9171908.html">Effective C++ 条款总结</a></h1><p>参考：</p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/daaikuaichuan/article/category/7200808">C++进阶</a></p>
+<h1 id="一-让自己习惯C"><a href="#一-让自己习惯C" class="headerlink" title="一.让自己习惯C++"></a><strong>一.让自己习惯C++</strong></h1><h2 id="1-视C-为一个语言联邦"><a href="#1-视C-为一个语言联邦" class="headerlink" title="1.视C++为一个语言联邦"></a><strong>1.视C++为一个语言联邦</strong></h2><p>　　C++是一种包含许多特性的语言，因而不要把它视为一个单一语言。理解C++至少需要学习一下4个部分：</p>
+<p>①C语言。C++仍以C为基础</p>
+<p>②objected-oriented C++。面向对象编程，类、封装、继承、多态</p>
+<p>③template  C++。C++泛型编程、模板元编程的基础</p>
+<p>④STL。容器、迭代器、算法</p>
+<h2 id="2-尽量使用const等替换-define"><a href="#2-尽量使用const等替换-define" class="headerlink" title="2.尽量使用const等替换#define"></a><strong>2.尽量使用const等替换#define</strong></h2><p>2.1 宏定义的问题</p>
+<p>【不容易定位错误】：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">define</span> PI 3.1415926</span></span><br></pre></td></tr></table></figure>
+
+<p>  在预处理时， 所有使用PI的地方都将被替换，之后编译器在编译时从未看到过PI。这时如果遇到错误，报错时给出的是3.1415926，而不是PI，因为PI从未进入到符号表，这将导致错误难以理解。一个替换的方法是如下定义：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">const</span> <span class="type">double</span> PI = <span class="number">3.1415926</span>;</span><br></pre></td></tr></table></figure>
+
+<p>【class专属常量】：</p>
+<p>  专属于class作用域的常量。专属于class的常量将这个常量限定在class的作用域内，而#define定义的常量没有作用域的限制，一旦在某一处有个宏定义，在其后面都有效（除非#undef）。这意味着#define不仅不能够用来定义class专属常量，也不能提供任何封装性。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">GamePlayer</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="type">static</span> <span class="type">const</span> <span class="type">int</span> NumTurns=<span class="number">5</span>; <span class="comment">// 所有实例共享一份</span></span><br><span class="line">	<span class="type">int</span> scores[NumTurns];</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>2.2 const\enum\inline的好处</p>
+<ul>
+<li><p>const的好处：<br>define直接常量替换，出现编译错误不易定位(不知道常量是哪个变量)；</p>
+<p>define没有作用域，const有作用域提供了封装性。</p>
+</li>
+<li><p>enum的好处：<br>  提供了封装性；<br>  编译器肯定不会分配额外内存空间(其实const也不会)。</p>
+</li>
+<li><p>inline的好处：<br>define宏函数容易造成误用</p>
+</li>
+</ul>
+<p>2.3  记住</p>
+<ul>
+<li>对于单纯常量，最好<strong>以const对象或者enum替换#define</strong>。</li>
+<li>对于形似函数的宏，最好改<strong>用inline函数替换#define</strong>。</li>
+</ul>
+<h2 id="3-尽可能使用const"><a href="#3-尽可能使用const" class="headerlink" title="3.尽可能使用const"></a><strong>3.尽可能使用const</strong></h2><ul>
+<li><p>const可以作用于：变量、指针、函数参数类型、类中的常函数。const可以防止变量被意外的修改，有助于编译器检测这些意外改变。</p>
+</li>
+<li><p>当non-const和const实现相同逻辑时，non-const对象可以调用const成员函数，这样可以缩减代码量。另外注意const对象不能调用non-const成员函数，编译报错：discards  qualifiers。</p>
+</li>
+<li><p>若函数的返回值是指针，且用const修饰，则函数返回值指向的内容是常数，不可被修改，此返回值仅能赋值给const修饰的相同类型的指针。</p>
+<p>令函数返回一个常量值，往往可以降低客户错误而造成的意外，又不至于放弃安全性和高效性。</p>
+</li>
+</ul>
+<p>const的用法</p>
+<p>1.修饰指针</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//const int *p; = &amp;a;</span></span><br><span class="line"><span class="type">int</span> a = <span class="number">9</span>;</span><br><span class="line"><span class="type">int</span> b = <span class="number">10</span>;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> *p = &amp;a;<span class="comment">//p是一个指向int类型的const值,与int const *p等价</span></span><br><span class="line">*p = <span class="number">11</span>;    <span class="comment">//编译错误，指向的对象是只读的，不可通过p进行改变</span></span><br><span class="line">p = &amp;b;     <span class="comment">//合法，改变了p的指向</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//int * const p = &amp;a;</span></span><br><span class="line"><span class="type">int</span> a = <span class="number">9</span>;</span><br><span class="line"><span class="type">int</span> b = <span class="number">10</span>;</span><br><span class="line"><span class="type">int</span> * <span class="type">const</span> p = &amp;a;<span class="comment">//p是一个const指针</span></span><br><span class="line">*p = <span class="number">11</span>;    <span class="comment">//合法，</span></span><br><span class="line">p = &amp;b;     <span class="comment">//编译错误，p是一个const指针，只读，不可变</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//const int * const p = &amp;a;</span></span><br><span class="line"><span class="type">int</span> a = <span class="number">9</span>;</span><br><span class="line"><span class="type">int</span> b = <span class="number">10</span>;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> * <span class="type">const</span> p = &amp;a;<span class="comment">//p既是一个const指针，同时也指向了int类型的const值</span></span><br><span class="line">*p = <span class="number">11</span>;    <span class="comment">//编译错误，指向的对象是只读的，不可通过p进行改变</span></span><br><span class="line">p = &amp;b;     <span class="comment">//编译错误，p是一个const指针，只读，不可变</span></span><br></pre></td></tr></table></figure>
+
+<p>2.1.修饰成员函数，const在函数后面</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Test</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">int</span> num;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">Test</span>():<span class="built_in">num</span>(<span class="number">10</span>)&#123;&#125;</span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">print1</span><span class="params">()</span></span>&#123;</span><br><span class="line">        cout&lt;&lt;num&lt;&lt;endl;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">print2</span><span class="params">()</span> <span class="type">const</span></span>&#123;</span><br><span class="line">        cout&lt;&lt;num&lt;&lt;endl;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">print3</span><span class="params">()</span> <span class="type">const</span>    </span>&#123;</span><br><span class="line">        <span class="comment">//num-=10;//ERROR 1.const函数内部不能修改成员变量</span></span><br><span class="line">        cout&lt;&lt;num&lt;&lt;endl;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    Test a;</span><br><span class="line">    a.<span class="built_in">print1</span>();</span><br><span class="line">    a.<span class="built_in">print2</span>();</span><br><span class="line">    a.<span class="built_in">print3</span>();</span><br><span class="line"></span><br><span class="line">    <span class="type">const</span> Test b;</span><br><span class="line">    b.<span class="built_in">print1</span>();<span class="comment">//ERROR 2.const对象不能访问非const函数</span></span><br><span class="line">    b.<span class="built_in">print2</span>();</span><br><span class="line">    b.<span class="built_in">print3</span>();</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>const修饰成员函数，在函数后面，注意：</p>
+<ul>
+<li>在const修饰的成员函数内部，不能对成员变量进行修改；</li>
+<li>const 修饰的类实例，不能访问非const函数；</li>
+</ul>
+<p>2.2.const修饰函数成员函数，当const在返回值前面</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Test</span>&#123;</span><br><span class="line">    <span class="type">int</span> num;</span><br><span class="line">    <span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">const</span> <span class="type">int</span> <span class="title">getNum</span><span class="params">()</span></span>&#123;<span class="keyword">return</span> num;&#125;</span><br><span class="line">    <span class="function"><span class="type">const</span> <span class="type">int</span>* <span class="title">getPtr</span><span class="params">()</span></span>&#123;<span class="keyword">return</span> &amp;num;&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    Test t;</span><br><span class="line">    <span class="type">int</span> num = t.<span class="built_in">getNum</span>(); <span class="comment">//成功，将const类型转化成非const类型数据</span></span><br><span class="line">    <span class="comment">//int *ptr = t.getPtr(); //Error,invalid conversion from &#x27;const int*&#x27; to &#x27;int*&#x27; </span></span><br><span class="line">    <span class="type">const</span> <span class="type">int</span> *ptr = t.<span class="built_in">getPtr</span>();<span class="comment">//success</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>const在函数前面修饰函数是，表示返回值是只读的。</p>
+<p>当返回值是const变量时，使用非const变量接收，编译器将const类型变量转换成非const类型数据。</p>
+<p>当返回值是const指针时，只能用const类型的指针来接收，可以使用const_cast取出const属性。</p>
+<h2 id="4-确定对象使用前被初始化"><a href="#4-确定对象使用前被初始化" class="headerlink" title="4.确定对象使用前被初始化"></a><strong>4.确定对象使用前被初始化</strong></h2><p>　　这里提到一个重要的基本概念：</p>
+<p>　　在构造函数的初始化列表中的才算是初始化，而构造函数的内容是在初始化列表之后执行的，已经不算是初始化操作。</p>
+<p>​		这里就存在效率问题，假设你的类成员是个其他类的对象，比如std::string  name，你在初始化列表中进行初始化，调用的是string的拷贝构造函数，而在构造函数中进行赋值的话，调用的是：默认构造函数+赋值函数，调用默认构造的原因是，调用构造函数之前会先对成员进行初始化（这也就是为什么在构造函数中进行的操作不能称之为初始化操作），而对于大多数类，默认构造函数+赋值函数的效率是小于只调用拷贝构造函数的。</p>
+<p>　　①因此最好是在初始化列表中进行初始化操作。</p>
+<p>　　②内置类型要手动初始化，不同的平台不能保证对内置类型进行初始化。也就是说，内置类型需要赋初始值。</p>
+<h1 id="二-构造-x2F-析构-x2F-赋值运算"><a href="#二-构造-x2F-析构-x2F-赋值运算" class="headerlink" title="二.构造&#x2F;析构&#x2F;赋值运算"></a><strong>二.构造&#x2F;析构&#x2F;赋值运算</strong></h1><h2 id="5-C-默认编写并调用的函数"><a href="#5-C-默认编写并调用的函数" class="headerlink" title="5.C++默认编写并调用的函数"></a><strong>5.C++默认编写并调用的函数</strong></h2><p>编译器默认实现的函数：默认构造、析构、拷贝构造、赋值函数。这里注意深拷贝和浅拷贝问题。</p>
+<p>编译器默认实现的拷贝构造函数都是浅拷贝，如果需要深拷贝需要使用者自己实现。</p>
+<h2 id="6-不想使用默认生成的函数，可以明确拒绝"><a href="#6-不想使用默认生成的函数，可以明确拒绝" class="headerlink" title="6.不想使用默认生成的函数，可以明确拒绝"></a><strong>6.不想使用默认生成的函数，可以明确拒绝</strong></h2><p>默认的构造可以被其他构造替换，拷贝构造和赋值函数如果不想被外面调用可以将其声明为private。</p>
+<p>设计一个不可复制的类,可以把拷贝构造函数声明称private或者使用delete关键字。这样可以禁止编译器生成默认的拷贝构造函数。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Test</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">protected</span>:</span><br><span class="line">    <span class="built_in">Test</span>() &#123;&#125;  <span class="comment">// 允许derived对象构造和析构</span></span><br><span class="line">    ~<span class="built_in">Test</span>()  &#123;&#125;</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">Test</span>(<span class="type">const</span> Test&amp;) = <span class="keyword">delete</span>; <span class="comment">//删除拷贝构造函数</span></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="built_in">Test</span>(<span class="type">const</span> Test&amp;); <span class="comment">// 阻止copying   </span></span><br><span class="line">    Test&amp; <span class="keyword">operator</span>=(<span class="type">const</span> Test&amp;);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="7-多态基类声明virtual析构函数"><a href="#7-多态基类声明virtual析构函数" class="headerlink" title="7.多态基类声明virtual析构函数"></a><strong>7.多态基类声明virtual析构函数</strong></h2><p>　　当一个父类指针指向子类对象时（即多态的用法），在释放对象时，如果父类的析构函数不是virtual的，那么编译器会将这个指针视为父类类型的，只会释放掉这个对象的一部分空间。如果声明为virtual的，那么在释放的时候，编译器就知道这是一个子类类型，会将对象都释放掉，即防止内存泄漏问题。</p>
+<h2 id="8-别让异常逃离析构函数"><a href="#8-别让异常逃离析构函数" class="headerlink" title="8.别让异常逃离析构函数"></a><strong>8.别让异常逃离析构函数</strong></h2><p>　绝不要让析构函数抛出异常，应该让用户自己处理可能发生异常的操作</p>
+<h2 id="9-不要在构造和析构函数调用virtual函数"><a href="#9-不要在构造和析构函数调用virtual函数" class="headerlink" title="9.不要在构造和析构函数调用virtual函数"></a><strong>9.不要在构造和析构函数调用virtual函数</strong></h2><p>　　由于父类的构造函数发生在子类之前，而此时子类的成员变量等并未初始化，因此在父类的构造函数中调用virtual函数，绝对不会调用子类的方法，即使现在你在创建一个子类对象。换句话说，在构造函数中调用的virtual函数，都会下降到父类类型，即都不是virtual函数。同样的道理，子类析构函数调用在父类之前，因此在父类析构函数调用virtual函数时，子类都不存在了，你让编译器怎么调用。因此一定不要再构造和析构中调用virtual函数。</p>
+<h2 id="10-令operator-x3D-返回reference-to-this"><a href="#10-令operator-x3D-返回reference-to-this" class="headerlink" title="**10.令operator&#x3D;返回reference to  *this **"></a>**10.令operator&#x3D;返回reference to  *this **</h2><h2 id="11-处理自我赋值"><a href="#11-处理自我赋值" class="headerlink" title="11.处理自我赋值"></a><strong>11.处理自我赋值</strong></h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">MyString&amp; MyString::<span class="keyword">operator</span>=(<span class="type">const</span> MyString&amp; str)</span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">if</span> (<span class="keyword">this</span> != &amp;str)</span><br><span class="line">	&#123;</span><br><span class="line">		MyString <span class="built_in">temp</span>(str);</span><br><span class="line">		<span class="type">char</span>* pTemp = temp.m_pData;</span><br><span class="line">		temp.m_pData = <span class="keyword">this</span>-&gt;m_pData;</span><br><span class="line">		<span class="keyword">this</span>-&gt;m_pData = pTemp;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> *<span class="keyword">this</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>​		返回引用比临时变量要少几次构造析构，效率高；</p>
+<p>​		第二条是因为，赋值的时候要先释放自己的资源然后赋予新的资源（资源假设为一个指针，这样便于理解），如果你自己给自己赋值，按照这个先释放再赋值的逻辑，自己直接就没了。所以发现是自己赋值自己的时候（this  &#x3D; &amp;object）直接返回*this即可。</p>
+<h2 id="12-复制对象的时候勿忘其每个部分"><a href="#12-复制对象的时候勿忘其每个部分" class="headerlink" title="12.复制对象的时候勿忘其每个部分"></a><strong>12.复制对象的时候勿忘其每个部分</strong></h2><p>　　没啥可解释的</p>
+<h1 id="三-资源管理"><a href="#三-资源管理" class="headerlink" title="三.资源管理"></a><strong>三.资源管理</strong></h1><h2 id="13-以对象管理资源"><a href="#13-以对象管理资源" class="headerlink" title="13.以对象管理资源"></a><strong>13.以对象管理资源</strong></h2><p>　　①在构造中获得资源并在析构函数中释放资源</p>
+<p>　　②两个常用的自动管理资源的类是shared_ptr和auto_ptr，其中auto_ptr的复制动作，会导致复制对象变为null，容易造成意外的错误，一般推荐使用shared_ptr，其使用引用计数的原理实现对象共享的目的，并且在计数为0时自动释放对象。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 返回指针，指向Investment继承体系内的动态分配对象，调用者有责任删除它</span></span><br><span class="line"><span class="function">Investment* <span class="title">createInvestment</span><span class="params">()</span></span>;   </span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">func</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    Investment* pInv = <span class="built_in">createInvestment</span>();   <span class="comment">//调用factory函数</span></span><br><span class="line">    /....../</span><br><span class="line">    <span class="keyword">delete</span> pInv;      <span class="comment">//释放pInv所指对象</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>上述代码可能出现如下问题导致无法删除pInv指针所指对象，<strong>出现资源泄露</strong>。</p>
+<ul>
+<li>“…”区域内一个过早结束的return语句；</li>
+<li>delete动作位于某个循环内，而该循环由于某个continue或goto语句过早结束；</li>
+<li>“…”区域内语句抛出异常。</li>
+</ul>
+<p>【解决方法】：</p>
+<ul>
+<li><p>获得资源后立刻放进管理对象内。实际上，“以对象管理资源”的观念常被称为“资源取得时机便是初始化时机”（Resource Acquisition Is Initialization;RAII）。每一笔资源都在获得的同时立刻被放进管理对象中。</p>
+<p>常被使用的RAII classes分别是shared_ptr、weak_ptr和unique_ptr。</p>
+</li>
+<li><p>管理对象运用析构函数确保资源被释放。</p>
+</li>
+</ul>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">func</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    /....../</span><br><span class="line">    <span class="function">shared_ptr&lt;Investment&gt; <span class="title">pInv</span><span class="params">(createInvestment())</span></span>;</span><br><span class="line">    /....../ <span class="comment">// shared_ptr的析构函数会自动删除pInv</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="14-在资源管理类中小心copy行为"><a href="#14-在资源管理类中小心copy行为" class="headerlink" title="14.在资源管理类中小心copy行为"></a><strong>14.在资源管理类中小心copy行为</strong></h2><p>1、RAII对象被复制时应该怎么做？<br>禁止复制。<br>  将copying函数声明为private或者使用**&#x3D;delete**。</p>
+<p>对管理资源使用引用计数法。<br>  shared_ptr便是如此。可将mutexPtr类型从Mutex* 改为shared_ptr。当然mutex也有自己的资源管理器：lock_guard。</p>
+<p>复制底部资源。<br>  也就是说，复制资源管理对象是，进行的是”深度拷贝“。</p>
+<p>转移底层资源的拥有权。<br>  有时候资源的拥有权只能给一个对象，这时候当资源复制时，就需要剥夺原RAII类对该资源的拥有权。像unique_ptr。在C++11新标准中的std::move便是这个功能。可以把一个左值转换为一个右值。</p>
+<p>2、请记住<br>复制RAII对象必须一并复制它所管理的资源，所以资源的copying行为决定RAII对象的copying行为。</p>
+<p>普遍而常见的RAII class copying行为是：抑制copying、施行引用计数法。不过其他行为也都可能被实现。</p>
+<h2 id="15-在资源管理类中提供对原始资源的访问"><a href="#15-在资源管理类中提供对原始资源的访问" class="headerlink" title="15.在资源管理类中提供对原始资源的访问"></a><strong>15.在资源管理类中提供对原始资源的访问</strong></h2><p>1、如何操纵原始资源<br>  前面两节都在讨论如何管理资源，一般情况下，使用资源管理类来屏蔽原始资源，对抗内存泄露等问题，避免使用原始资源。这样我们就无法直接访问原本的原始资源。毕竟程序在有些时候是需要操纵原始资源的，许多APIs要求使用原始资源。为了能操纵原始资源，我们要怎么做？ shared_ptr提供了一个get函数，用于执行这样的显示转换。这时如果在调用API时，如下：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">daysHeld</span><span class="params">(<span class="type">const</span> Investment* pi)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	/....../</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function">shared_ptr&lt;Investment&gt; <span class="title">pInv</span><span class="params">(createInvestment)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> days = <span class="built_in">daysHeld</span>(pInv); <span class="comment">//通不过编译，因为实参不是Investment类型</span></span><br><span class="line"><span class="type">int</span> days = <span class="built_in">daysHeld</span>(pInv.<span class="built_in">get</span>()); <span class="comment">//正确，通过成员函数get()获取原始资源的访问。</span></span><br></pre></td></tr></table></figure>
+
+<p>2、请记住<br>APIs往往要求访问原始资源，所以每一个RAII class应该提供一个“取得其所管理之资源”的办法。</p>
+<p>对原始资源的访问可能经由显式转换或隐式转换。一般而言显式转换(提供一个显式转换函数，如get)比较安全，但隐式转换(类中重写“()”运算符)对客户比较方便。</p>
+<h2 id="16-成对的使用new和delete"><a href="#16-成对的使用new和delete" class="headerlink" title="16.成对的使用new和delete"></a><strong>16.成对的使用new和delete</strong></h2><p>　　使用new申请内存，必须使用delete释放内存，使用new [] 申请内存，必须使用delete []释放内存</p>
+<h2 id="17-以单独的语句将newed对象置入shared-ptr"><a href="#17-以单独的语句将newed对象置入shared-ptr" class="headerlink" title="17.以单独的语句将newed对象置入shared_ptr"></a><strong>17.以单独的语句将newed对象置入shared_ptr</strong></h2><p>　　意思为不要写下类似Function(shared_ptr<Class>(new Class),  x())，其中Function和x为函数，Class是一个类。</p>
+<p>​		原因在于shared_ptr的构造分为两步，第一步是new  Class创建一个对象，第二部是执行构造函数，但是像上面那样写可能导致x()在两步之间运行（与编译器如何编译代码有关了），如果这个时候x()发生了异常，那么就会导致内存泄漏。因此初始化shared_ptr的时候，最好不要掺杂其他东西。</p>
+<h1 id="四-设计与生命"><a href="#四-设计与生命" class="headerlink" title="四.设计与生命"></a><strong>四.设计与生命</strong></h1><h2 id="18-让接口容易被正确使用，不易被误用"><a href="#18-让接口容易被正确使用，不易被误用" class="headerlink" title="18.让接口容易被正确使用，不易被误用"></a><strong>18.让接口容易被正确使用，不易被误用</strong></h2><p>　　文章举了个Day,Month,Year的例子进行简单的说明。在实际中就是要考虑客户如果使用你写的接口，怎么样能降低错误使用率，就像给别人提供API一样。要做到这一点还是很不容易的。</p>
+<h2 id="19-设计class"><a href="#19-设计class" class="headerlink" title="19.设计class"></a><strong>19.设计class</strong></h2><p>　　这个真的很难一开始就设计的很好，一般都是根据需求慢慢调整的，但是有一些公共特征还是考虑，比如构造和析构，需要什么操作等。</p>
+<h2 id="20-以pass-by-reference-const替换pass-by-value"><a href="#20-以pass-by-reference-const替换pass-by-value" class="headerlink" title="20.以pass-by-reference-const替换pass-by-value"></a><strong>20.以pass-by-reference-const替换pass-by-value</strong></h2><p>主要考虑两点：</p>
+<p>　　①效率问题，pass-by-value会导致很多临时对象的产生和销毁，就会多调用几次构造和析构，因此效率更低。</p>
+<p>　　②对象切割问题，pass-by-value的方式将一个子类对象传入一个参数类型父类的函数，那么拷贝的对象将被切割成只有父类对象被保留。引用可以解决这个问题，因为引用本质上也是指针，就和多态是一样的。</p>
+<p>　　另外，内置类型，STL迭代器和函数对象一般采用pass-by-value，因为其复制代价很小</p>
+<h2 id="21-不要返回临时对象的引用"><a href="#21-不要返回临时对象的引用" class="headerlink" title="21.不要返回临时对象的引用"></a><strong>21.不要返回临时对象的引用</strong></h2><p>　　①不要返回一个临时对象的引用</p>
+<p>　　②不要返回在堆上分配的对象的引用，因为这违背了new和delete成对出现的原则，这样的方式是很不合理的，稍加不注意就会导致内存泄漏问题。</p>
+<p>　　③也不要返回一个static对象的引用，因为static可能同时被很多地方需要，这样的话共享就存在问题。(注意在多线程环境中访问全局变量的问题。)</p>
+<p>　　所以对于这种问题，最好的解决方法就是不返回引用就OK了。</p>
+<h2 id="22-将成员变量声明为private"><a href="#22-将成员变量声明为private" class="headerlink" title="22.将成员变量声明为private"></a><strong>22.将成员变量声明为private</strong></h2><p>　　常规操作</p>
+<h2 id="23-宁以non-member、non-friend函数替换member函数"><a href="#23-宁以non-member、non-friend函数替换member函数" class="headerlink" title="23.宁以non-member、non-friend函数替换member函数"></a><strong>23.宁以non-member、non-friend函数替换member函数</strong></h2><p>　　文中提到了封装性强弱的概念：一个类中的成员或者成员函数，被越少的代码访问，那么封装性越高。所以增加一个成员函数会增加访问成员变量的代码，因此降低了封装性。所以这个条款才如此建议。仁者见仁智者见智，这个条款目前楼主没有在实际项目中应用过，大部分还是以成员函数的方式实现，因此个人感觉这个条款并没有感觉有什么卵用！</p>
+<h2 id="24-若所有参数皆需类型转换，那么请采用non-member函数"><a href="#24-若所有参数皆需类型转换，那么请采用non-member函数" class="headerlink" title="24.若所有参数皆需类型转换，那么请采用non-member函数"></a><strong>24.若所有参数皆需类型转换，那么请采用non-member函数</strong></h2><p>　　文中举了一个有理数Rational运算的例子，在类中加入一个operator*(const Rational&amp;  other)的函数，可以实现类似 rational *  2的操作，其中2是个int，但是因为rational有一个以int为参数的构造，因此编译器帮你执行了隐式类型转换。但是反过来写2 *  rational的时候，编译就报错了。因为2是个int，并没有operator<em>这个函数。</em></p>
+<p>但是为什么这样写就没有执行隐式类型转换呢？这又引出一个问题：隐式类型转换的合格条件是什么？</p>
+<p>答案是：必须是<strong>参数列中的参数</strong>才是隐式类型转换的有效参与者，类的执行者也就是’.’前面的那个对象（this指向的对象，比如说rational.func()中的rational是类执行者，相当于他是函数的调用人，地位较高，不能参与隐式类型转换），这就解释了为什么2放在前面是不行的。解决此种问题的方法是提供一个non-mem的operator*(Rational  a, Rational b)即可。</p>
+<h2 id="25-写一个不抛出异常的swap函数"><a href="#25-写一个不抛出异常的swap函数" class="headerlink" title="25.写一个不抛出异常的swap函数"></a><strong>25.写一个不抛出异常的swap函数</strong></h2><p>　　一般写swap最普通的方法就是利用中间变量，temp &#x3D; a;a &#x3D; b;b &#x3D; temp，这种方法对于内置类型没任何问题，内置类型上的赋值绝对不会抛出异常，并且效率很高。但是如果a,b不是内置类型，就会调用类的copy构造函数和assign函数，并且必须是深拷贝。这样如果类的成员较多就会造成交换的效率很低，特别是针对pimpl实现方法，即成员中包含指针（即资源）时。更好的做法就是直接交换指针就可以了，相当于交换了两个int(指针都是4字节的)，这就比拷贝这个指针指向的资源要快得多。</p>
+<p>　　如何实现呢？只要将swap都转换成内置类型的swap就可以了，做法就是在类中提供一个public的swap(T&amp;  b)函数（T为一个类），将每个成员进行交换（如果成员中包含其他非内置对象，调用这个对象的swap函数即可）。然后提供一个non-member的swap(T&amp;  a, T&amp; b)重载函数，在函数内部调用类中的a.swap(b)，就可以像如下方式实现交换两个对象的操作：swap(a, b)。</p>
+<p>　　注意：</p>
+<p>　　①在类内的swap交换内置类型时要调用std命名空间内的swap函数，必须使用using std::swap，否则就变成递归函数了</p>
+<p>　　②另外文中说在std命名空间内不能加入新东西，比如重载swap函数，但是经博主测试是可以在std内重载swap函数的（g++版本为5.4.0）。</p>
+<h1 id="五-实现"><a href="#五-实现" class="headerlink" title="五.实现"></a><strong>五.实现</strong></h1><h2 id="26-尽可能延后变量定义得时间"><a href="#26-尽可能延后变量定义得时间" class="headerlink" title="26.尽可能延后变量定义得时间"></a><strong>26.尽可能延后变量定义得时间</strong></h2><p>　　①因为变量（对类而言）的定义，需要承担一次构造函数的时间，在函数结束后还可能承担一次析构函数的时间，假如该变量未被使用，那么构造函数和析构函数的时间就白白浪费了，尤其是在可能发生异常的函数中，假如你过早的定义变量，然后在你使用这个变量之前抛出了异常，那么这个变量的构造函数就没有意义而且降低效率。所以应该尽可能延后变量定义得时间，只有真正使用这个变量的时候才定义它</p>
+<p>　　②条款4讲过，copy construction的效率 &gt; default construction +assign  function，所以最好的做法是直接调用copy construction函数对变量直接进行初始化，而不是先定义，再赋值</p>
+<p>　　③对于有循环的情况，假设一个n次的循环，如图所示：</p>
+<p>　　![img](Effective C++.assets&#x2F;1380035-20180802182606062-995062114.png)</p>
+<p>　　那么方法A的代价：1次构造+1次析构+n次赋值</p>
+<p>　　方法B的代价：n次构造+n次析构</p>
+<p>　　如果n较大，那么应该选择方法A，如果n较小，可以选择方法B。</p>
+<h2 id="27-尽量避免转型"><a href="#27-尽量避免转型" class="headerlink" title="27.尽量避免转型"></a><strong>27.尽量避免转型</strong></h2><p>　　①最好使用C++4个新式的类型转换函数，因为这很容易辨识，代码可读性提高</p>
+<p>　　②尽量避免使用dynamic_cast，因为这种转换效率很低，一般用虚函数的方式来避免转型</p>
+<h2 id="28-避免返回一个指针、引用或者迭代器指向类内的成员"><a href="#28-避免返回一个指针、引用或者迭代器指向类内的成员" class="headerlink" title="28.避免返回一个指针、引用或者迭代器指向类内的成员"></a><strong>28.避免返回一个指针、引用或者迭代器指向类内的成员</strong></h2><p>　　原因是如果返回了成员的引用或者指针，就可以通过这个引用或者指针修改雷内的private成员，这样是不合理的（这样的话成员就相当于public的了），这一点可以通过给函数的返回类型加const修饰符来防止内部成员变量被修改。但是还有一种情况是，如果获得的类内的一个成员的引用或指针，但是在使用之前，对象被释放了，那么这个引用或指针就变成了野指针了，必然会导致core  dump错误。</p>
+<p>​	所以应该避免返回类内成员的指针或引用。</p>
+<h2 id="29-异常安全函数"><a href="#29-异常安全函数" class="headerlink" title="29.异常安全函数"></a><strong>29.异常安全函数</strong></h2><p>　　发生异常时的处理主要分一下几类：资源不泄漏、数据不丢失、不抛出异常。反正就是考虑程序的各种可能的情况，如果异常了要尽可能保证你的程序某些功能或数据不丢失。这个也没啥可说的。</p>
+<h2 id="30-inline-函数"><a href="#30-inline-函数" class="headerlink" title="30.inline 函数"></a><strong>30.inline 函数</strong></h2><p>　　inline只是一种申请，编译器会根据具体情况来决定一个函数是否可以是inline得，比如递归函数、virtual函数、代码较多的函数，即使你声明了inline关键字，编译器也不会将此类函数视为inline的函数。</p>
+<h2 id="31-编译依存关系降低至最低"><a href="#31-编译依存关系降低至最低" class="headerlink" title="31.编译依存关系降低至最低"></a><strong>31.编译依存关系降低至最低</strong></h2><p>　　理解此条款关键是要理解C++的编译方式，具体可以参考：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/jerry19880126/p/3551836.html%E6%96%87%E4%B8%AD%E8%AF%B4%E7%9A%84%E5%BE%88%E8%AF%A6%E7%BB%86%E3%80%82%E7%90%86%E8%A7%A3%E4%BA%86%E6%96%87%E4%B8%AD%E7%9A%84%E6%84%8F%E6%80%9D%EF%BC%8C%E5%86%8D%E5%9B%9E%E5%A4%B4%E7%9C%8B%E8%BF%99%E4%B8%AA%E6%9D%A1%E6%AC%BE%E5%B0%B1%E6%B8%85%E6%99%B0%E5%A4%9A%E4%BA%86%E3%80%82%E5%85%B6%E5%85%B3%E9%94%AE%E7%82%B9%E5%A6%82%E4%B8%8B%EF%BC%9A">https://www.cnblogs.com/jerry19880126/p/3551836.html文中说的很详细。理解了文中的意思，再回头看这个条款就清晰多了。其关键点如下：</a></p>
+<p>　　①关于前置声明的一个限制是：编译器必须在编译时确定类的大小，即分配多少内存。因此如果你前置声明一个类class  TEST，然后在后面试图创建一个TEST的对象TEST  test，那么这个代码是不会通过编译的，因为编译器不确定要给test分配多少内存。那怎么规避这个问题呢？答案就是指针，典型的pimpl方式，因为指针的字节数是固定的（相对于平台，一般就是4或者8字节）。例如下面的代码就是可以通过编译的。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">class TEST;</span><br><span class="line">class AA&#123; </span><br><span class="line">    public:</span><br><span class="line">        TEST* aa; </span><br><span class="line">        //TEST&amp; b; //引用不可以，因为引用必须在初始化列表中进行初始化</span><br><span class="line">        void T(TEST&amp; tt) &#123; </span><br><span class="line">        &#125;   </span><br><span class="line">        void wdt(TEST* tt) &#123;</span><br><span class="line">        &#125;   </span><br><span class="line">        void PP() &#123;</span><br><span class="line">            cout &lt;&lt; &quot;AA::PP()&quot; &lt;&lt; endl;</span><br><span class="line">        &#125;   </span><br><span class="line">        AA() &#123;&#125;</span><br><span class="line">        ~AA() &#123;&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">int main() &#123;</span><br><span class="line">    AA aa; </span><br><span class="line">    aa.PP();</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>　可见，前置声明一个TEST类，并没有对应的类的实现，在另外一个类A中声明一个TEST<em>的成员，包括在函数中使用TEST</em> 或者  TEST&amp;类型的参数都没问题。但是在用这两个函数的时候还是要有TEST的定义和实现，那么这个时候怎么办，就是再创建一个TEST.h和TEST.cc，然后在A.cc中#Include”TEST.H”(假如class  A也单独创建一个A.cc和A.h)，这样当TEST中的内容有所改变的时候，只有TEST.cc和A.cc被重新编译。所有使用class A和class  TEST的地方都不会被重新编译。假如使用这两个类的地方特别多，那么这样就可以减少很多文件的编译了。</p>
+<p>　　②上面利用指针是一种实现方法，另一种就是Interface class，即类中全部都是pure  virtual函数，这样的类在使用的时候只能是以指针的形式出现，这样就同样达到了减少编译依赖的效果。</p>
+<p>　　③当然这两种方式都存在一定的代价：指针方式的实现要多分配指针大小的内存，每次访问都是间接访问。接口形式的实现方式要承担虚函数表的代价以及运行时的查找表的代价。但是一般这两种实现对资源和效率的影响通常不是最关键的，因此可以放心的使用，类似tensorflow源码中就大量使用这种方式降低编译依赖。</p>
+<h1 id="六-继承与面向对象设计"><a href="#六-继承与面向对象设计" class="headerlink" title="六.继承与面向对象设计"></a><strong>六.继承与面向对象设计</strong></h1><h2 id="32-确保public继承是is-a关系"><a href="#32-确保public继承是is-a关系" class="headerlink" title="32.确保public继承是is-a关系"></a><strong>32.确保public继承是is-a关系</strong></h2><h2 id="33-名称遮掩问题"><a href="#33-名称遮掩问题" class="headerlink" title="33.名称遮掩问题"></a><strong>33.名称遮掩问题</strong></h2><p>　　子类会遮掩父类同名的函数，可以使用类名作用域决定调用父类还是子类的函数。</p>
+<h2 id="34-接口继承与实现继承"><a href="#34-接口继承与实现继承" class="headerlink" title="34.接口继承与实现继承"></a><strong>34.接口继承与实现继承</strong></h2><p>　　理解接口继承和实现继承的区别，纯虚函数、非纯虚函数和普通函数在这两方面的区别：纯虚函数只指定接口继承、非纯虚函数指定接口继承并存在默认的实现继承、普通函数指定接口继承及强制实现继承。</p>
+<h2 id="35-考虑virtual函数以外的选择"><a href="#35-考虑virtual函数以外的选择" class="headerlink" title="35.考虑virtual函数以外的选择"></a><strong>35.考虑virtual函数以外的选择</strong></h2><p>　　<strong>……</strong></p>
+<h2 id="36-不要重新定义继承来的non-virtual函数"><a href="#36-不要重新定义继承来的non-virtual函数" class="headerlink" title="36.不要重新定义继承来的non-virtual函数"></a><strong>36.不要重新定义继承来的non-virtual函数</strong></h2><p>　　non-virtual在实现上是静态绑定的，调用父类还是子类的函数完全取决于指针或者对象的类型。在子类重定义non-virtual时，父类的相同的函数是不会被覆盖的。这条与33条类似。</p>
+<h2 id="37-不要重新定义重写函数（virtual）的默认参数"><a href="#37-不要重新定义重写函数（virtual）的默认参数" class="headerlink" title="37.不要重新定义重写函数（virtual）的默认参数"></a><strong>37.不要重新定义重写函数（virtual）的默认参数</strong></h2><p>　　默认参数都是静态绑定的，即你的指针是什么类型，默认参数就是什么类型。而virtual函数是动态绑定的，在运行期才决定调用哪个函数。所以如果你在父类class  Father有一个virtual函数并带有默认参数，例如void p(int default &#x3D;  100)，在子类重写这个函数，然后换了新的默认参数为default &#x3D; 10，在你以多态的方式调用p的时候：Father* f &#x3D; new Son;  f-&gt;p();这种情况p的默认参数为100而非10。因为f指针的静态类型为Father，而动态类型为Son。所以如果你的函数必须包含默认参数，不要这样写，解决方法是将带有默认参数的函数改为non-virtual函数，内部再调用一个virtual函数。因为non-virtual函数是从来不应该被重写的（条款36，覆盖问题）</p>
+<h2 id="38-类与类之间的关系：复合（has-a的关系）"><a href="#38-类与类之间的关系：复合（has-a的关系）" class="headerlink" title="38.类与类之间的关系：复合（has  a的关系）"></a><strong>38.类与类之间的关系：复合（has  a的关系）</strong></h2><h2 id="39-私有继承"><a href="#39-私有继承" class="headerlink" title="39.私有继承"></a><strong>39.私有继承</strong></h2><p>　　子类继承父类的方式决定了在子类中父类函数的属性，一般规则就是所有属性都按照继承方式对其。比如采用protected继承方式，那么父类中的public成员在子类都升级为protected，其他保持不变。如果采用private继承方式，父类中的所有成员全部变为private，特殊之处之一是父类中原本就是private的成员不可继承，即在子类中也无法使用父类的private成员。</p>
+<h2 id="40-多重继承"><a href="#40-多重继承" class="headerlink" title="40.多重继承"></a><strong>40.多重继承</strong></h2><h1 id="七-模板与泛型编程"><a href="#七-模板与泛型编程" class="headerlink" title="七.模板与泛型编程"></a><strong>七.模板与泛型编程</strong></h1><h2 id="41-隐式接口和编译器多态"><a href="#41-隐式接口和编译器多态" class="headerlink" title="41.隐式接口和编译器多态"></a><strong>41.隐式接口和编译器多态</strong></h2><p>　　class的继承和template都支持接口和多态。只不过class实现的接口是显示的，就是说一定能直接找到这个接口的实现代码。而template实现的接口，只能模糊的知道接口的特征，一般间接能找到实现的代码。用继承实现的多态属于运行期多态、模板实现的多态则是编译期多态。</p>
+<h2 id="42-了解typename"><a href="#42-了解typename" class="headerlink" title="42.了解typename"></a><strong>42.了解typename</strong></h2><p>　　①在声明template参数时，class和typename可互换。</p>
+<p>　　②typename的第二个用处是告诉编译期某一个嵌套从属类型是类型，最典型的就是STL中容器的迭代器类型，例如：T::iterator(T是个容器的类型，例如：vector<int>)，这个时候就要在T::iterator前面加一个typename，告诉编译器这是一个类型，否则编译器不能确定这是什么，因为有可能iterator是个静态变量或者某一namespace下的变量。</p>
+<p>　　③类的<strong>继承列表</strong>和<strong>初始化列表</strong>中的类型不需要typename指定类型，因为继承的一定是个类，而初始化列表一定是调用父类的构造或者初始化某个成员。</p>
+<h2 id="43-调用基类模板成员"><a href="#43-调用基类模板成员" class="headerlink" title="43.调用基类模板成员"></a><strong>43.调用基类模板成员</strong></h2><p>　　当一个类的基类包含模板参数时，需要通过this-&gt;的方式调用基类内的函数，例如 class F:  public  S<C>，在F中的成员函数中调用S中的成员函数this-&gt;test()，而直接写test()无法通过编译，原因是因为C是个模板没有办法确定类S的具体长相，或者说无法确定S中一定有test函数，即使你写的所有C都包含test函数，但是在编译器看来它是不确定这个问题的，因此无法通过编译。</p>
+<p>　　解决办法是：</p>
+<p>①使用this-&gt;test，这样做告诉编译器假设这个test已经被继承了。</p>
+<p>②使用using声明式：using  S<C>::test告诉编译期这个test位于S内。相当于必须手动通知编译器这个函数是存在的。</p>
+<h2 id="44-将与template参数无关的代码抽离到模板外"><a href="#44-将与template参数无关的代码抽离到模板外" class="headerlink" title="44.将与template参数无关的代码抽离到模板外"></a><strong>44.将与template参数无关的代码抽离到模板外</strong></h2><p>　　原因是模板会根据具体类型具象化不同的代码，如果将与模板无关的代码也放入模板函数或者类中，那么就会生成重复的代码，就会导致代码膨胀的问题，函数模板中与参数无关的代码可以包装成单独的函数。类模板中与参数无关的模板可以放到父类中。</p>
+<h2 id="45-运用成员函数模板接受所有兼容类型"><a href="#45-运用成员函数模板接受所有兼容类型" class="headerlink" title="45.运用成员函数模板接受所有兼容类型"></a><strong>45.运用成员函数模板接受所有兼容类型</strong></h2><p>　　文中以shared_ptr为例讲解了使用成员函数模板实现智能指针不同类型间的转换，以及如何避免任意类型之间的相互转换，这种函数可称为泛化拷贝构造函数。另外泛化拷贝构造不同于默认拷贝构造函数。</p>
+<h2 id="46-需要类型转换时请为模板定义非成员函数"><a href="#46-需要类型转换时请为模板定义非成员函数" class="headerlink" title="46.需要类型转换时请为模板定义非成员函数"></a><strong>46.需要类型转换时请为模板定义非成员函数</strong></h2><p>　  　条款24中Rational函数仅以int为例，说明了隐士类型转换的合格参与者的条件，并提出了非成员函数的解决方法。现在将其扩展为template形式：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">template &lt;typename T&gt;</span><br><span class="line">const Rational&lt;T&gt; operator*(const Rational&lt;T&gt;&amp; lhs, const Rational&lt;T&gt;&amp; rhs) &#123;……&#125;</span><br></pre></td></tr></table></figure>
+
+<p>　　发现在调用的时候无法通过编译，即以下代码无法通过编译：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Rational&lt;int&gt;   oneHalf(1, 2);</span><br><span class="line">Rational&lt;int&gt;    ret = oneHalf*2;</span><br></pre></td></tr></table></figure>
+
+<p>　　相比于条款24，换成模板之后为什么就无法通过编译了呢？原因在于模板的运行需要进行模板推算，即operator*函数的两个参数类型的T要根据传入的参数类型进行确认，第一个参数因为是oneHalf，其本身就是Rational<int>类型，因此第一个参数的类型中的T很容易进行推理，但是第二个传入的参数是int，如何根据这个int参数推导出第二个参数的类型T呢？显然编译器无法进行推理，条款24能推理的原因是进行了隐士类型转换，或者说Rational的构造函数中有一个以int为参数的构造函数，但是template在进行参数推到的过程中从不将隐士类型转换函数考虑在内，这也是合理的因为你没法根据参数类型推导出模板参数，这个Ratinal的例子貌似看起来可以，因为构造函数的参数类型是const  T&amp; 但是假如其构造参数类型是个固定类型，比如说float，那么难道模板参数能永远是float么。因此编译器不考虑隐士类型转换也是有道理的。</p>
+<p>　　那么这个问题怎么解决呢，该如何让这个模板函数的参数能进行隐式类型转换，答案就是：先具象化这个函数，相当于先确定T，然后就可以进行隐士类型转换了，做法是在类中声明一个非成员函数，这该如何做到呢，答案就是友元函数，在类中定义的友元函数都被视为非成员函数，对于本例该像如下方式声明：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">friend const Rational operator*(const Rational&amp; lhs, const Rational&amp; rhs) &#123;</span><br><span class="line">   return  (lhs.numrator()*rhs.numrator()/lhs.denominator()*rhs.denominator());  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>　　由于此函数是在模板类的内部，因此当oneHalf对象生成之后，T就被确定为int，那么operator*函数的参数和返回值中的T也均是确定的了。</p>
+<p>　　另外，由于此函数的功能过于简单，因此可直接将其实现放入类中（inline的），假如类的功能很复杂，那么一般都采用调用类外的某一个功能函数，这时候代码这样实现：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">friend const Rational&lt;T&gt; operator*(const Rational&lt;T&gt;&amp; lhs, const Rational&lt;T&gt;&amp; rhs) &#123;</span><br><span class="line">      return  DoMultiply&lt;T&gt;(lhs, rhs);  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>　　这样写实际和上面的写法是一样的，当T被确定为int时，会生成一份Rational<int>的类，具象化出里面的函数，这样就能确定调用的是T为int的operator*函数，然后在另一个模板函数内实现其操作，本例来说就是DoMultiply函数。</p>
+<h2 id="47-traits编程技巧"><a href="#47-traits编程技巧" class="headerlink" title="47.traits编程技巧"></a><strong>47.traits编程技巧</strong></h2><p>　　traits是用来获取参数类型信息，因为有时候需要根据参数类型信息做不同的处理，下面这篇博客中列举了两个简单的例子，<a target="_blank" rel="noopener" href="https://blog.csdn.net/my_business/article/details/7891687%EF%BC%88%E5%85%B6%E5%AE%9E%E5%8F%AF%E4%BB%A5%E4%BD%BF%E7%94%A8typeid%E8%BF%9B%E8%A1%8C%E7%AE%80%E5%8D%95%E7%9A%84%E5%AE%9E%E7%8E%B0%EF%BC%8C%E4%BD%86%E6%98%AF%E8%BF%99%E7%A7%8D%E5%81%9A%E6%B3%95%E6%95%88%E7%8E%87%E4%BD%8E%EF%BC%8C%E5%9B%A0%E4%B8%BAtypeid%E9%9C%80%E8%A6%81%E9%85%8D%E4%B8%AAif%E4%BD%BF%E7%94%A8%EF%BC%8Cif%E6%98%AF%E5%9C%A8%E8%BF%90%E8%A1%8C%E6%9C%9F%E6%89%8D%E5%86%B3%E5%AE%9A%E7%9A%84%EF%BC%8C%E8%80%8Ctraits%E5%8F%AF%E4%BB%A5%E5%9C%A8%E7%BC%96%E8%AF%91%E5%99%A8%E5%B0%B1%E8%BF%9B%E8%A1%8C%E7%B1%BB%E5%9E%8B%E7%9A%84%E5%88%A4%E5%88%AB%EF%BC%8C%E6%95%88%E7%8E%87%E6%9B%B4%E9%AB%98%EF%BC%89%EF%BC%8C%E6%96%87%E4%B8%AD%E4%BB%A5STL%E8%BF%AD%E4%BB%A3%E5%99%A8%E7%9B%B8%E5%85%B3%E5%87%BD%E6%95%B0%E4%B8%AD%E7%9A%84advance%E4%B8%BA%E4%BE%8B%EF%BC%8Cadvance%E5%87%BD%E6%95%B0%E5%8E%9F%E5%9E%8B%E4%B8%BA%EF%BC%9A">https://blog.csdn.net/my_business/article/details/7891687（其实可以使用typeid进行简单的实现，但是这种做法效率低，因为typeid需要配个if使用，if是在运行期才决定的，而traits可以在编译器就进行类型的判别，效率更高），文中以STL迭代器相关函数中的advance为例，advance函数原型为：</a></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">template&lt;typename IterT, typename DistT&gt;</span><br><span class="line">void advance(IterT&amp; iter, DistT&amp; d) &#123;</span><br><span class="line">  if(iter 为 random_access_iterator_tag) </span><br><span class="line">    iter += d;</span><br><span class="line">  ……      </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>　　其中要根据iter为不同类型（一共5种）执行不同操作，这时候就必须能提供一种判别类型的方法，前面说了利用typeid的方法，要使用if进行判断，if是在运行期实现的，效率低，而且typeid有可能在编译器就确定了类型，却要等到运行期if才能决定运行哪个分支，为什么不在编译器就定好呢。traits技术可以在编译器就做到类型的判别，标准做法是声明一个traits  class然后进行各种不同版本的特化，本例中的traits class为（说是class，其实一般都声明为结构体）：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">template&lt;typename IterT&gt;</span><br><span class="line">struct  iterator_traits;</span><br></pre></td></tr></table></figure>
+
+<p>然后针对不同类型特化不同的struct，但是每个iterator类必须有一个相同的typedef 名为  iterator_category，iterator_traits只是将其再typedef成iterator_category</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">template &lt;typename Iter&gt;</span><br><span class="line">struct iterator_traits &#123;</span><br><span class="line">   typedef typename Iter::iterator_category iterator_category;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>　　也就是说iterator_traits中存储了一个类型为iterator_category，但是根据不同的模板参数其有不同的值，这个例子，其实就是将类型统一名称，当然traits的功能远非如此，你可以根据需求添加相应功能。现在通过调用：iterator_traits<IterT>::iterator_category就拿到了迭代器的类型，那么怎么在编译期做到判断if呢，方法就是重载函数，重载函数是在编译期就确定了调用哪个的，原理就是和所有名字相同的重载函数比较，直到找到参数类型一致的，这就是编译期实现了if判断，可以利用这个特点在编译期就决定advance函数要运行什么功能。例如random的DoAdvance方法如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">template &lt;typename IterT, typename DistT&gt;</span><br><span class="line">void DoAdvance(IterT&amp; iter, DistT&amp; d, std::random_access_iterator_tag) &#123;</span><br><span class="line">  iter += d;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>　　在调用的时候，将advance函数改为：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">template&lt;typename IterT, typename DistT&gt;</span><br><span class="line">void advance(IterT&amp; iter, DistT&amp; d) &#123;</span><br><span class="line">  DoAdvance(iter, d, iterator_traits&lt;IterT&gt;::iterator_category());         </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>　　这样根据参数的不同就在编译确定好了，你到底调用的是哪个DoAdvance函数。这里有个问题就是如果不用iterator_traits，DoAdvance函数的第三个参数直接换为  IterT::iterator_category也是可以，那么这么麻烦的用traits干嘛？其实对本例来说还有一种IterT是指针迭代器的情况，指针迭代器都属于random分类，这种情况，不用trait就很难实现了，如果用traits的话，写一个偏特化就OK了，例如：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">template&lt;typename IterT&gt;</span><br><span class="line">struct iterator_traits&lt;Iter*&gt;&#123;</span><br><span class="line">typedef  random_access_iterator_tag iterator_category;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>有点类似前面提到的博客中，如何判定一个类型是指针类型。</p>
+<p>另外抛开本例，在traits中也可以附加其他额外信息：就类似如何判定T是否是指针类型，就在traits中放入了一个bool；还有一种需求是声明一个和参数类型相同的临时变量，这时候不用traits就很难实现了，根据你的需求你可以任意添加附加信息实现更复杂的功能。</p>
+<h2 id="48-模板元编程"><a href="#48-模板元编程" class="headerlink" title="48.模板元编程"></a><strong>48.模板元编程</strong></h2><p>　　采用模板编程的好处是：</p>
+<p>①可将工作由运行期移动到编译器完成，造成更高的执行效率（占用内存小，运行速度快）和更早的侦测错误</p>
+<p>②编码更加简洁；坏处：	①编译时间长	②代码不易理解</p>
+<h2 id="八-定制new和delete（条款49-52）"><a href="#八-定制new和delete（条款49-52）" class="headerlink" title="八.定制new和delete（条款49~52）"></a><strong>八.定制new和delete（条款49~52）</strong></h2><p> 　　这章讲了new和delete的一些高级用法：set_new_handler、operator  new&#x2F;delete的重载及应该遵循的规则、placement new。一般情况下较少会重载new，所以倒不如了解new&#x2F;delete的基础知识更好，参考：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/deepllz/p/9927807.html">https://www.cnblogs.com/deepllz/p/9927807.html</a></p>
+<h1 id="九-杂项讨论（条款53-55）"><a href="#九-杂项讨论（条款53-55）" class="headerlink" title="九.杂项讨论（条款53~55）"></a><strong>九.杂项讨论（条款53~55）</strong></h1>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://github.com/damei6677/C++/Effective%20C++.html" data-id="clji7crpi00026s4l0knoabhx" data-title="" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2023/06/">June 2023</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/blog/2023/06/30/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2023 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/blog/" class="mobile-nav-link">Home</a>
+  
+    <a href="/blog/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/blog/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/blog/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/blog/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

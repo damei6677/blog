@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="问题总结修改了gitignore文件后不生效。清理下git缓存 1git rm -r --cached . 忽略目录123456789101112131）每一行表示一个匹配规则,空行会被忽略；2）以 # 开头的行表示注释，可以使用反斜杠进行转义；3）空格不匹配任何的文件，可以作为分隔符，可以使用反斜杠进行转义；4）* 表示匹配零个或多个任意字符；5）** 表示匹配任意中间目录；如 ：a&#x2F;**&#x2F;z">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="https://github.com/damei6677/git/gitignore.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="问题总结修改了gitignore文件后不生效。清理下git缓存 1git rm -r --cached . 忽略目录123456789101112131）每一行表示一个匹配规则,空行会被忽略；2）以 # 开头的行表示注释，可以使用反斜杠进行转义；3）空格不匹配任何的文件，可以作为分隔符，可以使用反斜杠进行转义；4）* 表示匹配零个或多个任意字符；5）** 表示匹配任意中间目录；如 ：a&#x2F;**&#x2F;z">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-11-09T06:32:40.418Z">
+<meta property="article:modified_time" content="2022-11-09T06:32:40.418Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/blog/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/blog/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/blog/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/blog/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/blog/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/blog/">Home</a>
+        
+          <a class="main-nav-link" href="/blog/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/blog/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://github.com/damei6677"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="page-" class="h-entry article article-type-page" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/blog/git/gitignore.html" class="article-date">
+  <time class="dt-published" datetime="2022-11-09T06:32:40.418Z" itemprop="datePublished">2022-11-09</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="问题总结"><a href="#问题总结" class="headerlink" title="问题总结"></a>问题总结</h1><p>修改了gitignore文件后不生效。<br>清理下git缓存</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git rm -r --cached .</span><br></pre></td></tr></table></figure>
+<h2 id="忽略目录"><a href="#忽略目录" class="headerlink" title="忽略目录"></a>忽略目录</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">1）每一行表示一个匹配规则,空行会被忽略；</span><br><span class="line">2）以 # 开头的行表示注释，可以使用反斜杠进行转义；</span><br><span class="line">3）空格不匹配任何的文件，可以作为分隔符，可以使用反斜杠进行转义；</span><br><span class="line">4）* 表示匹配零个或多个任意字符；</span><br><span class="line">5）** 表示匹配任意中间目录；如 ：a/**/z 可以匹配 a/z, a/b/z 或者 a/b/c/z;</span><br><span class="line">6）? 表示匹配任意一个字符；</span><br><span class="line">7）[abc] 表示匹配任意一个括号中的字符；</span><br><span class="line">8）[a-z] 表示匹配任意一个括号中的两个字符的范围之内的字符；</span><br><span class="line">9）以斜杠/开始表示目录，且表示根目录；</span><br><span class="line">10）以斜杠/结束的模式表示只匹配文件夹以及该文件路径下的内容，不匹配该文件；</span><br><span class="line">11）如果一个模式不包含斜杠，则它匹配相对于当前.gitignore文件路径的内容，如果该模式不在.gitignore中，则相对于项目根目录</span><br><span class="line">12）! 表示对.gitignore中的模式进行取反；即：取消对应的忽略，继续追踪对应的文件。</span><br><span class="line">13）git对于.ignore配置文件是按行从上到下进行规则匹配的，意味着如果前面的规则匹配的范围更大，则后面的规则将不会生效；</span><br></pre></td></tr></table></figure>
+<h2 id=""><a href="#" class="headerlink" title=""></a></h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#递归忽略文件</span><br><span class="line">**/build-*/</span><br></pre></td></tr></table></figure>
+
+<h1 id="CPP"><a href="#CPP" class="headerlink" title="CPP"></a>CPP</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash"><span class="comment">##############################################################</span></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">cpp</span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash"><span class="built_in">dir</span></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">所有以buil为开头的目录</span></span><br><span class="line">**/buil*/</span><br><span class="line">**/build-*/</span><br><span class="line">**/CMakeFiles</span><br><span class="line"></span><br><span class="line">**/*Makelists.txt.user</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">递归</span></span><br><span class="line">**/*CMakeFiles.txt.user</span><br><span class="line">**/*CMakeFiles.txt.*</span><br><span class="line">**/.vs*</span><br><span class="line"></span><br><span class="line">CMakeLists.txt.user</span><br><span class="line">CMakeCache.txt</span><br><span class="line">CMakeFiles</span><br><span class="line">CMakeScripts</span><br><span class="line">Testing</span><br><span class="line">Makefile</span><br><span class="line">cmake_install.cmake</span><br><span class="line">install_manifest.txt</span><br><span class="line">compile_commands.json</span><br><span class="line">CTestTestfile.cmake</span><br><span class="line">_deps</span><br><span class="line"></span><br><span class="line">*.pro.user</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h1 id="IDEA"><a href="#IDEA" class="headerlink" title="IDEA"></a>IDEA</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash"><span class="comment">##############################################################</span></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">idea</span></span><br><span class="line">**/out/</span><br><span class="line">**/.idea/</span><br><span class="line">**/build*/</span><br><span class="line">**/target/</span><br><span class="line">**/log/</span><br><span class="line">**/logs/</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">idea</span></span><br><span class="line">HELP.md</span><br><span class="line">!.mvn/wrapper/maven-wrapper.jar</span><br><span class="line">!**/src/main/**</span><br><span class="line">!**/src/test/**</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash"><span class="comment">## STS ###</span></span></span><br><span class="line">.apt_generated</span><br><span class="line">.classpath</span><br><span class="line">.factorypath</span><br><span class="line">.project</span><br><span class="line">.settings</span><br><span class="line">.springBeans</span><br><span class="line">.sts4-cache</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash"><span class="comment">## IntelliJ IDEA ###</span></span></span><br><span class="line">.idea</span><br><span class="line">*.iws</span><br><span class="line">*.iml</span><br><span class="line">*.ipr</span><br></pre></td></tr></table></figure>
+<h2 id="Qt-gitignore"><a href="#Qt-gitignore" class="headerlink" title="Qt gitignore"></a><strong>Qt gitignore</strong></h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"># C++ objects and libs</span><br><span class="line">*.slo</span><br><span class="line">*.lo</span><br><span class="line">*.o</span><br><span class="line">*.a</span><br><span class="line">*.la</span><br><span class="line">*.lai</span><br><span class="line">*.so</span><br><span class="line">*.so.*</span><br><span class="line">*.dll</span><br><span class="line">*.dylib</span><br><span class="line"># Qt-es</span><br><span class="line">object_script.*.Release</span><br><span class="line">object_script.*.Debug</span><br><span class="line">*_plugin_import.cpp</span><br><span class="line">/.qmake.cache</span><br><span class="line">/.qmake.stash</span><br><span class="line">*.pro.user</span><br><span class="line">*.pro.user.*</span><br><span class="line">*.qbs.user</span><br><span class="line">*.qbs.user.*</span><br><span class="line">*.moc</span><br><span class="line">moc_*.cpp</span><br><span class="line">moc_*.h</span><br><span class="line">qrc_*.cpp</span><br><span class="line">ui_*.h</span><br><span class="line">*.qmlc</span><br><span class="line">*.jsc</span><br><span class="line">Makefile*</span><br><span class="line">*build-*</span><br><span class="line">*.qm</span><br><span class="line">*.prl</span><br><span class="line"># Qt unit tests</span><br><span class="line">target_wrapper.*</span><br><span class="line"># QtCreator</span><br><span class="line">*.autosave</span><br><span class="line"># QtCreator Qml</span><br><span class="line">*.qmlproject.user</span><br><span class="line">*.qmlproject.user.*</span><br><span class="line"># QtCreator CMake</span><br><span class="line">CMakeLists.txt.user*</span><br><span class="line"># QtCreator 4.8&lt; compilation database </span><br><span class="line">compile_commands.json</span><br><span class="line"># QtCreator local machine specific files for imported projects</span><br><span class="line">*creator.user*</span><br><span class="line">*_qmlcache.qrc</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://github.com/damei6677/git/gitignore.html" data-id="clji7crpt00126s4l1wo86gf1" data-title="" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2023/06/">June 2023</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/blog/2023/06/30/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2023 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/blog/" class="mobile-nav-link">Home</a>
+  
+    <a href="/blog/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/blog/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/blog/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/blog/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

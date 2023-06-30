@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="掌静脉快速比对方法、服务器及系统步骤1，录入，将用户掌静脉数据录入到服务器系统中，将n（n大于1）个用户的掌静脉数据进行融合，对生物特征进行聚合，提取特征索引。将掌静脉聚合数据放到服务器1中，将用户掌静脉数据放入服务器2中。 步骤2，比对，将需要比对的掌静脉数据输入服务器1中，服务器1先将该掌静脉数据与步骤1中获取的特征索引进行算法处理，获得m（m大于1）个特征相近的掌静脉数据。 步骤3，再比对，">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="https://github.com/damei6677/patent/palm-match-server.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="掌静脉快速比对方法、服务器及系统步骤1，录入，将用户掌静脉数据录入到服务器系统中，将n（n大于1）个用户的掌静脉数据进行融合，对生物特征进行聚合，提取特征索引。将掌静脉聚合数据放到服务器1中，将用户掌静脉数据放入服务器2中。 步骤2，比对，将需要比对的掌静脉数据输入服务器1中，服务器1先将该掌静脉数据与步骤1中获取的特征索引进行算法处理，获得m（m大于1）个特征相近的掌静脉数据。 步骤3，再比对，">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2023-06-30T01:10:07.983Z">
+<meta property="article:modified_time" content="2022-11-30T02:50:11.103Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/blog/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/blog/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/blog/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/blog/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/blog/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/blog/">Home</a>
+        
+          <a class="main-nav-link" href="/blog/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/blog/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://github.com/damei6677"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="page-" class="h-entry article article-type-page" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/blog/patent/palm-match-server.html" class="article-date">
+  <time class="dt-published" datetime="2023-06-30T01:10:07.983Z" itemprop="datePublished">2023-06-30</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="掌静脉快速比对方法、服务器及系统"><a href="#掌静脉快速比对方法、服务器及系统" class="headerlink" title="掌静脉快速比对方法、服务器及系统"></a>掌静脉快速比对方法、服务器及系统</h1><p>步骤1，录入，将用户掌静脉数据录入到服务器系统中，将n（n大于1）个用户的掌静脉数据进行融合，对生物特征进行聚合，提取特征索引。将掌静脉聚合数据放到服务器1中，将用户掌静脉数据放入服务器2中。</p>
+<p>步骤2，比对，将需要比对的掌静脉数据输入服务器1中，服务器1先将该掌静脉数据与步骤1中获取的特征索引进行算法处理，获得m（m大于1）个特征相近的掌静脉数据。</p>
+<p>步骤3，再比对，需要比对的掌静脉数据输入到服务器2中，与步骤2中获取的特征相近的掌静脉数据进行再比对，找到最匹配的掌静脉数据，获得比对结果。</p>
+<p>优点：</p>
+<p>1、两个服务器分工合作，精简服务器复杂程序，利于实现。</p>
+<p>2、两个服务器分别处理不同的业务逻辑，减少服务器系统负载，减少并行压力。</p>
+<p>3、可以将两个服务器分别部署到不同的物理电脑上，减少复杂比对业务对于硬件数据处理能力的严苛要求。</p>
+<p>4、两个服务器分开部署，使用分布式技术，升级时可以不停机热更换。</p>
+<p>5、安全。两个服务器，使用分布式技术，负载均衡，某个服务器崩溃，可以马上切换到另一个服务器。</p>
+<p>6、按需伸缩。使用分布式技术，根据业务需求，按需求增多或者减少服务器数量。</p>
+<p>&#x2F;&#x2F;主要写掌静脉相关的优点。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://github.com/damei6677/patent/palm-match-server.html" data-id="clji7crpz001h6s4l4bmp64kp" data-title="" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2023/06/">June 2023</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/blog/2023/06/30/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2023 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/blog/" class="mobile-nav-link">Home</a>
+  
+    <a href="/blog/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/blog/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/blog/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/blog/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

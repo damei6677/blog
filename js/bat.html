@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="0.BAT批处理batch百度百科 1.dos 批处理中%cd%  和%~dp0%的区别看网上介绍区别，写的好复杂，其实很简单： %cd%  在批处理和命令窗口都能使用。用于打印，当前工作路径。 %~dp0% 则只能用于批处理中，用于获得当前批处理文件所在的路径。 做个试验试一下： 12345678910@echo off     echo this is %%cd%%  %cd%     ech">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="https://github.com/damei6677/js/bat.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="0.BAT批处理batch百度百科 1.dos 批处理中%cd%  和%~dp0%的区别看网上介绍区别，写的好复杂，其实很简单： %cd%  在批处理和命令窗口都能使用。用于打印，当前工作路径。 %~dp0% 则只能用于批处理中，用于获得当前批处理文件所在的路径。 做个试验试一下： 12345678910@echo off     echo this is %%cd%%  %cd%     ech">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://github.com/blog/bat.assets/011116405196399.jpg">
+<meta property="og:image" content="https://github.com/blog/bat.assets/011118453623392.jpg">
+<meta property="og:image" content="https://github.com/blog/bat.assets/011137589406534.jpg">
+<meta property="article:published_time" content="2022-11-04T03:28:38.576Z">
+<meta property="article:modified_time" content="2022-10-08T06:25:41.136Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://github.com/blog/bat.assets/011116405196399.jpg">
+  
+    <link rel="alternate" href="/blog/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/blog/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/blog/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/blog/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/blog/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/blog/">Home</a>
+        
+          <a class="main-nav-link" href="/blog/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/blog/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://github.com/damei6677"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="page-" class="h-entry article article-type-page" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/blog/js/bat.html" class="article-date">
+  <time class="dt-published" datetime="2022-11-04T03:28:38.576Z" itemprop="datePublished">2022-11-04</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="0-BAT批处理"><a href="#0-BAT批处理" class="headerlink" title="0.BAT批处理"></a>0.BAT批处理</h1><p><a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E6%89%B9%E5%A4%84%E7%90%86/1448600?fromtitle=Batch&fromid=1079355&fr=aladdin">batch百度百科</a></p>
+<h2 id="1-dos-批处理中-cd-和-dp0-的区别"><a href="#1-dos-批处理中-cd-和-dp0-的区别" class="headerlink" title="1.dos 批处理中%cd%  和%~dp0%的区别"></a>1.<a target="_blank" rel="noopener" href="https://www.cnblogs.com/xiami303/p/4066919.html">dos 批处理中%cd%  和%~dp0%的区别</a></h2><p>看网上介绍区别，写的好复杂，其实很简单：</p>
+<p>%cd%  在批处理和命令窗口都能使用。用于打印，当前工作路径。</p>
+<p>%~dp0% 则只能用于批处理中，用于获得当前批处理文件所在的路径。</p>
+<p>做个试验试一下：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">@echo off     </span><br><span class="line">echo this is %%cd%%  %cd%     </span><br><span class="line">echo this is %%~dp0 %~dp0   </span><br><span class="line"></span><br><span class="line">echo switch to another folder:</span><br><span class="line">cd d:\Program Files (x86)</span><br><span class="line">echo this is %%cd%%  %cd%     </span><br><span class="line">echo this is %%~dp0 %~dp0 </span><br><span class="line"></span><br><span class="line">pause</span><br></pre></td></tr></table></figure>
+
+<p>结果发现%cd% 是可以在脚本中通过cd 切换到别的目录的，打印的路径是动态的。</p>
+<p><img src="/blog/bat.assets/011116405196399.jpg" alt="img"></p>
+<p>事实上，应该注意的是，使用的场景多半不同，  cd 到不同的工作路径，是dos常用操作。而%cd%就是为了得到当前的工作路径而设置的。</p>
+<p><img src="/blog/bat.assets/011118453623392.jpg" alt="img"></p>
+<p>但是，另外一种常用的需求就是获取当前bat文件所在的路径，那这个路径就需要用%~dp0%。 这里有一点儿麻烦的情况就是bat1 再调用bat2，  到底获取的是哪个路径呢？</p>
+<p>做个试验，试一下便知道了：</p>
+<p>t1.bat:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">@echo off</span><br><span class="line">echo this is t1.bat</span><br><span class="line">echo %%~dp0%% get path: %~dp0% </span><br><span class="line">cd D:\learn\Bat\codes</span><br><span class="line">call t2.bat</span><br><span class="line">pause</span><br></pre></td></tr></table></figure>
+
+<p>t2.bat: </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">echo this is t2.bat</span><br><span class="line">echo %%~dp0%% get path : %~dp0%</span><br><span class="line">pause</span><br></pre></td></tr></table></figure>
+
+<p>t1在d盘根目录，t2.bat 在D:\learn\Bat\codes。  执行t1.bat 执行结果是：</p>
+<p><img src="/blog/bat.assets/011137589406534.jpg" alt="img"></p>
+<p>可见，是以当前命令所在的文件路径为准的咯。</p>
+<p>注意，批处理想把变量名称本身， 要在外层在加一个%%。</p>
+<h2 id="2-语法"><a href="#2-语法" class="headerlink" title="2.语法"></a>2.语法</h2><figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">::执行程序</span><br><span class="line">&quot;.\NSIS\makensis.exe&quot; &quot;.\hudongketang_new.nsi&quot;</span><br><span class="line"></span><br><span class="line">::@表示该行代码不回显</span><br><span class="line">@<span class="built_in">echo</span> <span class="variable">%DestPath%</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="1-windows设置"><a href="#1-windows设置" class="headerlink" title="1.windows设置"></a>1.windows设置</h1><h2 id="1-启动管理员"><a href="#1-启动管理员" class="headerlink" title="1.启动管理员"></a>1.启动管理员</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">net user administrator /active:no</span><br></pre></td></tr></table></figure>
+
+<h2 id="2-开机启动"><a href="#2-开机启动" class="headerlink" title="2.开机启动"></a>2.开机启动</h2><p>快捷方式复制到一下目录</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">C:\ProgramData\Microsoft\Windows\Start Menu\Programs\StartUp</span><br></pre></td></tr></table></figure>
+
+<h2 id="3-程序崩溃，但不报错"><a href="#3-程序崩溃，但不报错" class="headerlink" title="3.程序崩溃，但不报错"></a>3.程序崩溃，但不报错</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//需要崩溃的地方</span></span><br><span class="line"><span class="built_in">memcpy</span>(<span class="number">0</span>,<span class="string">&quot;123&quot;</span>,<span class="number">1000</span>);</span><br><span class="line"><span class="comment">//main.cpp</span></span><br><span class="line"> _CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);</span><br><span class="line">    <span class="built_in">SetUnhandledExceptionFilter</span>(callback);</span><br><span class="line"><span class="comment">//需要实现的函数</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;crtdbg.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;windows.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">long</span> __stdcall <span class="title">callback</span><span class="params">(EXCEPTION_POINTERS *excp)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> EXCEPTION_EXECUTE_HANDLER;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="4-dos命令-杀死进程"><a href="#4-dos命令-杀死进程" class="headerlink" title="4.dos命令,杀死进程"></a>4.dos命令,杀死进程</h2><p>杀死某个进程，并且不弹出命令提示符</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">taskkill /m ***.exe</span><br></pre></td></tr></table></figure>
+
+<h2 id="5-查看环境变量"><a href="#5-查看环境变量" class="headerlink" title="5.查看环境变量"></a>5.查看环境变量</h2><p>在命令提示符窗口中，输入set可以查看系统当前所有的环境变量</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">查看p开头的环境变量</span></span><br><span class="line">set p </span><br></pre></td></tr></table></figure>
+
+<h2 id="6-修改环境变量后立即生效"><a href="#6-修改环境变量后立即生效" class="headerlink" title="6.修改环境变量后立即生效"></a>6.修改环境变量后立即生效</h2><p>总结：”输入：<code>set PATH=C:</code> ，关闭cmd窗口。</p>
+<p>再次打开cmd窗口，输入：<code>echo %PATH%</code> “估计在这个过程系统会重新读取path的配置文件，所以会起效。</p>
+<h2 id="7-设置定时启动程序"><a href="#7-设置定时启动程序" class="headerlink" title="7.设置定时启动程序"></a>7.设置定时启动程序</h2><p>控制面板–管理工具–计划任务–新建任务</p>
+<h2 id="8-windows设置自动开关机"><a href="#8-windows设置自动开关机" class="headerlink" title="8.windows设置自动开关机"></a><a target="_blank" rel="noopener" href="https://answers.microsoft.com/zh-hans/windows/forum/windows_7-hardware/windows-7/2e9e1884-f517-436c-b112-558768e4035a">8.windows设置自动开关机</a></h2>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://github.com/damei6677/js/bat.html" data-id="clji7crpy001c6s4l16eg1kjl" data-title="" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2023/06/">June 2023</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/blog/2023/06/30/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2023 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/blog/" class="mobile-nav-link">Home</a>
+  
+    <a href="/blog/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/blog/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/blog/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/blog/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="工程模块拆分标准拆分应该是:boot 启动模块common 公共类模块,工具类等services 服务实现api 对外提供的interface 程序发布123nohup java -jar *.jar &amp;#把标准输出标准错误输出都输出到&#x2F;dev&#x2F;null里面。nohup java -jar *.jar &gt;&#x2F;dev&#x2F;null 2&gt;&amp;1 &amp;    问题解答：1、zo">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="https://github.com/damei6677/backend/summary.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="工程模块拆分标准拆分应该是:boot 启动模块common 公共类模块,工具类等services 服务实现api 对外提供的interface 程序发布123nohup java -jar *.jar &amp;#把标准输出标准错误输出都输出到&#x2F;dev&#x2F;null里面。nohup java -jar *.jar &gt;&#x2F;dev&#x2F;null 2&gt;&amp;1 &amp;    问题解答：1、zo">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://github.com/blog/summary.assets/image-20221118111236537.png">
+<meta property="og:image" content="https://github.com/blog/summary.assets/image-20221118111313759.png">
+<meta property="og:image" content="https://github.com/blog/summary.assets%5Cimage-20221116162603125.png?lastModify=1668736746">
+<meta property="article:published_time" content="2023-06-15T05:36:40.391Z">
+<meta property="article:modified_time" content="2022-11-29T06:56:15.183Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://github.com/blog/summary.assets/image-20221118111236537.png">
+  
+    <link rel="alternate" href="/blog/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/blog/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/blog/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/blog/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/blog/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/blog/">Home</a>
+        
+          <a class="main-nav-link" href="/blog/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/blog/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://github.com/damei6677"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="page-" class="h-entry article article-type-page" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/blog/backend/summary.html" class="article-date">
+  <time class="dt-published" datetime="2023-06-15T05:36:40.391Z" itemprop="datePublished">2023-06-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="工程模块拆分"><a href="#工程模块拆分" class="headerlink" title="工程模块拆分"></a>工程模块拆分</h1><p>标准拆分应该是:<br>boot 启动模块<br>common 公共类模块,工具类等<br>services 服务实现<br>api 对外提供的interface</p>
+<h1 id="程序发布"><a href="#程序发布" class="headerlink" title="程序发布"></a>程序发布</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">nohup java -jar *.jar &amp;</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">把标准输出标准错误输出都输出到/dev/null里面。</span></span><br><span class="line">nohup java -jar *.jar &gt;/dev/null 2&gt;&amp;1 &amp;</span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="问题解答："><a href="#问题解答：" class="headerlink" title="问题解答："></a>问题解答：</h1><h2 id="1、zookeeper和nginx区别。"><a href="#1、zookeeper和nginx区别。" class="headerlink" title="1、zookeeper和nginx区别。"></a>1、zookeeper和nginx区别。</h2><p>一个是分布式小文件存储系统，多用于注册中心，一个是http反向代理服务器。雷锋和雷锋塔的区别.</p>
+<h2 id="2-每个微服务放到一个单独的docker里面"><a href="#2-每个微服务放到一个单独的docker里面" class="headerlink" title="2 每个微服务放到一个单独的docker里面"></a>2 每个微服务放到一个单独的docker里面</h2><p>优点：</p>
+<ul>
+<li>灵活。可分别升级。</li>
+<li>安全。互相隔离，迅速恢复。</li>
+</ul>
+<p><img src="/blog/summary.assets/image-20221118111236537.png" alt="image-20221118111236537"></p>
+<p><img src="/blog/summary.assets/image-20221118111313759.png" alt="image-20221118111313759"></p>
+<h2 id="jar-linux-解包"><a href="#jar-linux-解包" class="headerlink" title="jar linux 解包"></a>jar linux 解包</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">jar -xvf demo.jar</span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="知识树"><a href="#知识树" class="headerlink" title="知识树"></a>知识树</h1><p><img src="/blog/summary.assets%5Cimage-20221116162603125.png?lastModify=1668736746" alt="image-20221116162603125"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://github.com/damei6677/backend/summary.html" data-id="clji7crpo000i6s4l4aqygsur" data-title="" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2023/06/">June 2023</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/blog/2023/06/30/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2023 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/blog/" class="mobile-nav-link">Home</a>
+  
+    <a href="/blog/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/blog/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/blog/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/blog/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

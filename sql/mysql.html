@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="1.使用1.登录mysql -u username -p (输入密码) 2.用户管理修改root密码新安装mysql软件root帐号没有密码，需要手动新建密码。 12345678--1mysqladmin -u root -p password--2、可以设置是否允许远程登录。UPDATE mysql.user set authentication_string &#x3D; PASSWORD (&amp;quot">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="https://github.com/damei6677/sql/mysql.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="1.使用1.登录mysql -u username -p (输入密码) 2.用户管理修改root密码新安装mysql软件root帐号没有密码，需要手动新建密码。 12345678--1mysqladmin -u root -p password--2、可以设置是否允许远程登录。UPDATE mysql.user set authentication_string &#x3D; PASSWORD (&amp;quot">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2023-05-24T08:04:05.422Z">
+<meta property="article:modified_time" content="2023-05-24T08:04:05.422Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/blog/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/blog/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/blog/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/blog/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/blog/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/blog/">Home</a>
+        
+          <a class="main-nav-link" href="/blog/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/blog/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://github.com/damei6677"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="page-" class="h-entry article article-type-page" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/blog/sql/mysql.html" class="article-date">
+  <time class="dt-published" datetime="2023-05-24T08:04:05.422Z" itemprop="datePublished">2023-05-24</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="1-使用"><a href="#1-使用" class="headerlink" title="1.使用"></a>1.使用</h1><h2 id="1-登录"><a href="#1-登录" class="headerlink" title="1.登录"></a>1.登录</h2><p>mysql -u username -p (输入密码)</p>
+<h2 id="2-用户管理"><a href="#2-用户管理" class="headerlink" title="2.用户管理"></a>2.用户管理</h2><h3 id="修改root密码"><a href="#修改root密码" class="headerlink" title="修改root密码"></a>修改root密码</h3><p>新安装mysql软件root帐号没有密码，需要手动新建密码。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">--1</span></span><br><span class="line">mysqladmin <span class="operator">-</span>u root <span class="operator">-</span>p password</span><br><span class="line"><span class="comment">--2、可以设置是否允许远程登录。</span></span><br><span class="line"><span class="keyword">UPDATE</span> mysql.user <span class="keyword">set</span> authentication_string <span class="operator">=</span> PASSWORD (&quot;rootpwd) WHERE User = &quot;root&quot; and Host=&quot;localhost&quot;;</span><br><span class="line">--3、只能本地登录，禁止远程登录。</span><br><span class="line">SET PASSWORD = PASSWORD (&quot;rootpwd&quot;);  </span><br><span class="line">                                                        </span><br><span class="line">flush privileges;</span><br></pre></td></tr></table></figure>
+
+<h3 id="创建用户"><a href="#创建用户" class="headerlink" title="创建用户"></a>创建用户</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">--1</span></span><br><span class="line"><span class="comment">--insert into mysql.user(Host,User,Password) values(&quot;localhost&quot;,&quot;test&quot;,password(&quot;1234&quot;));</span></span><br><span class="line"></span><br><span class="line"><span class="comment">--2</span></span><br><span class="line"><span class="comment">--CREATE USER &#x27;username&#x27;@&#x27;localhost&#x27; IDENTIFIED BY &#x27;password&#x27;;</span></span><br><span class="line"><span class="comment">--将&quot;localhost&quot;改为&quot;%&quot;，表示在任何一台电脑上都可以登录。</span></span><br><span class="line"><span class="comment">--@&quot;%&quot; 表示对所有非本地主机授权，不包括localhost。（localhost地址设为127.0.0.1，如果设为真实的本地地址，不知道是否可以，没有验证。）</span></span><br><span class="line"><span class="keyword">create</span> <span class="keyword">user</span> &quot;ganning&quot;@&quot;%&quot; identified <span class="keyword">by</span> &quot;ganing7355608&quot;;</span><br><span class="line"></span><br><span class="line"><span class="comment">--mysql8新建用户并收取</span></span><br><span class="line"><span class="keyword">create</span> <span class="keyword">user</span> <span class="string">&#x27;jing&#x27;</span>@<span class="string">&#x27;%&#x27;</span> identified <span class="keyword">by</span> <span class="string">&#x27;111111&#x27;</span>;</span><br><span class="line"><span class="keyword">grant</span> <span class="keyword">all</span> privileges <span class="keyword">on</span> db_caiduoduo.<span class="operator">*</span> <span class="keyword">to</span> <span class="string">&#x27;jing&#x27;</span>@<span class="string">&#x27;%&#x27;</span> <span class="keyword">with</span> <span class="keyword">grant</span> option; </span><br><span class="line">flush privileges;</span><br></pre></td></tr></table></figure>
+
+<h3 id="授权"><a href="#授权" class="headerlink" title="授权"></a>授权</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">--查看用户权限。</span></span><br><span class="line"><span class="keyword">SHOW</span> GRANTS <span class="keyword">FOR</span> <span class="string">&#x27;dog&#x27;</span>@<span class="string">&#x27;localhost&#x27;</span>; </span><br><span class="line"><span class="comment">--该用户本地登录时可以有新建database以及管理所有database的权利。</span></span><br><span class="line"><span class="keyword">GRANT</span> <span class="keyword">CREATE</span> <span class="keyword">ON</span> <span class="operator">*</span>.<span class="operator">*</span> <span class="keyword">TO</span> <span class="string">&#x27;myuser&#x27;</span>@<span class="string">&#x27;localhost&#x27;</span>;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>授权格式：grant 权限 on 数据库.* to 用户名@登录主机 identified by “密码”;　</p>
+<p>授权username用户拥有testDB数据库的所有权限</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="operator">&gt;</span><span class="keyword">grant</span> <span class="keyword">all</span> privileges <span class="keyword">on</span> testDB.<span class="operator">*</span> <span class="keyword">to</span> username<span class="variable">@localhost</span> identified <span class="keyword">by</span> <span class="string">&#x27;1234&#x27;</span>;</span><br><span class="line"><span class="operator">&gt;</span>flush privileges;<span class="operator">/</span><span class="operator">/</span>刷新系统权限表</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">grant</span> <span class="keyword">all</span> privileges <span class="keyword">on</span> qingdb.<span class="operator">*</span> <span class="keyword">to</span> <span class="string">&#x27;qing&#x27;</span>@<span class="string">&#x27;%&#x27;</span> identified <span class="keyword">by</span> <span class="string">&#x27;aaaaaa&#x27;</span>;	</span><br><span class="line">flush privileges;</span><br></pre></td></tr></table></figure>
+
+<h3 id="撤销用户权限"><a href="#撤销用户权限" class="headerlink" title="撤销用户权限"></a>撤销用户权限</h3><p>命令: REVOKE privilege ON databasename.tablename FROM ‘username‘@’host’;</p>
+<h3 id="删除用户"><a href="#删除用户" class="headerlink" title="删除用户"></a>删除用户</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="operator">&gt;</span><span class="keyword">delete</span> <span class="keyword">from</span> <span class="keyword">user</span> <span class="keyword">where</span> <span class="keyword">User</span><span class="operator">=</span><span class="string">&#x27;username&#x27;</span> <span class="keyword">and</span> Host<span class="operator">=</span><span class="string">&#x27;localhost&#x27;</span>;</span><br><span class="line"><span class="operator">&gt;</span>flush privileges;</span><br><span class="line"></span><br><span class="line"><span class="operator">&gt;</span><span class="keyword">drop</span> database testDB;<span class="operator">/</span><span class="operator">/</span>删除数据库</span><br><span class="line"></span><br><span class="line"><span class="operator">&gt;</span><span class="keyword">drop</span> <span class="keyword">user</span> username@<span class="string">&#x27;%&#x27;</span>;<span class="operator">/</span><span class="operator">/</span>删除用户及权限</span><br><span class="line"><span class="operator">&gt;</span><span class="keyword">drop</span> <span class="keyword">user</span> username<span class="variable">@localhost</span>;</span><br></pre></td></tr></table></figure>
+
+<h3 id="修改密码"><a href="#修改密码" class="headerlink" title="修改密码"></a>修改密码</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">update</span> mysql.user <span class="keyword">set</span> password<span class="operator">=</span>password(<span class="string">&#x27;newpassword&#x27;</span>) <span class="keyword">where</span> <span class="keyword">User</span><span class="operator">=</span><span class="string">&#x27;username&#x27;</span> <span class="keyword">and</span> Host<span class="operator">=</span><span class="string">&#x27;localhost&#x27;</span>;	</span><br><span class="line">flush privileges;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">set password for &#x27;username&#x27;@&#x27;host&#x27; = password(&#x27;newpassword&#x27;);</span><br></pre></td></tr></table></figure>
+
+<h2 id="连接"><a href="#连接" class="headerlink" title="连接"></a>连接</h2><h3 id="1045"><a href="#1045" class="headerlink" title="1045"></a>1045</h3><p>1,该用户没有远程登录权限，需要添加该权限。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grant all privileges on qingdb.* to &#x27;qing&#x27;@&#x27;%&#x27; identified by &#x27;aaaaaa&#x27;;</span><br></pre></td></tr></table></figure>
+
+<p>2,可能密码错误。</p>
+<h3 id="1130"><a href="#1130" class="headerlink" title="1130"></a>1130</h3><p>用户没有远程登录权限。</p>
+<h3 id="1698"><a href="#1698" class="headerlink" title="1698"></a>1698</h3><p>查看一下user表，错误的起因就是在这里， root的plugin被修改成了auth_socket，用密码登陆的plugin应该是mysql_native_password。</p>
+<p>只要把auth_socket改成mysql_native_password就行了：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">update mysql.user set authentication_string=PASSWORD(&#x27;111111&#x27;), </span><br><span class="line">plugin=&#x27;mysql_native_password&#x27; where user=&#x27;root&#x27;;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="错误编码2003"><a href="#错误编码2003" class="headerlink" title="错误编码2003"></a>错误编码2003</h3><p>​	mysql远程连接失败（错误码：2003）。</p>
+<p>​	用”vim my.cnf”命令查看my.cnf文件(在MySQL安装目录下，我的位置是&#x2F;etc&#x2F;mysql&#x2F;my.cnf),修改其对应的值并重启MySQL。对应内容如下：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">[mysqld]</span><br><span class="line">bind-address = 0.0.0.0  # 表示允许任何主机登陆MySQL</span><br><span class="line">port=3306               # 表示MySQL运行端口为3306</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">重启服务器</span></span><br><span class="line">systemctl restart mysql/mariadb</span><br></pre></td></tr></table></figure>
+
+<p><strong>如果还没解决，查看防火墙</strong></p>
+<h3 id="连接错误10061"><a href="#连接错误10061" class="headerlink" title="连接错误10061"></a>连接错误10061</h3><p>1.数据库中查看用户是否有远程登录的权限。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select user,host form mysql.user;</span><br></pre></td></tr></table></figure>
+
+<p>​	如果没有‘%’权限，则添加。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grant all privileges on qingdb.* to &#x27;qing&#x27;@&#x27;%&#x27; identified by &#x27;aaaaaa&#x27;;</span><br></pre></td></tr></table></figure>
+
+<p>2.查看配置文件</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">root@debian:/home/zhaomin# cat /etc/mysql/my.cnf</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">The MariaDB configuration file</span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash"></span></span><br><span class="line"><span class="language-bash"><span class="comment"># The MariaDB/MySQL tools read configuration files in the following order:</span></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">1. <span class="string">&quot;/etc/mysql/mariadb.cnf&quot;</span> (this file) to <span class="built_in">set</span> global defaults,</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">2. <span class="string">&quot;/etc/mysql/conf.d/*.cnf&quot;</span> to <span class="built_in">set</span> global options.</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">3. <span class="string">&quot;/etc/mysql/mariadb.conf.d/*.cnf&quot;</span> to <span class="built_in">set</span> MariaDB-only options.</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">4. <span class="string">&quot;~/.my.cnf&quot;</span> to <span class="built_in">set</span> user-specific options.</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>​	查看mariadb将读取的配置文件。</p>
+<p>​	在文件中添加：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[mysqld]</span><br><span class="line">bind-address = 0.0.0.0</span><br></pre></td></tr></table></figure>
+
+<p>​	然后重启服务</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl restart mariadb</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h1 id="2-操作"><a href="#2-操作" class="headerlink" title="2.操作"></a>2.操作</h1><h2 id="导入数据库结构"><a href="#导入数据库结构" class="headerlink" title="导入数据库结构"></a>导入数据库结构</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="operator">&gt;</span>use databasename;</span><br><span class="line"><span class="operator">&gt;</span>source <span class="operator">/</span>home<span class="operator">/</span>xing<span class="operator">/</span>bbq.sql;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="显示数据表结构"><a href="#显示数据表结构" class="headerlink" title="显示数据表结构"></a>显示数据表结构</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">describe</span> tablename;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="删除数据库和数据表"><a href="#删除数据库和数据表" class="headerlink" title="删除数据库和数据表"></a>删除数据库和数据表</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">drop</span> database basename;</span><br><span class="line"><span class="keyword">drop</span> <span class="keyword">table</span> tablename;</span><br></pre></td></tr></table></figure>
+
+<h2 id="查看数据库大小"><a href="#查看数据库大小" class="headerlink" title="查看数据库大小"></a>查看数据库大小</h2><p>​	查看数据库大小。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="operator">&gt;</span>use qingdb;</span><br><span class="line"><span class="operator">&gt;</span><span class="keyword">select</span> concat(round(<span class="built_in">sum</span>(data_length<span class="operator">/</span><span class="number">1024</span><span class="operator">/</span><span class="number">1024</span>),<span class="number">2</span>),<span class="string">&#x27;MB&#x27;</span>) <span class="keyword">as</span> data <span class="keyword">from</span> tables;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="operator">+</span><span class="comment">----------+  </span></span><br><span class="line"><span class="operator">|</span> data     <span class="operator">|</span>  </span><br><span class="line"><span class="operator">+</span><span class="comment">----------+  </span></span><br><span class="line"><span class="operator">|</span> <span class="number">123.68</span>MB <span class="operator">|</span>  </span><br><span class="line"><span class="operator">+</span><span class="comment">----------+  </span></span><br><span class="line"><span class="number">1</span> <span class="type">row</span> <span class="keyword">in</span> <span class="keyword">set</span> (<span class="number">0.36</span> sec)  </span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="3-关键字"><a href="#3-关键字" class="headerlink" title="3.关键字"></a>3.关键字</h1><h2 id="as"><a href="#as" class="headerlink" title="as"></a>as</h2><p>​	as可以理解为：用作、当成、作为，一般是重命名列名或者表名。主要是为了数据显示，方便查看.</p>
+<p>（1）重命名列</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> name <span class="keyword">as</span> column1,age <span class="keyword">as</span> column_2 <span class="keyword">from</span> tablename;</span><br></pre></td></tr></table></figure>
+
+<p>​	查询tablename表中的两列，显示时重新命名。</p>
+<p>（2）重命名表名</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> b.name,b.age,c.homeaddrfrom tablename <span class="keyword">as</span> b <span class="keyword">left</span> <span class="keyword">join</span> ctablename <span class="keyword">as</span> c <span class="keyword">on</span> b.id <span class="operator">=</span> c.id;</span><br></pre></td></tr></table></figure>
+
+<p>​	多用在多表联合查询。</p>
+<p>tablename重命名为b，那么列名可以用新的表名来提领与其他表区分。</p>
+<p>（3）可以做为连接语句的连接符</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> tablename <span class="keyword">as</span> <span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> tablename2;</span><br></pre></td></tr></table></figure>
+
+<p>​	上面语句的意思就是先获取到tablename表中的所有记录，之后创建一张tablename表，结构和tablename2表相同，记录为后面语句的查询结果。</p>
+<ol start="2">
+<li>show</li>
+</ol>
+<p>查看表create语句</p>
+<p>show create table tablename;</p>
+<h1 id="4-在线测试数据库"><a href="#4-在线测试数据库" class="headerlink" title="4.在线测试数据库"></a>4.在线测试数据库</h1><h2 id="sql107-ccaeo-com"><a href="#sql107-ccaeo-com" class="headerlink" title="sql107.ccaeo.com"></a>sql107.ccaeo.com</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">【以下是您的空间账号信息：】</span><br><span class="line">|</span><br><span class="line">| 控制面板地址：http:<span class="comment">//cpanel.ccaeo.com</span></span><br><span class="line">|</span><br><span class="line">| 用户名：cca_23603612</span><br><span class="line">|</span><br><span class="line">| 密码：yingge2017</span><br><span class="line">|</span><br><span class="line">|【Ftp账号信息如下：】</span><br><span class="line">|</span><br><span class="line">| ftp地址：ftp.ccaeo.com</span><br><span class="line">|</span><br><span class="line">| ftp账号：cca_23603612</span><br><span class="line">|</span><br><span class="line">| ftp密码：yingge2017</span><br><span class="line">|</span><br><span class="line">|【以下是你的数据库信息：】</span><br><span class="line">|</span><br><span class="line">| MYSQL账号：请进入控制面板自行创建</span><br><span class="line">|</span><br><span class="line">| MYSQL用户名：cca_23603612</span><br><span class="line">|</span><br><span class="line">| MYSQL密码：yingge2017</span><br><span class="line">|</span><br><span class="line">| MYSQL服务器地址：请进入控制面板查看</span><br><span class="line">|</span><br><span class="line">|【您的域名信息：】</span><br><span class="line">|</span><br><span class="line">| 您的免费二级域名：http:<span class="comment">//yingge2017.ccaeo.com</span></span><br><span class="line">|</span><br><span class="line">| 您的注册邮箱：<span class="number">1239877983</span>@qq.com</span><br><span class="line">|</span><br><span class="line">| 您安装的程序信息：</span><br><span class="line">| 注：如果您在申请账号的过程中选择了在线安装程序，您的程序账号密码信息显示，否则将为空，可自行通过ftp或者控制面板文件在线管理工具上传您的程序进行安装。</span><br><span class="line">|</span><br></pre></td></tr></table></figure>
+
+
+
+<p>MySQL Host Name ：sql107.ccaeo.com</p>
+<p>MySQL User Name：cca_23603612</p>
+<p>MySQL Password：yingge2017</p>
+<p>MySQL DB Name：cca_23603612_yinggedb</p>
+<h2 id="db4free-net"><a href="#db4free-net" class="headerlink" title="db4free.net"></a>db4free.net</h2><p>host:db4free.net</p>
+<p>port:3306</p>
+<p>mysqlname:zhongxingbi</p>
+<p>mysqlpwd:zhongxingbi</p>
+<p>mysqldb:zhongxingbidb</p>
+<h2 id="freesqldatabase-com"><a href="#freesqldatabase-com" class="headerlink" title="freesqldatabase.com"></a><strong>freesqldatabase.com</strong></h2><p>zzxx6265</p>
+<p>Your account number is: 340147</p>
+<p>Your new database is now ready to use.</p>
+<p>To connect to your database use these details;</p>
+<p><strong>Host:</strong> sql12.freesqldatabase.com<br><strong>Database name:</strong> sql12283383<br><strong>Database user:</strong> sql12283383<br><strong>Database password:</strong> XBVJKRNJqy<br><strong>Port number:</strong> 3306</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://github.com/damei6677/sql/mysql.html" data-id="clji7crq0001l6s4l8s7ifqhb" data-title="" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2023/06/">June 2023</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/blog/2023/06/30/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2023 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/blog/" class="mobile-nav-link">Home</a>
+  
+    <a href="/blog/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/blog/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/blog/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/blog/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

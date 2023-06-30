@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="概念 zk是个树形目录服务。  分布式的、开源的分布式应用程序的协调服务。  zk主要功能:  配置管理   分布式锁      集群管理      数据模型 树形目录服务，其数据木星和unix的文件系统目录树类似。 ZNode,保存数据和节点信息。 可以拥有子节点。 节点分四大类： 持久化节点 临时节点 持久化顺序节点 临时顺序节点    分布式锁处理跨机器的进程间的数据同步问题。 使用启动，打">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="https://github.com/damei6677/backend/zookeeper.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="概念 zk是个树形目录服务。  分布式的、开源的分布式应用程序的协调服务。  zk主要功能:  配置管理   分布式锁      集群管理      数据模型 树形目录服务，其数据木星和unix的文件系统目录树类似。 ZNode,保存数据和节点信息。 可以拥有子节点。 节点分四大类： 持久化节点 临时节点 持久化顺序节点 临时顺序节点    分布式锁处理跨机器的进程间的数据同步问题。 使用启动，打">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://github.com/blog/zookeeper.assets%5Cimage-20221113100242907.png">
+<meta property="og:image" content="https://github.com/blog/zookeeper.assets%5Cimage-20221113100321787.png">
+<meta property="og:image" content="https://github.com/blog/zookeeper.assets%5Cimage-20221113100431982.png">
+<meta property="article:published_time" content="2023-06-15T05:36:15.173Z">
+<meta property="article:modified_time" content="2023-04-04T03:23:55.854Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://github.com/blog/zookeeper.assets%5Cimage-20221113100242907.png">
+  
+    <link rel="alternate" href="/blog/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/blog/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/blog/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/blog/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/blog/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/blog/">Home</a>
+        
+          <a class="main-nav-link" href="/blog/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/blog/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://github.com/damei6677"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="page-" class="h-entry article article-type-page" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/blog/backend/zookeeper.html" class="article-date">
+  <time class="dt-published" datetime="2023-06-15T05:36:15.173Z" itemprop="datePublished">2023-06-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h1><ul>
+<li><p>zk是个树形目录服务。</p>
+</li>
+<li><p>分布式的、开源的分布式应用程序的协调服务。</p>
+</li>
+<li><p>zk主要功能:</p>
+<ul>
+<li><p>配置管理</p>
+<p><img src="/blog/zookeeper.assets%5Cimage-20221113100242907.png" alt="image-20221113100242907"></p>
+</li>
+<li><p>分布式锁 </p>
+<p>  <img src="/blog/zookeeper.assets%5Cimage-20221113100321787.png" alt="image-20221113100321787"></p>
+</li>
+<li><p>集群管理</p>
+<p><img src="/blog/zookeeper.assets%5Cimage-20221113100431982.png" alt="image-20221113100431982"></p>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="数据模型"><a href="#数据模型" class="headerlink" title="数据模型"></a>数据模型</h1><ul>
+<li>树形目录服务，其数据木星和unix的文件系统目录树类似。</li>
+<li>ZNode,保存数据和节点信息。</li>
+<li>可以拥有子节点。</li>
+<li>节点分四大类：<ul>
+<li>持久化节点</li>
+<li>临时节点</li>
+<li>持久化顺序节点</li>
+<li>临时顺序节点</li>
+</ul>
+</li>
+</ul>
+<h1 id="分布式锁"><a href="#分布式锁" class="headerlink" title="分布式锁"></a>分布式锁</h1><p>处理跨机器的进程间的数据同步问题。</p>
+<h1 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h1><p>启动，打印启动 步骤。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">./zkServer.sh start</span><br><span class="line">./zkServer.sh start-foreground</span><br><span class="line">jps</span><br><span class="line">./zkCli.sh</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">退出客户端</span></span><br><span class="line">quit</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">指定配置文件</span></span><br><span class="line">zkServer.sh start  your_config</span><br><span class="line">zkServer.sh stop   your_config</span><br><span class="line">zkServer.sh status your_config</span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/m0_46357847/article/details/124856259">https://blog.csdn.net/m0_46357847/article/details/124856259</a></p>
+<h1 id="配置文件与集群"><a href="#配置文件与集群" class="headerlink" title="配置文件与集群"></a>配置文件与集群</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">The number of milliseconds of each tick</span></span><br><span class="line">tickTime=2000</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">The number of ticks that the initial</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">synchronization phase can take</span></span><br><span class="line">initLimit=10</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">The number of ticks that can pass between</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">sending a request and getting an acknowledgement</span></span><br><span class="line">syncLimit=5</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">the directory <span class="built_in">where</span> the snapshot is stored.</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash"><span class="keyword">do</span> not use /tmp <span class="keyword">for</span> storage, /tmp here is just</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">example sakes.</span></span><br><span class="line">dataDir=/var/zkdata</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">the port at <span class="built_in">which</span> the clients will connect</span></span><br><span class="line">clientPort=2181</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">admin.serverPort=1280</span></span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">the maximum number of client connections.</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">increase this <span class="keyword">if</span> you need to handle more clients</span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">maxClientCnxns=60</span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash"></span></span><br><span class="line"><span class="language-bash"><span class="comment"># Be sure to read the maintenance section of the</span></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">administrator guide before turning on autopurge.</span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash"></span></span><br><span class="line"><span class="language-bash"><span class="comment"># http://zookeeper.apache.org/doc/current/zookeeperAdmin.html#sc_maintenance</span></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash"></span></span><br><span class="line"><span class="language-bash"><span class="comment"># The number of snapshots to retain in dataDir</span></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">autopurge.snapRetainCount=3</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">Purge task interval <span class="keyword">in</span> hours</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">Set to <span class="string">&quot;0&quot;</span> to <span class="built_in">disable</span> auto purge feature</span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">autopurge.purgeInterval=1</span></span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash"><span class="comment"># Metrics Providers</span></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash"></span></span><br><span class="line"><span class="language-bash"><span class="comment"># https://prometheus.io Metrics Exporter</span></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">metricsProvider.className=org.apache.zookeeper.metrics.prometheus.PrometheusMetricsProvider</span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">metricsProvider.httpPort=7000</span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">metricsProvider.exportJvmInfo=<span class="literal">true</span></span></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="集群"><a href="#集群" class="headerlink" title="集群"></a>集群</h2><h1 id="可视化工具"><a href="#可视化工具" class="headerlink" title="可视化工具"></a>可视化工具</h1><p>prettyZoo</p>
+<p>名字prettyZoo，意为美丽的动物园，确实界面比上面的两种好看多了，也是开源项目，2.1K的star。</p>
+<p>下载地址：<br><a href="https://github.com/vran-dev/PrettyZoo/releases">https://github.com/vran-dev/PrettyZoo/releases</a></p>
+<h1 id="docker相关命令"><a href="#docker相关命令" class="headerlink" title="docker相关命令"></a>docker相关命令</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">docker pull zookeeper</span><br><span class="line"></span><br><span class="line">docker run --restart always --name zookeeper -p 2181:2181 -p 2888:2888 -p 3888:3888 -p 8082:8080 -d zookeeper</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://github.com/damei6677/backend/zookeeper.html" data-id="clji7crpp000l6s4l3f6d04wx" data-title="" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2023/06/">June 2023</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/blog/2023/06/30/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2023 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/blog/" class="mobile-nav-link">Home</a>
+  
+    <a href="/blog/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/blog/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/blog/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/blog/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

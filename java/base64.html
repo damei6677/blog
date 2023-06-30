@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="&amp;StringBase64工具类提供了一套静态方法获取下面三种BASE64编解码器：  基本：输出被映射到一组字符A-Za-z0-9+&#x2F;，编码不添加任何行标，输出的解码仅支持A-Za-z0-9+&#x2F;。 URL：输出映射到一组字符A-Za-z0-9+_，输出是URL和文件。 MIME：输出隐射到MIME友好格式。输出每行不超过76字符，并且使用’\r’并跟随’\n’作为分割">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="https://github.com/damei6677/java/base64.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="&amp;StringBase64工具类提供了一套静态方法获取下面三种BASE64编解码器：  基本：输出被映射到一组字符A-Za-z0-9+&#x2F;，编码不添加任何行标，输出的解码仅支持A-Za-z0-9+&#x2F;。 URL：输出映射到一组字符A-Za-z0-9+_，输出是URL和文件。 MIME：输出隐射到MIME友好格式。输出每行不超过76字符，并且使用’\r’并跟随’\n’作为分割">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2023-05-10T05:41:36.709Z">
+<meta property="article:modified_time" content="2023-05-10T05:41:36.709Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/blog/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/blog/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/blog/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/blog/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/blog/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/blog/">Home</a>
+        
+          <a class="main-nav-link" href="/blog/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/blog/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://github.com/damei6677"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="page-" class="h-entry article article-type-page" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/blog/java/base64.html" class="article-date">
+  <time class="dt-published" datetime="2023-05-10T05:41:36.709Z" itemprop="datePublished">2023-05-10</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="amp-String"><a href="#amp-String" class="headerlink" title="&amp;String"></a>&amp;String</h1><p>Base64工具类提供了一套静态方法获取下面三种BASE64编解码器：</p>
+<ul>
+<li>基本：输出被映射到一组字符A-Za-z0-9+&#x2F;，编码不添加任何行标，输出的解码仅支持A-Za-z0-9+&#x2F;。</li>
+<li>URL：输出映射到一组字符A-Za-z0-9+_，输出是URL和文件。</li>
+<li>MIME：输出隐射到MIME友好格式。输出每行不超过76字符，并且使用’\r’并跟随’\n’作为分割。编码输出最后没有行分割。</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">System.out.println(<span class="string">&quot;===================================================&quot;</span>);</span><br><span class="line"><span class="comment">//1.使用基本编码</span></span><br><span class="line"><span class="type">String</span> <span class="variable">base64encodedString</span> <span class="operator">=</span> Base64.getEncoder().encodeToString(<span class="string">&quot;runoob?java8&quot;</span>.getBytes(<span class="string">&quot;utf-8&quot;</span>));</span><br><span class="line">System.out.println(<span class="string">&quot;Base64 编码字符串 (基本) :&quot;</span> + base64encodedString);</span><br><span class="line"></span><br><span class="line"><span class="type">byte</span>[] base64decodedBytes = Base64.getDecoder().decode(base64encodedString);</span><br><span class="line">System.out.println(<span class="string">&quot;原始字符串: &quot;</span> + <span class="keyword">new</span> <span class="title class_">String</span>(base64decodedBytes, <span class="string">&quot;utf-8&quot;</span>));</span><br><span class="line">System.out.println(<span class="string">&quot;===================================================&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//2.url</span></span><br><span class="line">base64encodedString = Base64.getUrlEncoder().encodeToString(<span class="string">&quot;runoob?java8&quot;</span>.getBytes(<span class="string">&quot;utf-8&quot;</span>));</span><br><span class="line">System.out.println(<span class="string">&quot;Base64 编码字符串 (URL) :&quot;</span> + base64encodedString);</span><br><span class="line"></span><br><span class="line"><span class="type">byte</span>[] urlDecode = Base64.getDecoder().decode(base64encodedString);</span><br><span class="line">System.out.println(<span class="string">&quot;原始字符串: &quot;</span> + <span class="keyword">new</span> <span class="title class_">String</span>(urlDecode, <span class="string">&quot;utf-8&quot;</span>));</span><br><span class="line">System.out.println(<span class="string">&quot;===================================================&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//3.MIME</span></span><br><span class="line"><span class="type">StringBuilder</span> <span class="variable">stringBuilder</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">StringBuilder</span>();</span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; <span class="number">10</span>; ++i) &#123;</span><br><span class="line">    stringBuilder.append(UUID.randomUUID().toString());</span><br><span class="line">&#125;</span><br><span class="line"><span class="type">byte</span>[] mimeBytes = stringBuilder.toString().getBytes(<span class="string">&quot;utf-8&quot;</span>);</span><br><span class="line"><span class="type">String</span> <span class="variable">mimeEncodedString</span> <span class="operator">=</span> Base64.getMimeEncoder().encodeToString(mimeBytes);</span><br><span class="line">System.out.println(<span class="string">&quot;Base64 编码字符串 (MIME) :&quot;</span> + mimeEncodedString);</span><br><span class="line"></span><br><span class="line"><span class="type">byte</span>[] mimeDecode = Base64.getDecoder().decode(base64encodedString);</span><br><span class="line">System.out.println(<span class="string">&quot;原始字符串: &quot;</span> + <span class="keyword">new</span> <span class="title class_">String</span>(mimeDecode, <span class="string">&quot;utf-8&quot;</span>));</span><br><span class="line">System.out.println(<span class="string">&quot;===================================================&quot;</span>);</span><br></pre></td></tr></table></figure>
+<h1 id="amp-byte"><a href="#amp-byte" class="headerlink" title="&amp;byte[]"></a>&amp;byte[]</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// byte[]转base64 方法1</span></span><br><span class="line"><span class="comment">//byte[] byteArray;</span></span><br><span class="line"><span class="type">String</span> <span class="variable">base64Str</span> <span class="operator">=</span> Base64.getEncoder().encodeToString(byteArray);</span><br><span class="line"><span class="comment">// base64转byte[]</span></span><br><span class="line"><span class="comment">//String base64Str;</span></span><br><span class="line"><span class="type">byte</span>[] byteArray2 = Base64.getDecoder().decode(base64Str);</span><br><span class="line"></span><br><span class="line"><span class="comment">// byte[]转base64 方法2</span></span><br><span class="line"><span class="type">String</span> <span class="variable">base64Str</span> <span class="operator">=</span> DatatypeConverter.printBase64Binary(byteArray);</span><br><span class="line"><span class="comment">// base64转byte[]</span></span><br><span class="line"><span class="type">byte</span>[] byteArray2 = DatatypeConverter.parseBase64Binary(base64Str);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="String-amp-byte"><a href="#String-amp-byte" class="headerlink" title="String&amp;byte[]"></a>String&amp;byte[]</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//Convert to byte[]</span></span><br><span class="line"><span class="type">byte</span>[] bytes = string.getBytes();</span><br><span class="line">        </span><br><span class="line"><span class="comment">//Convert back to String</span></span><br><span class="line"><span class="type">String</span> <span class="variable">s</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">String</span>(bytes);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://github.com/damei6677/java/base64.html" data-id="clji7crpr000r6s4l0kx1501o" data-title="" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2023/06/">June 2023</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/blog/2023/06/30/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2023 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/blog/" class="mobile-nav-link">Home</a>
+  
+    <a href="/blog/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/blog/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/blog/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/blog/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

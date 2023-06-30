@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="知识点varName&#x3D;valuevarName是变量名，value是赋给变量的值。如果value不包含任何空白字符（例如空格），那么就不需要将其放入引号中，否则必须使用单引号或双引号。 赋值操作，等号两边不能有空格。 echo $var等同于echo ${var} 计算程序运行消耗的时间 12345678#!&#x2F;bin&#x2F;bash#文件名: time_take.shstart&#x3D;$(date">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="https://github.com/damei6677/linux/shell.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="知识点varName&#x3D;valuevarName是变量名，value是赋给变量的值。如果value不包含任何空白字符（例如空格），那么就不需要将其放入引号中，否则必须使用单引号或双引号。 赋值操作，等号两边不能有空格。 echo $var等同于echo ${var} 计算程序运行消耗的时间 12345678#!&#x2F;bin&#x2F;bash#文件名: time_take.shstart&#x3D;$(date">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2023-05-16T07:28:44.861Z">
+<meta property="article:modified_time" content="2023-05-16T07:28:44.861Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/blog/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/blog/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/blog/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/blog/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/blog/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/blog/">Home</a>
+        
+          <a class="main-nav-link" href="/blog/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/blog/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://github.com/damei6677"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="page-" class="h-entry article article-type-page" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/blog/linux/shell.html" class="article-date">
+  <time class="dt-published" datetime="2023-05-16T07:28:44.861Z" itemprop="datePublished">2023-05-16</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="知识点"><a href="#知识点" class="headerlink" title="知识点"></a>知识点</h1><p>varName&#x3D;value<br>varName是变量名，value是赋给变量的值。如果value不包含任何空白字符（例如空格），<br>那么就不需要将其放入引号中，否则必须使用单引号或双引号。</p>
+<p>赋值操作，等号两边不能有空格。</p>
+<p>echo $var<br>等同于<br>echo ${var}</p>
+<p>计算程序运行消耗的时间</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">!/bin/bash</span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">文件名: time_take.sh</span></span><br><span class="line">start=$(date +%s)</span><br><span class="line">commands;</span><br><span class="line">statements;</span><br><span class="line">end=$(date +%s)</span><br><span class="line">difference=$(( end - start))</span><br><span class="line">echo Time taken to execute commands is $difference seconds.</span><br></pre></td></tr></table></figure>
+
+<h2 id="执行字符串中的命令"><a href="#执行字符串中的命令" class="headerlink" title="执行字符串中的命令"></a><strong>执行字符串中的命令</strong></h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">#!/bin/bash</span><br><span class="line">cmd=&quot;ls -al&quot;</span><br><span class="line">echo $cmd</span><br><span class="line">$cmd</span><br><span class="line">#输出位</span><br><span class="line">ls -al</span><br><span class="line">总用量 24</span><br><span class="line">drwxr-xr-x  3 ding ding 4096 4月   6 16:37 .</span><br><span class="line">drwxr-xr-x 17 ding ding 4096 4月   6 15:33 ..</span><br><span class="line">-rw-rw-r--  1 ding ding   14 4月   6 10:46 f2</span><br><span class="line">-rw-r--r--  1 root root   23 4月   6 10:01 file</span><br><span class="line">drwxrwxrwx  6 ding ding 4096 4月   6 10:54 go</span><br><span class="line">-rwxrwxr-x  1 ding ding   41 4月   6 16:37 test.sh</span><br></pre></td></tr></table></figure>
+
+<h2 id="获得当前文件所在路径"><a href="#获得当前文件所在路径" class="headerlink" title="获得当前文件所在路径"></a><strong>获得当前文件所在路径</strong></h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">方法1</span></span><br><span class="line">curPath=$(readlink -f &quot;$(dirname &quot;$0&quot;)&quot;)</span><br><span class="line">echo $curPath   </span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">或者</span></span><br><span class="line">curPath=$(dirname $(readlink -f &quot;$0&quot;))</span><br><span class="line">echo $curPath </span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">方法2，跳转到脚本所在目录</span></span><br><span class="line">cd $(dirname &quot;$0&quot;)</span><br><span class="line">echo `pwd`</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="Shell脚本中-0、-、-、-、-、-、-等的意义说明"><a href="#Shell脚本中-0、-、-、-、-、-、-等的意义说明" class="headerlink" title="*Shell脚本中$0、$?、$!、$$、$、$#、$@等的意义说明"></a>*<em>Shell脚本中$0、$?、$!、$$、$<em>、$#、$@等的意义说明</em></em></h2><p><strong>1.1、简要说明</strong><br>ps： 你在Linux环境下多试下就明白了<br>$$<br>Shell本身的PID（ProcessID，即脚本运行的当前<a target="_blank" rel="noopener" href="https://www.baidu.com/s?wd=%E8%BF%9B%E7%A8%8BID&tn=SE_PcZhidaonwhc_ngpagmjz&rsv_dl=gh_pc_zhidao">进程ID</a>号）<br>$!<br>Shell最后运行的后台Process的PID(后台运行的最后一个进程的<a target="_blank" rel="noopener" href="https://www.baidu.com/s?wd=%E8%BF%9B%E7%A8%8BID&tn=SE_PcZhidaonwhc_ngpagmjz&rsv_dl=gh_pc_zhidao">进程ID</a>号)<br>$?<br>最后运行的命令的结束代码（返回值）即执行上一个指令的返回值 (显示最后命令的退出状态。0表示没有错误，其他任何值表明有错误)<br>$-<br>显示shell使用的当前选项，与set命令功能相同<br>$*<br>所有参数列表。如”$*”用「”」括起来的情况、以”$1 $2 … $n”的形式输出所有参数，此选项参数可超过9个。<br>$@<br>所有参数列表。如”$@”用「”」括起来的情况、以”$1” “$2” … “$n” 的形式输出所有参数。<br>$@ 跟$*类似，但是可以当作数组用<br>$#<br>添加到Shell的参数个数<br>$0<br>Shell本身的文件名<br>$1～$n<br>添加到Shell的各参数值。$1是第1参数、$2是第2参数…。</p>
+<p><strong>1.2、脚本举例</strong></p>
+<p>我们先写一个简单的脚本，执行以后再解释各个变量的意义</p>
+<h1 id="touch-variable"><a href="#touch-variable" class="headerlink" title="touch variable"></a>touch variable</h1><h1 id="vi-variable"><a href="#vi-variable" class="headerlink" title="vi variable"></a>vi variable</h1><p>脚本内容如下：<br>#!&#x2F;bin&#x2F;sh<br>echo “number:$#”<br>echo “scname:$0”<br>echo “first :$1”<br>echo “second:$2”<br>echo “argume:$@”<br>保存退出<br>赋予脚本执行权限</p>
+<h1 id="chmod-x-variable"><a href="#chmod-x-variable" class="headerlink" title="chmod +x variable"></a>chmod +x variable</h1><p>执行脚本</p>
+<h1 id="x2F-variable-aa-bb"><a href="#x2F-variable-aa-bb" class="headerlink" title=".&#x2F;variable aa bb"></a>.&#x2F;variable aa bb</h1><p>number:2<br>scname:.&#x2F;variable<br>first: aa<br>second:bb<br>argume:aa bb</p>
+<p>结果分析</p>
+<p>通过显示结果可以看到：<br>$# 是传给脚本的参数个数<br>$0 是脚本本身的名字<br>$1是传递给该shell脚本的第一个参数<br>$2是传递给该shell脚本的第二个参数<br>$@ 是传给脚本的所有参数的列表</p>
+<h2 id="字符串操作"><a href="#字符串操作" class="headerlink" title="字符串操作"></a>字符串操作</h2><h2 id="脚本运行时传递参数"><a href="#脚本运行时传递参数" class="headerlink" title="脚本运行时传递参数"></a>脚本运行时传递参数</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">$ cat test1.sh </span><br><span class="line">#!/bin/bash</span><br><span class="line">a=<span class="string">&quot;$1&quot;</span></span><br><span class="line"><span class="keyword">if</span> [ <span class="string">&quot;$a&quot;</span> == <span class="string">&quot;arm&quot;</span>  ];then</span><br><span class="line">        echo ==============</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">        echo <span class="number">0</span> </span><br><span class="line">fi</span><br><span class="line"></span><br><span class="line">#运行结果<span class="number">1</span></span><br><span class="line">./test1.sh</span><br><span class="line"><span class="number">0</span></span><br><span class="line">#运行结果<span class="number">2</span></span><br><span class="line">./test1.sh arm</span><br><span class="line">==========</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="if语句"><a href="#if语句" class="headerlink" title="if语句"></a>if语句</h2><p>[<a target="_blank" rel="noopener" href="https://blog.csdn.net/wxx_0124/article/details/95305625[](https://blog.csdn.net/wxx_0124/article/details/95305625)">https://blog.csdn.net/wxx_0124/article/details/95305625[](https://blog.csdn.net/wxx_0124/article/details/95305625)</a></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">常用的：</span><br><span class="line">[ -a FILE ] 如果 FILE 存在则为真。</span><br><span class="line">[ -d FILE ] 如果 FILE 存在且是一个目录则返回为真。</span><br><span class="line">[ -e FILE ] 如果 指定的文件或目录存在时返回为真。</span><br><span class="line">[ -f FILE ] 如果 FILE 存在且是一个普通文件则返回为真。</span><br><span class="line">[ -r FILE ] 如果 FILE 存在且是可读的则返回为真。</span><br><span class="line">[ -w FILE ] 如果 FILE 存在且是可写的则返回为真。（一个目录为了它的内容被访问必然是可执行的）</span><br><span class="line">[ -x FILE ] 如果 FILE 存在且是可执行的则返回为真。</span><br><span class="line"> </span><br><span class="line">不常用的：</span><br><span class="line">[ -b FILE ] 如果 FILE 存在且是一个块文件则返回为真。</span><br><span class="line">[ -c FILE ] 如果 FILE 存在且是一个字符文件则返回为真。</span><br><span class="line">[ -g FILE ] 如果 FILE 存在且设置了SGID则返回为真。</span><br><span class="line">[ -h FILE ] 如果 FILE 存在且是一个符号符号链接文件则返回为真。（该选项在一些老系统上无效）</span><br><span class="line">[ -k FILE ] 如果 FILE 存在且已经设置了冒险位则返回为真。</span><br><span class="line">[ -p FILE ] 如果 FILE 存并且是命令管道时返回为真。</span><br><span class="line">[ -s FILE ] 如果 FILE 存在且大小非0时为真则返回为真。</span><br><span class="line">[ -u FILE ] 如果 FILE 存在且设置了SUID位时返回为真。</span><br><span class="line">[ -O FILE ] 如果 FILE 存在且属有效用户ID则返回为真。</span><br><span class="line">[ -G FILE ] 如果 FILE 存在且默认组为当前组则返回为真。（只检查系统默认组）</span><br><span class="line">[ -L FILE ] 如果 FILE 存在且是一个符号连接则返回为真。</span><br><span class="line">[ -N FILE ] 如果 FILE 存在 and has been mod如果ied since it was last read则返回为真。</span><br><span class="line">[ -S FILE ] 如果 FILE 存在且是一个套接字则返回为真。</span><br><span class="line">[ FILE1 -nt FILE2 ] 如果 FILE1 比 FILE2 新, 或者 FILE1 存在但是 FILE2 不存在则返回为真。</span><br><span class="line">[ FILE1 -ot FILE2 ] 如果 FILE1 比 FILE2 老, 或者 FILE2 存在但是 FILE1 不存在则返回为真。</span><br><span class="line">[ FILE1 -ef FILE2 ] 如果 FILE1 和 FILE2 指向相同的设备和节点号则返回为真。</span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">!/bin/bash</span></span><br><span class="line">a=100</span><br><span class="line">b=150</span><br><span class="line">if [ $a == $b ]</span><br><span class="line">then</span><br><span class="line">echo &quot;a==b&quot;</span><br><span class="line">elif [ $a -gt $b ]</span><br><span class="line">then</span><br><span class="line">echo &quot;a &gt; b&quot;</span><br><span class="line">elif [ $a -lt $b ]</span><br><span class="line">then</span><br><span class="line">echo &quot;a &lt; b&quot;</span><br><span class="line">else</span><br><span class="line">echo &quot;a b not known&quot;</span><br><span class="line">fikk</span><br></pre></td></tr></table></figure>
+<h1 id="例子"><a href="#例子" class="headerlink" title="例子"></a><strong>例子</strong></h1><h2 id="获取当前脚本所在路径"><a href="#获取当前脚本所在路径" class="headerlink" title="获取当前脚本所在路径"></a>获取当前脚本所在路径</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">/bin/bash</span></span><br><span class="line">rootDir=$(cd $(dirname $0); pwd)</span><br><span class="line">echo &quot;rootDir $rootDir&quot;</span><br></pre></td></tr></table></figure>
+<h2 id="获取当前时间"><a href="#获取当前时间" class="headerlink" title="获取当前时间"></a><strong>获取当前时间</strong></h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">!/bin/bash</span></span><br><span class="line">time=$(date &quot;+%Y%m%d-%H%M%S&quot;)</span><br><span class="line">echo $time</span><br><span class="line">输出为：</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash"><span class="comment">###############</span></span></span><br><span class="line">20180930155515</span><br></pre></td></tr></table></figure>
+<h2 id="mv替换rm"><a href="#mv替换rm" class="headerlink" title="mv替换rm"></a>mv替换rm</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash"><span class="comment">#########################################################</span></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash"><span class="built_in">rm</span> = <span class="built_in">mv</span></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">vim ~/.bashrc</span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash"><span class="built_in">source</span> ~/.bashrc</span></span><br><span class="line">mkdir -p ~/.trash   #在家目录下创建一个.trash文件夹</span><br><span class="line">alias rm=del        #使用别名del代替rm</span><br><span class="line">del()               #函数del，作用：将rm命令修改为mv命令</span><br><span class="line">&#123;</span><br><span class="line">  mv $@ ~/.trash/$@-$(date &quot;+%Y%m%d-%H%M%S&quot;)</span><br><span class="line">&#125;</span><br><span class="line">cleardel()          #函数cleardel，作用：清空回收站.trash文件夹，y或Y表示确认，n表示取消</span><br><span class="line">&#123;</span><br><span class="line">    read -p &quot;clear sure?[Input &#x27;y&#x27; or &#x27;Y&#x27; to confirm. &amp;&amp; Input &#x27;n&#x27; to cancel.]&quot; confirm</span><br><span class="line">    [ $confirm == &#x27;y&#x27; ] || [ $confirm == &#x27;Y&#x27; ]  &amp;&amp; /bin/rm -rf ~/.trash/*</span><br><span class="line">&#125;</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash"><span class="comment">#########################################################</span></span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="添加当前目录到环境变量中并运行程序"><a href="#添加当前目录到环境变量中并运行程序" class="headerlink" title="添加当前目录到环境变量中并运行程序"></a>添加当前目录到环境变量中并运行程序</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">#!/bin/bash</span><br><span class="line">cd `dirname $0`</span><br><span class="line">export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$PWD</span><br><span class="line"></span><br><span class="line">./a.out</span><br></pre></td></tr></table></figure>
+<h2 id="可执行文件查找所需要的库-打包脚本"><a href="#可执行文件查找所需要的库-打包脚本" class="headerlink" title="可执行文件查找所需要的库-打包脚本"></a>可执行文件查找所需要的库-打包脚本</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">!/bin/bash</span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">执行脚本，第一个参数是可执行文件，第二个参数是库文件存放的目录。</span></span><br><span class="line"></span><br><span class="line">excuteName=$1</span><br><span class="line">destDir=$2</span><br><span class="line">deplist=$(ldd $excuteName | awk &#x27;&#123;if (match($3,&quot;/&quot;))&#123; printf(&quot;%s &quot;),$3 &#125; &#125;&#x27;)</span><br><span class="line">cp $deplist $destDir</span><br></pre></td></tr></table></figure>
+<h2 id="x2F-bin-x2F-bash-M-解释器错误-没有那个文件或目录"><a href="#x2F-bin-x2F-bash-M-解释器错误-没有那个文件或目录" class="headerlink" title="&#x2F;bin&#x2F;bash^M: 解释器错误: 没有那个文件或目录"></a>&#x2F;bin&#x2F;bash^M: 解释器错误: 没有那个文件或目录</h2><p>在win下编辑的时候，换行结尾是\n\r ， 而在linux下 是\n，所以才会有 多出来的\r</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sed -i &#x27;s/\r$//&#x27; </span><br></pre></td></tr></table></figure>
+<h2 id="执行cmake脚本1"><a href="#执行cmake脚本1" class="headerlink" title="执行cmake脚本1"></a>执行cmake脚本1</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">!/bin/bash</span></span><br><span class="line"></span><br><span class="line">echo `rm ovm-200/lib/* -fr`</span><br><span class="line">echo `rm src/feature-src/build/* -fr`</span><br><span class="line"></span><br><span class="line">cd src/feature-src/build</span><br><span class="line"></span><br><span class="line">echo --------------------------------</span><br><span class="line">current_path=$(cd &quot;$(dirname &quot;$0&quot;)&quot;;pwd)</span><br><span class="line">echo $&#123;current_path&#125;</span><br><span class="line">echo --------------------------------</span><br><span class="line"></span><br><span class="line">para=$1</span><br><span class="line">if [ &quot;$para&quot; == &quot;arm&quot; ];then</span><br><span class="line">	cmake -D platform=arm ..;make -j4</span><br><span class="line">else</span><br><span class="line">	cmake ..;make -j4 </span><br><span class="line">fi</span><br><span class="line">	</span><br></pre></td></tr></table></figure>
+<h2 id="执行cmake脚本2"><a href="#执行cmake脚本2" class="headerlink" title="执行cmake脚本2"></a>执行cmake脚本2</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">!/bin/bash</span></span><br><span class="line"></span><br><span class="line">echo `rm build/* -fr`</span><br><span class="line"></span><br><span class="line">cd ./build</span><br><span class="line"></span><br><span class="line">echo --------------------------------</span><br><span class="line">current_path=$(cd &quot;$(dirname &quot;$0&quot;)&quot;;pwd)</span><br><span class="line">echo $&#123;current_path&#125;</span><br><span class="line">echo --------------------------------</span><br><span class="line"></span><br><span class="line">para=$1</span><br><span class="line">if [ &quot;$para&quot; == &quot;arm&quot; ];then</span><br><span class="line">	cmake -D platform=arm ..;make -j4</span><br><span class="line">else</span><br><span class="line">	cmake ..;make -j4 </span><br><span class="line">fi</span><br><span class="line">	</span><br></pre></td></tr></table></figure>
+<h2 id="执行cmake脚本3"><a href="#执行cmake脚本3" class="headerlink" title="执行cmake脚本3"></a>执行cmake脚本3</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">!/bin/bash</span></span><br><span class="line"></span><br><span class="line">echo --------------------------------</span><br><span class="line">current_path=$(cd &quot;$(dirname &quot;$0&quot;)&quot;;pwd)</span><br><span class="line">echo $&#123;current_path&#125;</span><br><span class="line">echo --------------------------------</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash"><span class="comment">###############################################</span></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">variable</span></span><br><span class="line">lib_dir=&quot;$current_path/ovm-200/lib&quot;</span><br><span class="line">build_dir=&quot;$current_path/src/feature-src/build&quot;</span><br><span class="line">X86MarkFile=&quot;$build_dir/X86&quot;</span><br><span class="line">ARMMarkFile=&quot;$build_dir/ARM&quot;</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash"><span class="comment">###############################################</span></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash"><span class="keyword">function</span></span></span><br><span class="line">function is_file_existed()&#123;</span><br><span class="line">	if [ -a &quot;$1&quot; ];then</span><br><span class="line">		return 0</span><br><span class="line">	else</span><br><span class="line">		return 1</span><br><span class="line">	fi</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">createX86MarkFileFunc()&#123;</span><br><span class="line">	echo &quot;createX86MarkFileFunc&quot;</span><br><span class="line">	touch &quot;$X86MarkFile&quot;</span><br><span class="line">&#125;</span><br><span class="line">createArmMarkFileFunc()&#123;</span><br><span class="line">	echo &quot;createArmMarkFileFunc&quot;</span><br><span class="line">	touch &quot;$ARMMarkFile&quot;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function isARMMarkFileExisted()&#123;</span><br><span class="line">	echo &quot;isARMMarkFileExisted&quot;</span><br><span class="line">	if [ -a &quot;$ARMMarkFile&quot; ];then</span><br><span class="line">		return 0</span><br><span class="line">	else</span><br><span class="line">		return 1</span><br><span class="line">	fi</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function isX86MarkFileExisted()&#123;</span><br><span class="line">	echo &quot;isX86MarkFileExisted&quot;</span><br><span class="line">	if [ -a &quot;$X86MarkFile&quot; ];then</span><br><span class="line">		return 0</span><br><span class="line">	else</span><br><span class="line">		return 1</span><br><span class="line">	fi</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">rmFunc()&#123;</span><br><span class="line">	echo &quot;rmFunc&quot;</span><br><span class="line">	echo `rm $lib_dir/* -fr`</span><br><span class="line">	echo `rm $build_dir/* -fr`</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">buildX86Func()&#123;</span><br><span class="line">	echo &quot;buildX86Func&quot;</span><br><span class="line"></span><br><span class="line">	if is_file_existed &quot;$X86MarkFile&quot; ;then</span><br><span class="line">		echo &quot;X86MarkFile existed&quot;</span><br><span class="line">	else</span><br><span class="line">		echo &quot;X86MarkFile not existed&quot;</span><br><span class="line">		rmFunc</span><br><span class="line">		createX86MarkFileFunc</span><br><span class="line">	fi	</span><br><span class="line"></span><br><span class="line">	cmake ..;make -j4 </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">buildArmFunc()&#123;</span><br><span class="line">	echo &quot;buildArmFunc&quot;</span><br><span class="line"></span><br><span class="line">	if is_file_existed &quot;$ARMMarkFile&quot; ;then</span><br><span class="line">		echo &quot;ARMMarkFile existed&quot;</span><br><span class="line">	else</span><br><span class="line">		echo &quot;ARMMarkFile not existed&quot;</span><br><span class="line">		rmFunc</span><br><span class="line">		createArmMarkFileFunc</span><br><span class="line">	fi	</span><br><span class="line"></span><br><span class="line">	cmake -D platform=arm ..;make -j4</span><br><span class="line">&#125;</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash"><span class="comment">###############################################</span></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">main</span></span><br><span class="line">if [ &quot;$1&quot; == &quot;feature&quot; ];then</span><br><span class="line">	cd src/feature-src/build</span><br><span class="line">else</span><br><span class="line">	cd src/match-src/build</span><br><span class="line">	build_dir=&quot;$current_path/src/match-src/build&quot;</span><br><span class="line">	X86MarkFile=&quot;$build_dir/X86&quot;</span><br><span class="line">	ARMMarkFile=&quot;$build_dir/ARM&quot;</span><br><span class="line">fi</span><br><span class="line"></span><br><span class="line">echo &quot;$current_path&quot;</span><br><span class="line">echo &quot;$build_dir&quot;</span><br><span class="line">echo &quot;$X86MarkFile&quot;</span><br><span class="line">echo &quot;$ARMMarkFile&quot;</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash"></span></span><br><span class="line"><span class="language-bash"><span class="keyword">if</span> [ <span class="string">&quot;<span class="variable">$2</span>&quot;</span> == <span class="string">&quot;arm&quot;</span> ];<span class="keyword">then</span></span></span><br><span class="line">	if [ &quot;$3&quot; == &quot;clean&quot; ];then</span><br><span class="line">		rmFunc</span><br><span class="line">	fi</span><br><span class="line">	</span><br><span class="line">	buildArmFunc</span><br><span class="line">	</span><br><span class="line">elif [ &quot;$2&quot; == &quot;clean&quot; ];then</span><br><span class="line">	rmFunc	</span><br><span class="line">	buildX86Func </span><br><span class="line">else</span><br><span class="line">	buildX86Func </span><br><span class="line">fi</span><br><span class="line">	</span><br></pre></td></tr></table></figure>
+<h2 id="判断文件是否存在"><a href="#判断文件是否存在" class="headerlink" title="判断文件是否存在"></a>判断文件是否存在</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">!/bin/bash</span></span><br><span class="line">function is_file_existed()&#123;</span><br><span class="line">	if [ -a &quot;$1&quot; ];then</span><br><span class="line">		return 0</span><br><span class="line">	else</span><br><span class="line">		return 1</span><br><span class="line">	fi</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">if is_file_existed &quot;$1&quot; ;then</span><br><span class="line">	echo &quot;existed&quot;</span><br><span class="line">else</span><br><span class="line">	echo &quot;not existed&quot;</span><br><span class="line">fi</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">./file.sh file</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="跳转到shell文件所在目录执行"><a href="#跳转到shell文件所在目录执行" class="headerlink" title="跳转到shell文件所在目录执行"></a>跳转到shell文件所在目录执行</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd $(dirname &quot;$0&quot;)</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://github.com/damei6677/linux/shell.html" data-id="clji7crpx00186s4l9j6idniz" data-title="" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2023/06/">June 2023</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/blog/2023/06/30/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2023 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/blog/" class="mobile-nav-link">Home</a>
+  
+    <a href="/blog/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/blog/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/blog/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/blog/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

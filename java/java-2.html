@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="interfacehttps:&#x2F;&#x2F;www.runoob.com&#x2F;java&#x2F;java-interfaces.html 接口的含义理解 接口可以理解成统一的协议, 而接口中的属性也属于协议中的内容。但是接口的属性都是公共的，静态的，最终的。 接口的成员特点：  1、成员变量只能是常量，默认修饰符 public static final 2、成员方法只能是抽象方法。默认修饰符 public abstra">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="https://github.com/damei6677/java/java-2.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="interfacehttps:&#x2F;&#x2F;www.runoob.com&#x2F;java&#x2F;java-interfaces.html 接口的含义理解 接口可以理解成统一的协议, 而接口中的属性也属于协议中的内容。但是接口的属性都是公共的，静态的，最终的。 接口的成员特点：  1、成员变量只能是常量，默认修饰符 public static final 2、成员方法只能是抽象方法。默认修饰符 public abstra">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-12-14T01:47:56.640Z">
+<meta property="article:modified_time" content="2022-12-14T01:47:56.640Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/blog/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/blog/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/blog/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/blog/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/blog/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/blog/">Home</a>
+        
+          <a class="main-nav-link" href="/blog/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/blog/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://github.com/damei6677"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="page-" class="h-entry article article-type-page" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/blog/java/java-2.html" class="article-date">
+  <time class="dt-published" datetime="2022-12-14T01:47:56.640Z" itemprop="datePublished">2022-12-14</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="interface"><a href="#interface" class="headerlink" title="interface"></a>interface</h1><p><a target="_blank" rel="noopener" href="https://www.runoob.com/java/java-interfaces.html">https://www.runoob.com/java/java-interfaces.html</a></p>
+<p><strong>接口的含义理解</strong></p>
+<p>接口可以理解成统一的<strong>协议</strong>, 而接口中的属性也属于协议中的内容。但是接口的属性都是公共的，静态的，最终的。</p>
+<p>接口的成员特点：</p>
+<ul>
+<li>1、<strong>成员变量</strong>只能是常量，默认修饰符 <strong>public static final</strong></li>
+<li>2、<strong>成员方法</strong>只能是抽象方法。默认修饰符 <strong>public abstract</strong></li>
+</ul>
+<p>所以，Java 接口中，使用变量的时候，变量必须被赋值。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">//所以接口定义属性</span><br><span class="line">public interface People &#123;</span><br><span class="line">    int age=10;</span><br><span class="line">    String name=&quot;输出名字&quot;; // 接口里面定义的成员变量都是  public static final 修饰</span><br><span class="line">    public void eat();　　</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>所有的变量必须给出初始值，且绝对不会被修改，因为隐藏的修饰符为 public static final。</p>
+<p><strong>注意点</strong></p>
+<p>1.接口可以多继承</p>
+<p>2.接口的方法声明必须是 public abstract 即便不写默认也是</p>
+<p>3.接口里面不能包含方法具体实现</p>
+<p>4.类实继承接口必须实现接口里申明的全部方法，除非该类是抽象类</p>
+<p>5.类里面可以声明 public static final 修饰的变量</p>
+<p>6.接口不能被实例化，但是可以被实现类创建</p>
+<p><strong>什么时候使用抽象类和接口</strong></p>
+<ul>
+<li>如果你拥有一些方法并且想让它们中的一些有默认实现，那么使用抽象类吧。</li>
+<li>如果你想实现多重继承，那么你必须使用接口。由于<strong>Java不支持多继承</strong>，子类不能够继承多个类，但可以实现多个接口。因此你就可以使用接口来解决它。</li>
+<li>如果基本功能在不断改变，那么就需要使用抽象类。如果不断改变基本功能并且使用接口，那么就需要改变所有实现了该接口的类。</li>
+</ul>
+<p><strong>static&#x2F;default</strong></p>
+<p>1、默认方法，添加 <strong>default</strong> 修饰即可；</p>
+<p>2、静态方法，使用 static 修饰；示例如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">interface</span> <span class="title class_">Test</span>&#123;</span><br><span class="line">    <span class="comment">//这个是默认方法</span></span><br><span class="line">    <span class="keyword">default</span> String <span class="title function_">get</span><span class="params">(String aa)</span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;我是jdk1.8默认实现方法...&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;&quot;</span>;</span><br><span class="line">    &#125;   </span><br><span class="line">    <span class="comment">//这个是静态方法    </span></span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">staticmethod</span><span class="params">()</span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;我是静态方法&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>调用得话，静态方法只能通过接口名调用，不可以通过实现类的类名或者实现类的对象调用，default 方法只能通过接口实现类的对象来调用。</p>
+<h1 id="多线程"><a href="#多线程" class="headerlink" title="多线程"></a>多线程</h1><h2 id="CompletableFuture"><a href="#CompletableFuture" class="headerlink" title="CompletableFuture"></a>CompletableFuture</h2>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://github.com/damei6677/java/java-2.html" data-id="clji7crps000x6s4l3d847vnf" data-title="" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2023/06/">June 2023</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/blog/2023/06/30/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2023 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/blog/" class="mobile-nav-link">Home</a>
+  
+    <a href="/blog/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/blog/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/blog/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/blog/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

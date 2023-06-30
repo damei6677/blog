@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="迭代器反向迭代器123456789101112vector&lt;int&gt; vtr&amp;#123;12,324,444,555,66&amp;#125;;auto it &#x3D; vtr.rbegin();for(;it !&#x3D; vtr.rend();++it)&amp;#123;    cout&lt;&lt;*it&lt;&lt;endl;&amp;#125;輸出爲:6655544432412  容器释放包含指针12345">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="https://github.com/damei6677/C++/container.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="迭代器反向迭代器123456789101112vector&lt;int&gt; vtr&amp;#123;12,324,444,555,66&amp;#125;;auto it &#x3D; vtr.rbegin();for(;it !&#x3D; vtr.rend();++it)&amp;#123;    cout&lt;&lt;*it&lt;&lt;endl;&amp;#125;輸出爲:6655544432412  容器释放包含指针12345">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2023-06-28T02:14:21.918Z">
+<meta property="article:modified_time" content="2022-12-06T06:05:36.610Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/blog/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/blog/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/blog/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/blog/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/blog/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/blog/">Home</a>
+        
+          <a class="main-nav-link" href="/blog/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/blog/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://github.com/damei6677"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="page-" class="h-entry article article-type-page" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/blog/C++/container.html" class="article-date">
+  <time class="dt-published" datetime="2023-06-28T02:14:21.918Z" itemprop="datePublished">2023-06-28</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="迭代器"><a href="#迭代器" class="headerlink" title="迭代器"></a>迭代器</h1><h2 id="反向迭代器"><a href="#反向迭代器" class="headerlink" title="反向迭代器"></a>反向迭代器</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">vector&lt;<span class="type">int</span>&gt; vtr&#123;<span class="number">12</span>,<span class="number">324</span>,<span class="number">444</span>,<span class="number">555</span>,<span class="number">66</span>&#125;;</span><br><span class="line"><span class="keyword">auto</span> it = vtr.<span class="built_in">rbegin</span>();</span><br><span class="line"><span class="keyword">for</span>(;it != vtr.<span class="built_in">rend</span>();++it)&#123;</span><br><span class="line">    cout&lt;&lt;*it&lt;&lt;endl;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">輸出爲:</span><br><span class="line"><span class="number">66</span></span><br><span class="line"><span class="number">555</span></span><br><span class="line"><span class="number">444</span></span><br><span class="line"><span class="number">324</span></span><br><span class="line"><span class="number">12</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="容器释放"><a href="#容器释放" class="headerlink" title="容器释放"></a>容器释放</h2><h3 id="包含指针"><a href="#包含指针" class="headerlink" title="包含指针"></a>包含指针</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// TestArray2.cpp : 此文件包含 &quot;main&quot; 函数。程序执行将在此处开始并结束。</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;vector&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Person</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="type">int</span> age;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	vector&lt;Person*&gt; tmpVector;</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i=<span class="number">1</span>; i&lt;<span class="number">10</span>; ++i)</span><br><span class="line">	&#123;</span><br><span class="line">		Person *pPerson = <span class="keyword">new</span> Person;</span><br><span class="line">		pPerson-&gt;age = i;</span><br><span class="line">		tmpVector.<span class="built_in">emplace_back</span>(pPerson);</span><br><span class="line">	&#125;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;-------------打印vector中所有指针的地址------------&quot;</span> &lt;&lt; endl;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">auto</span> iter : tmpVector)</span><br><span class="line">	&#123;</span><br><span class="line">		cout &lt;&lt; iter &lt;&lt; endl;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;-------------打印从vector中取出的指针的地址------------&quot;</span> &lt;&lt; endl;</span><br><span class="line">	Person *tmpPerson = tmpVector.<span class="built_in">at</span>(<span class="number">0</span>);</span><br><span class="line">	cout &lt;&lt; tmpPerson &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">if</span> 0</span></span><br><span class="line">	<span class="comment">// 这里不需要释放，后面释放数组中的空间就可以了</span></span><br><span class="line">	<span class="comment">// 如果在这里释放的话，vector的第一个指针会变成野指针，后面再释放vector空间时程序会崩溃</span></span><br><span class="line">	<span class="keyword">if</span> (tmpPerson != <span class="literal">nullptr</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">delete</span> tmpPerson;</span><br><span class="line">		tmpPerson = <span class="literal">nullptr</span>;</span><br><span class="line">	&#125;</span><br><span class="line"><span class="meta">#<span class="keyword">endif</span></span></span><br><span class="line">	</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">auto</span> iter=tmpVector.<span class="built_in">begin</span>(); iter!=tmpVector.<span class="built_in">end</span>(); ++iter)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span> (*iter != <span class="literal">nullptr</span>)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="built_in">delete</span> (*iter);</span><br><span class="line">			(*iter) = <span class="literal">nullptr</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">// 清空vector数据并释放空间</span></span><br><span class="line">	tmpVector.<span class="built_in">clear</span>();</span><br><span class="line">	vector&lt;Person*&gt; tmpSwapVector;</span><br><span class="line">	tmpSwapVector.<span class="built_in">swap</span>(tmpVector);</span><br><span class="line">	<span class="comment">//</span></span><br><span class="line">    std::cout &lt;&lt; <span class="string">&quot;Hello World!\n&quot;</span>;</span><br><span class="line">	<span class="built_in">getchar</span>();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="vector"><a href="#vector" class="headerlink" title="vector"></a>vector</h1><h2 id="设置所有元素默认值"><a href="#设置所有元素默认值" class="headerlink" title="设置所有元素默认值"></a>设置所有元素默认值</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">vector&lt;<span class="type">unsigned</span> <span class="type">char</span>&gt; <span class="title">data</span><span class="params">(dataLen)</span></span>;</span><br><span class="line">std::<span class="built_in">fill</span>(data.<span class="built_in">begin</span>(), data.<span class="built_in">end</span>(), <span class="number">0</span>);</span><br></pre></td></tr></table></figure>
+
+<h2 id="删除元素"><a href="#删除元素" class="headerlink" title="删除元素"></a>删除元素</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">auto</span> it = vtr.<span class="built_in">begin</span>();it != vtr.<span class="built_in">end</span>();)    &#123;</span><br><span class="line">    <span class="keyword">if</span>(*it == <span class="number">8</span>)&#123;</span><br><span class="line">        <span class="comment">//erase删除成功后会返回下一个元素的迭代器。</span></span><br><span class="line">        it = vtr.<span class="built_in">erase</span>(it);</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        ++it;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="map"><a href="#map" class="headerlink" title="map"></a>map</h1>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://github.com/damei6677/C++/container.html" data-id="clji7crpj00036s4lc9cb4kk1" data-title="" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2023/06/">June 2023</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/blog/2023/06/30/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2023 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/blog/" class="mobile-nav-link">Home</a>
+  
+    <a href="/blog/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/blog/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/blog/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/blog/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

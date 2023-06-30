@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="1.总述​	log4cplus要输出一条日志需要一个必需的日志输出对象Logger、一个连接器Appender、一个布局器Layout和多个可选的过滤器Filter。 2 设置步骤：1.配置Logger对象和最低输出日志级别。 2.分别配置各个Logger对象的属性。包括Appender\Layout\Filter。 2.1 配置Logger对象配置文件第一行配置日志对象和最低输出日志级别。 1l">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="https://github.com/damei6677/C++/log4cplus.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="1.总述​	log4cplus要输出一条日志需要一个必需的日志输出对象Logger、一个连接器Appender、一个布局器Layout和多个可选的过滤器Filter。 2 设置步骤：1.配置Logger对象和最低输出日志级别。 2.分别配置各个Logger对象的属性。包括Appender\Layout\Filter。 2.1 配置Logger对象配置文件第一行配置日志对象和最低输出日志级别。 1l">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-11-04T03:34:47.656Z">
+<meta property="article:modified_time" content="2022-10-08T06:25:41.149Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/blog/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/blog/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/blog/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/blog/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/blog/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/blog/">Home</a>
+        
+          <a class="main-nav-link" href="/blog/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/blog/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://github.com/damei6677"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="page-" class="h-entry article article-type-page" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/blog/C++/log4cplus.html" class="article-date">
+  <time class="dt-published" datetime="2022-11-04T03:34:47.656Z" itemprop="datePublished">2022-11-04</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="1-总述"><a href="#1-总述" class="headerlink" title="1.总述"></a>1.总述</h1><p>​	log4cplus要输出一条日志需要一个必需的日志输出对象Logger、一个连接器Appender、一个布局器Layout和多个可选的过滤器Filter。</p>
+<h2 id="2-设置步骤："><a href="#2-设置步骤：" class="headerlink" title="2 设置步骤："></a>2 设置步骤：</h2><p>1.配置Logger对象和最低输出日志级别。</p>
+<p>2.分别配置各个Logger对象的属性。包括Appender\Layout\Filter。</p>
+<h2 id="2-1-配置Logger对象"><a href="#2-1-配置Logger对象" class="headerlink" title="2.1 配置Logger对象"></a>2.1 配置Logger对象</h2><p>配置文件第一行配置日志对象和最低输出日志级别。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">log4cplus::roogLogger = DEBUG,ALL_MSGS,CONSOLE_MESS</span><br></pre></td></tr></table></figure>
+
+<p>说明：</p>
+<p>1.rootLogger为配置项名称，表示日志器配置。</p>
+<p>2.DEBUG为输出最低级别日志，对所有Logger有效。级别可选：</p>
+<ul>
+<li><p>ALL</p>
+</li>
+<li><p>TRACE</p>
+</li>
+<li><p>DEBUG</p>
+</li>
+<li><p>INFO</p>
+</li>
+<li><p>WARN</p>
+</li>
+<li><p>ERROR</p>
+</li>
+<li><p>FATAL</p>
+</li>
+<li><p>OFF</p>
+</li>
+<li><p>NOTSET</p>
+</li>
+<li><p>UNKNOWN</p>
+<p>默认为NOTSET，该级别不过滤任何日志。</p>
+</li>
+</ul>
+<p>3.ALL_MSGS和CONSOLE_MSGS为两个Logger对象名称，名称可任意。每个Logger对象可单独配置日志文件、输出日志级别、备份文件数量等属性。</p>
+<h2 id="2-2-配置各个Logger对象的属性"><a href="#2-2-配置各个Logger对象的属性" class="headerlink" title="2.2 配置各个Logger对象的属性"></a>2.2 配置各个Logger对象的属性</h2><p>​	一个Logger对象需要一个连接器Appender、一个布局器Layout和多个可选的过滤器Filter，那么属性配置也分为三部分：</p>
+<ul>
+<li>Appender属性配置</li>
+<li>Layout属性配置</li>
+<li>Filter属性配置</li>
+</ul>
+<h3 id="2-2-1-连接器-Appender"><a href="#2-2-1-连接器-Appender" class="headerlink" title="2.2.1 连接器 Appender"></a>2.2.1 连接器 Appender</h3><p>​	连接器有以下子类：</p>
+<ul>
+<li>ConsoleAppender 控制台输出</li>
+<li>FileAppender 文件输出<ul>
+<li>RollingFileAppender </li>
+<li>DailyRollingFileAppender</li>
+</ul>
+</li>
+<li>SocketAppender 网络输出</li>
+<li>NullAppender 无输出</li>
+</ul>
+<p>2.2.1.1 ConsoleAppender 控制台输出连接器</p>
+<p>​	它会将日志输出到控制台。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#所有Appender属性配置时第一行都为连接器配置类型</span></span><br><span class="line">log4cplus.appender.CONSOLE_MSGS = log4cplus::ConsoleAppender</span><br><span class="line"><span class="comment">#log4cplus 为配置项标志</span></span><br><span class="line"><span class="comment">#appender 为连接器配置项表示</span></span><br><span class="line"><span class="comment">#CONSOLE_MSGS 为连接器名称，即配置项首行配置的两个连接器的名称之一，如果这个名称没有在首行配置，则无效。</span></span><br><span class="line"><span class="comment">#log4cplus::ConsoleAppender 为连接器名称，指明这个连接器为控制台输出连接器。</span></span><br></pre></td></tr></table></figure>
+
+<p>2.2.1.2 FileAppender文件连接器</p>
+<p>​	 文件连接器可将日志输出到文件中，还可按照大小或者日期进行备份。</p>
+<p>2.2.1.2.1 FileAppender 文件连机器</p>
+<p>​	文件 输出Appender，它会将日志输出到配置文件中，但是没有备份功能。它可以配置的属性有：</p>
+<ul>
+<li>File:日志文件名</li>
+<li>ImmediateFlush：true&#x2F;false 是否立即刷新。</li>
+<li>Appender:true&#x2F;false 是否追加写入。若为false，每次删掉之前的文件内容重新写。</li>
+</ul>
+<p>2.2.1.2.2 RollingFileAppender 按大小备份文件输出器</p>
+<p>​	按大小备份文件输出器，它不仅能将日志输出到配置的文件中，还能按照日志文件的大小备份日志文件。继承自FileAppender,拥有FileAppender所有的配置属性，还拥有自己的独特的配置属性：</p>
+<ul>
+<li>MaxFileSize:最大文件大小，以MB或KB为单位，默认10MB.</li>
+<li>MaxBackupIndex:最大备份文件数，默认为1</li>
+<li>RollOverAfterClose：关闭后是否备份（true&#x2F;false）,默认false.</li>
+</ul>
+<p>​	MaxBackupIndex:它输出的最新日志在File属性配置文件中，没输出一条日志后检查日志文件大小，若发现超出MaxBackupSize属性配置的大小，则进行备份。备份规则是：在文件名后添加 “_index” (index为序号)。每次备份会将现有的日志文件的index加1，最大的index若大于MaxFileSize则将文件删除。</p>
+<p>​	RollOverAfterClose:若配置为true,则MaxBackupIndex大于1，那么按照备份规则将所有日志文件备份。退出后备份的好处是每次程序重新运行起来后都从一个新日志文件开始写日志。需要注意的是，程序得正常退出才能执行退出后备份。</p>
+<p>2.2.1.2.3 DailyRollingFileAppender 按时间备份文件连接器</p>
+<p>​	它不仅能将日志输出到备份文件中，还能按指定的日期间隔备份文件。但是现在这个链接器有个问题，它备份的日志数量没有控制，会无限备份下去而不会删除。它继承自FileAppender,拥有FileAppender所有的配置属性。自己特有的属性有：</p>
+<ul>
+<li><p>Schedule：备份日期。可选：</p>
+<ul>
+<li><p>MONTHLY</p>
+</li>
+<li><p>WEEKLY</p>
+</li>
+<li><p>DAILY</p>
+</li>
+<li><p>TWICE_DAILY</p>
+</li>
+<li><p>HOURLY</p>
+</li>
+</ul>
+</li>
+<li><p>MaxBackupIndex：最大备份书，默认为1.但是目前代码逻辑，无用。</p>
+</li>
+<li><p>RollOverAfterClose:退出备份，在这个连接器中，无用。</p>
+</li>
+</ul>
+<p>2.2.1.3 SocketAppender 网络连接器</p>
+<p>​	继承自Appender，用来向远程服务器上发送日志。它的配置为：</p>
+<ul>
+<li><p>host:主机IP</p>
+</li>
+<li><p>port:主机端口</p>
+</li>
+<li><p>ServerName:写日志的程序名称。回加到日志的最前面，用以区分日志来源。</p>
+<p>要使用这个连接器需要开启一个日志接收服务器，所以一般不用。</p>
+</li>
+</ul>
+<p>2.2.1.4 NullAppender空连接器</p>
+<p>​	继承自Appender，没有配置属性。一个空的连接器，没有任何作用。</p>
+<h3 id="2-2-2-布局Layout配置"><a href="#2-2-2-布局Layout配置" class="headerlink" title="2.2.2 布局Layout配置"></a>2.2.2 布局Layout配置</h3><p>​	Layout为日志格式布局器，负责调整输出格式。派生的子类有：</p>
+<ul>
+<li><p>SimpleLayout</p>
+</li>
+<li><p>TTCCLayout</p>
+</li>
+<li><p>PatternLayout</p>
+</li>
+</ul>
+<p>​	Layout作为基类本身没有配置属性项。布局器必需配置类型名称。格式为：</p>
+  <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">log4cplus.<span class="property">appender</span>.<span class="property">CONSOLE_MSGS</span>.<span class="property">layout</span> = <span class="attr">log4cplus</span>::<span class="title class_">PatternLayout</span></span><br></pre></td></tr></table></figure>
+
+<p>​	这里是为CONSOLE_MSGS这个连接器配置一个appender，该Layout的类型是PatternLayout。</p>
+<p>2.2.2.1 SimpleLayout简单格式布局器</p>
+<p>​	这个布局器没有可配置的属性，输出日志的格式是确定的。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#日志界别-日志内容</span><br><span class="line"><span class="variable constant_">INFO</span>-<span class="title class_">Info</span> log</span><br></pre></td></tr></table></figure>
+
+<p>2.2.2.2 TTCCLayout 预制格式布局器</p>
+<p>​	这个布局器能将日志按固定的格式输出，格式中能调整的只有时间格式。其具体配置项为：</p>
+<ul>
+<li>DateFormat:时间格式，默认是“%m-%d-%y %H:%M:%S,%q”。</li>
+<li>Use_gmtime:true&#x2F;false。是否使用GMT（格林威治标准）时间.</li>
+</ul>
+<p>2.2.2.3 PatternLayout 可定制格式布局器</p>
+<p>​	找个布局器拥有强大的日志格式定制功能。其可配置项为：</p>
+<ul>
+<li>ConversionPattern:日志格式。</li>
+</ul>
+<h3 id="2-2-3-过滤器Filter配置"><a href="#2-2-3-过滤器Filter配置" class="headerlink" title="2.2.3 过滤器Filter配置"></a>2.2.3 过滤器Filter配置</h3><p>​	Filter为日志过滤器，可附加到一个日志器中过滤出符合条件的日志进行输出。一个日志器可以有多个过滤器。它本身是虚基类，没有配置属性项。它派生出四个子过滤器：</p>
+<ul>
+<li><p>LogLevelRangeFilter</p>
+</li>
+<li><p>LogLevelMatchFilter</p>
+</li>
+<li><p>StringMatchFiler</p>
+</li>
+<li><p>DenyAllFilter</p>
+</li>
+</ul>
+<p>​	要使用过滤器也必须先配置过滤器的类型，如：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">log4cplus.<span class="property">appender</span>.<span class="property">CONSOLE</span>.<span class="property">filters</span><span class="number">.1</span> = <span class="attr">log4cplus</span>::<span class="attr">spi</span>::<span class="title class_">LogLevelRangeFilter</span></span><br></pre></td></tr></table></figure>
+
+<p>​	这里为CONSOLE这个连接器配置一个过滤器1，类型为LogLevelRangeFilter日志级别过滤器。</p>
+<p>2.2.3.1 LogLevelRangeFilter 日志级别过滤器</p>
+<p>​	这个过滤器会留下某些级别内的或是某些级别外的日志。具体的配置为：</p>
+<ul>
+<li><p>LogLevelMin:接受最低级别的日志，</p>
+<p>可选的日志级别从低到高排列为：</p>
+<ul>
+<li>TRACE</li>
+<li>DEBUG</li>
+<li>INFO</li>
+<li>WARN</li>
+<li>ERROR</li>
+<li>FATAL</li>
+</ul>
+</li>
+<li><p>LogLevelMax:接受最高级别的日志</p>
+</li>
+<li><p>AcceptOnMatch:true&#x2F;false 是否立即接受处在级别范围内的日志。在一个日志器有多个过滤器时有用。</p>
+<ul>
+<li>若为true，则只要日志处于可接受的日志级别访问类则直接输出，不再接受后面的过滤器的过滤；</li>
+<li>若为false,则即使日志符合当前过滤器的条件，还需要进行后面过滤器的过滤。</li>
+</ul>
+</li>
+</ul>
+<p>2.2.3.2 LogLevelMatchFilter 日志级别匹配过滤器</p>
+<p>​	这个过滤器会过滤出只需要的级别的日志或是过滤掉不需要的级别的日志。匹配项为：</p>
+<ul>
+<li><p>LogLevelToMatch:比对日志的级别。</p>
+</li>
+<li><p>AcceptOnMatch:true&#x2F;false,默认true。是否直接判定最终结果。</p>
+<ul>
+<li>true：如果日志级别匹配成功，则直接输出不再接受后面过滤器的过滤；</li>
+<li>false：直接拒绝不再接受后面过滤器的过滤。</li>
+</ul>
+<p>若是日志级别没有匹配成功，则不管AcceptOnMatch为什么值都将接受后面的过滤器的过滤，如果后面没有过滤器了则直接输出。</p>
+</li>
+</ul>
+<p>2.2.3.3 StringMatchFilter 日志字符串匹配过滤器</p>
+<p>​	这个过滤器能过滤直接输出含有某个字符串的日志，也可过滤掉含有某个特定字符串的日志。</p>
+<ul>
+<li><p>StringToMatch: 用于匹配的字符串。</p>
+</li>
+<li><p>AcceptOnMatch:true&#x2F;false,默认true。直接输出或直接拒绝匹配的日志。若日志中含有StringToMatch项配置的字符串时，</p>
+<ul>
+<li><p>true:则直接输出日志而不再接受之后的过滤器的过滤；</p>
+</li>
+<li><p>false:则直接拒绝而不再接受后面过滤器的过滤。</p>
+</li>
+</ul>
+<p>若日志中不包含StringToMatch项匹配的字符串时，则直接交给下个过滤器的过滤。若没有其他过滤器则直接输出日志。</p>
+</li>
+</ul>
+<h1 id="PatternLayout格式"><a href="#PatternLayout格式" class="headerlink" title="PatternLayout格式"></a>PatternLayout格式</h1><p>各种消息格式：   </p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">（<span class="number">1</span>）<span class="string">&quot;%%&quot;</span>，转义为%；  </span><br><span class="line">（<span class="number">2</span>）<span class="string">&quot;%c&#123;n&#125;&quot;</span>，输出logger名称，也可以控制logger名称的显示层次其中数字表示层次。   </span><br><span class="line">（<span class="number">3</span>）<span class="string">&quot;%D&quot;</span>，显示本地时间，%d显示标准时间，可以通过%d&#123;...&#125;定义更详细的显示格式，比如%d&#123;%H:%M:%s&#125;表示要显示小时:分钟：秒。大括号中可显示的预定义标识符如下：</span><br><span class="line">%a -- 表示礼拜几，英文缩写形式，比如<span class="string">&quot;Fri&quot;</span>%A -- 表示礼拜几，比如<span class="string">&quot;Friday&quot;</span></span><br><span class="line">%b -- 表示几月份，英文缩写形式，比如<span class="string">&quot;Oct&quot;</span>%B -- 表示几月份，<span class="string">&quot;October&quot;</span></span><br><span class="line">%c -- 标准的日期＋时间格式，如 <span class="string">&quot;Sat Oct 16 18:56:19 2004&quot;</span></span><br><span class="line">%d -- 表示今天是这个月的几号(<span class="number">1</span><span class="number">-31</span>)<span class="string">&quot;16&quot;</span></span><br><span class="line">%H -- 表示当前时刻是几时(<span class="number">0</span><span class="number">-23</span>)，如 <span class="string">&quot;18&quot;</span></span><br><span class="line">%I -- 表示当前时刻是几时(<span class="number">1</span><span class="number">-12</span>)，如 <span class="string">&quot;6&quot;</span></span><br><span class="line">%j -- 表示今天是哪一天(<span class="number">1</span><span class="number">-366</span>)，如 <span class="string">&quot;290&quot;</span></span><br><span class="line">%m -- 表示本月是哪一月(<span class="number">1</span><span class="number">-12</span>)，如 <span class="string">&quot;10&quot;</span></span><br><span class="line">%M -- 表示当前时刻是哪一分钟(<span class="number">0</span><span class="number">-59</span>)，如 <span class="string">&quot;59&quot;</span></span><br><span class="line">%p -- 表示现在是上午还是下午， AM <span class="keyword">or</span> PM</span><br><span class="line">%q -- 表示当前时刻中毫秒部分(<span class="number">0</span><span class="number">-999</span>)，如 <span class="string">&quot;237&quot;</span></span><br><span class="line">%Q -- 表示当前时刻中带小数的毫秒部分(<span class="number">0</span><span class="number">-999.999</span>)，如 <span class="string">&quot;430.732&quot;</span></span><br><span class="line">%S -- 表示当前时刻的多少秒(<span class="number">0</span><span class="number">-59</span>)，如 <span class="string">&quot;32&quot;</span></span><br><span class="line">%U -- 表示本周是今年的第几个礼拜，以周日为第一天开始计算(<span class="number">0</span><span class="number">-53</span>)。</span><br><span class="line">%w -- 表示礼拜几，(<span class="number">0</span><span class="number">-6</span>, 礼拜天为<span class="number">0</span>)，如 <span class="string">&quot;6&quot;</span></span><br><span class="line">%W -- 表示本周是今年的第几个礼拜，以周一为第一天开始计算(<span class="number">0</span><span class="number">-53</span>)。</span><br><span class="line">%x -- 标准的日期格式，如 <span class="string">&quot;10/16/04&quot;</span>%X -- 标准的时间格式，如 <span class="string">&quot;19:02:34&quot;</span></span><br><span class="line">%y -- 两位数的年份(<span class="number">0</span><span class="number">-99</span>)，如 <span class="string">&quot;04&quot;</span>%Y -- 四位数的年份，如 <span class="string">&quot;2004&quot;</span>%Z -- 时区名，比如 <span class="string">&quot;GMT&quot;</span>    </span><br><span class="line">（<span class="number">4</span>）<span class="string">&quot;%F&quot;</span>，输出当前记录器所在的文件名称；</span><br><span class="line">（<span class="number">5</span>）<span class="string">&quot;%L&quot;</span>，输出当前记录器所在的文件行号；</span><br><span class="line">（<span class="number">6</span>）<span class="string">&quot;%l&quot;</span>，输出当前记录器所在的文件名称和行号；</span><br><span class="line">（<span class="number">7</span>）<span class="string">&quot;%m&quot;</span>，输出原始信息，这种实现机制可以确保原始信息被嵌入到带格式的信息中。</span><br><span class="line">（<span class="number">8</span>）<span class="string">&quot;%n&quot;</span>，换行符；</span><br><span class="line">（<span class="number">9</span>）<span class="string">&quot;%p&quot;</span>，输出LogLevel；</span><br><span class="line">（<span class="number">10</span>）<span class="string">&quot;%t&quot;</span>，输出记录器所在的线程ID</span><br><span class="line">（<span class="number">11</span>）<span class="string">&quot;%x&quot;</span>，嵌套诊断上下文NDC输出，从堆栈中弹出上下文信息，NDC可以用对不同源的log信息（同时地）交叉输出进行区分。</span><br><span class="line">（<span class="number">12</span>）格式对齐：<span class="string">&quot;%-10m&quot;</span>时表示左对齐，宽度是<span class="number">10</span>。</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://github.com/damei6677/C++/log4cplus.html" data-id="clji7crpj00046s4la81pfwqm" data-title="" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2023/06/">June 2023</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/blog/2023/06/30/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2023 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/blog/" class="mobile-nav-link">Home</a>
+  
+    <a href="/blog/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/blog/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/blog/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/blog/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

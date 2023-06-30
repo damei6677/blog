@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="概念介绍​		简单的说bootloader就是这么一小段程序，它在系统上电时开始执行，初始化硬件设备、准备好软件环境，最后调用操作系统内核。 ​		增强bootloader的功能，开发中常用的，也称位Monitor。比如，增加网络功能、从PC上通过串口或网络下载文件、烧写文件、将Flash上压缩的文件解压后再运行。 启动代码什么是启动代码？ 启动代码是系统上电或者复位后运行的第一段代码，是进入C">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="https://github.com/damei6677/embedded/bootloader.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="概念介绍​		简单的说bootloader就是这么一小段程序，它在系统上电时开始执行，初始化硬件设备、准备好软件环境，最后调用操作系统内核。 ​		增强bootloader的功能，开发中常用的，也称位Monitor。比如，增加网络功能、从PC上通过串口或网络下载文件、烧写文件、将Flash上压缩的文件解压后再运行。 启动代码什么是启动代码？ 启动代码是系统上电或者复位后运行的第一段代码，是进入C">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-11-04T03:29:23.076Z">
+<meta property="article:modified_time" content="2022-10-08T06:25:41.137Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/blog/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/blog/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/blog/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/blog/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/blog/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/blog/">Home</a>
+        
+          <a class="main-nav-link" href="/blog/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/blog/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://github.com/damei6677"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="page-" class="h-entry article article-type-page" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/blog/embedded/bootloader.html" class="article-date">
+  <time class="dt-published" datetime="2022-11-04T03:29:23.076Z" itemprop="datePublished">2022-11-04</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="概念介绍"><a href="#概念介绍" class="headerlink" title="概念介绍"></a>概念介绍</h1><p>​		简单的说bootloader就是这么一小段程序，它在系统上电时开始执行，初始化硬件设备、准备好软件环境，最后调用操作系统内核。</p>
+<p>​		增强bootloader的功能，开发中常用的，也称位Monitor。比如，增加网络功能、从PC上通过串口或网络下载文件、烧写文件、将Flash上压缩的文件解压后再运行。</p>
+<h2 id="启动代码"><a href="#启动代码" class="headerlink" title="启动代码"></a>启动代码</h2><p>什么是启动代码？</p>
+<p>启动代码是系统上电或者复位后运行的第一段代码，是进入C 语言的main 函数之前需要执行的那段汇编代码。</p>
+<p>启动代码有何用？</p>
+<p>它的作用是在用户程序运行之前对系统硬件及软件环境进行必要的初始化并在最后使程序跳转到用户程序。它直接面对ARM 处理器内核及硬件控制器进行编程，所执行的操作与具体的目标系统紧密相关。</p>
+<p>C语言程序的运行需要具备一定的条件，如分配好外部数据空间，堆栈空间和中断入口等。另外，汇编代码可以更直接地对硬件进行操作，效率更高，这对启动中断等对时间要求更高的情况是非常必要的</p>
+<p>什么是Bootloader？</p>
+<p>Bootloader 不是一段代码，它是一个具有引导装载功能的完整的程序，如可以引导装载linux的vivi，uboot，以及通常PC机上的BOIS程序等。</p>
+<p>启动代码和Bootloader关系？</p>
+<p>Bootloader 也包含了相应的启动代码，也就是说，启动代码是Bootloader的一部分，是所有相应应用程序的一部分。</p>
+<h2 id="两种操作模式"><a href="#两种操作模式" class="headerlink" title="两种操作模式"></a>两种操作模式</h2><ul>
+<li>启动加载模式 Boot loading</li>
+</ul>
+<p>​		上电后，Bootloader从板子上的某个固态存储设备上将操作系统加载到RAM中运行，整个过程并没有用户的介入。产品发布时，设置在这种模式下。</p>
+<ul>
+<li>下载模式 Down loading</li>
+</ul>
+<p>​		在这种模式下，开发人员可以使用各种命令，通过串口链接或网络链接等通信手段从主机（Host）下载文件（比如内核映像、文件系统映像），将他们直接放在内存运行或是烧入Flash类固态存储设备中。</p>
+<h2 id="启动两个阶段"><a href="#启动两个阶段" class="headerlink" title="启动两个阶段"></a>启动两个阶段</h2><p>​		第一阶段使用汇编来实现；第二阶段使用C语言实现，这样可以实现复杂的功能，而且代码可以实现更复杂的功能，而且代码会有更好的可读性和可移植性。</p>
+<p>1.第一阶段</p>
+<ul>
+<li><p>硬件设备初始化</p>
+</li>
+<li><p>为加载Bootloader的第二阶段准备RAM空间</p>
+</li>
+<li><p>复制Bootloader的第二阶段代码到RAM空间中</p>
+</li>
+<li><p>设置好栈</p>
+</li>
+<li><p>跳转到第二阶段代码的C入口点</p>
+</li>
+</ul>
+<p>​		第一阶段进行的硬件爱你初始化一般包括：关闭WATCHDOG、关中断、设置CPU的速度和时钟频率、RAM初始化等。</p>
+<p>2.第二阶段</p>
+<ul>
+<li>初始化本阶段要使用到的硬件设备</li>
+<li>检测系统内存映射（memory map）</li>
+<li>将内核映像和根文件系统映像从Flash读取到RAM空间中</li>
+<li>为内核设置启动参数</li>
+<li>调用内核</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://github.com/damei6677/embedded/bootloader.html" data-id="clji7crpr000q6s4lduyu3vqb" data-title="" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2023/06/">June 2023</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/blog/2023/06/30/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2023 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/blog/" class="mobile-nav-link">Home</a>
+  
+    <a href="/blog/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/blog/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/blog/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/blog/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

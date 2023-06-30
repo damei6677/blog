@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="1.buildvs2015编译log4cpp  log4cpp是动态库项目 log4cppLIB是静态哭项目  打开msvc10，升级，选中log4cpp项目，生成。 出现错误如下： 12函数“int snprintf(**********)”已有主体函数“int vsnprintf(*********)”已有主体  修改log4cpp项目属性–配置属性–C&#x2F;C++–预处理器 添加宏HA">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="https://github.com/damei6677/C++/log4cpp.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="1.buildvs2015编译log4cpp  log4cpp是动态库项目 log4cppLIB是静态哭项目  打开msvc10，升级，选中log4cpp项目，生成。 出现错误如下： 12函数“int snprintf(**********)”已有主体函数“int vsnprintf(*********)”已有主体  修改log4cpp项目属性–配置属性–C&#x2F;C++–预处理器 添加宏HA">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-11-04T03:34:47.659Z">
+<meta property="article:modified_time" content="2022-10-08T06:25:41.149Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/blog/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/blog/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/blog/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/blog/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/blog/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/blog/">Home</a>
+        
+          <a class="main-nav-link" href="/blog/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/blog/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://github.com/damei6677"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="page-" class="h-entry article article-type-page" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/blog/C++/log4cpp.html" class="article-date">
+  <time class="dt-published" datetime="2022-11-04T03:34:47.659Z" itemprop="datePublished">2022-11-04</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="1-build"><a href="#1-build" class="headerlink" title="1.build"></a>1.build</h1><p>vs2015编译log4cpp</p>
+<ul>
+<li><code>log4cpp</code>是动态库项目</li>
+<li><code>log4cppLIB</code>是静态哭项目</li>
+</ul>
+<p>打开msvc10，升级，选中log4cpp项目，生成。</p>
+<p>出现错误如下：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">函数“<span class="type">int</span> <span class="title function_">snprintf</span><span class="params">(**********)</span>”已有主体</span><br><span class="line">函数“<span class="type">int</span> <span class="title function_">vsnprintf</span><span class="params">(*********)</span>”已有主体</span><br></pre></td></tr></table></figure>
+
+<p>修改log4cpp项目属性–配置属性–C&#x2F;C++–预处理器</p>
+<p>添加宏<code>HAVE_SNPRINTF</code></p>
+<h1 id="2-log4cpp优点"><a href="#2-log4cpp优点" class="headerlink" title="2. log4cpp优点"></a>2. log4cpp优点</h1><p>优点如下：</p>
+<ul>
+<li>提供应用程序运行上下文，方便跟踪调试。</li>
+<li>可拓展的、多种方式记录日志，包括命令行、文件、回卷文件、内存、syslog服务器、win事件日志等。</li>
+<li>可以动态控制日志记录级别，在效率和功能中进行调整。</li>
+<li>所有配置可以通过配置文件进行动态调整。</li>
+<li>多语言支持，包括java(log4j),C++(log4cpp\log4cplus),c(log4c),python(log4p)等。</li>
+</ul>
+<h1 id="3-概念"><a href="#3-概念" class="headerlink" title="3. 概念"></a>3. 概念</h1><p>​	　Log4cpp中的概念继承自log4j，最重要的是Category(种类)、Appender(附加目的地)和Layout(布局)三个概念，此外还有Priority(优先级)和NDC(嵌套的诊断上下文)等。<br>　　简言之，Category负责向日志中写入信息，Appender负责指定日志的目的地，Layout负责设定日志的格式，Priority被用来指定Category的优先级和日志的优先级， NDC则是一种用来区分不同场景中交替出现的日志的手段。</p>
+<h2 id="3-1-Category"><a href="#3-1-Category" class="headerlink" title="3.1 Category"></a>3.1 Category</h2><p>　　Log4cpp记录日志的原理如下：每个Category都有一个优先级，该优先级可以由setPriority方法设置，或者从其父Category中继承而来。每条日志也有一个优先级，当Category记录该条日志时，若日志优先级高于Category的优先级时，该日志被记录，否则被忽略。系统中默认的优先级等级如下：</p>
+<p>typedef enum …{EMERG &#x3D; 0,<br>    　　FATAL &#x3D; 0,<br>　　	ALERT &#x3D; 100,<br>　　	CRIT &#x3D; 200,<br>　　	ERROR &#x3D; 300,<br>　　	WARN &#x3D; 400,<br>　　	NOTICE &#x3D; 500,<br>　　	INFO &#x3D; 600,<br>　　	DEBUG &#x3D; 700,<br>　　	NOTSET &#x3D; 800<br>　　} PriorityLevel;</p>
+<p>　　<code>注意：取值越小，优先级越高。</code><br>　　例如一个Category的优先级为101，则所有EMERG、FATAL、ALERT日志都可以记录下来，而其他则不能。<br>　　Category、Appender和Layout三者的关系如下：系统中可以有多个Category，它们都是继承自同一个根，每个Category负责记录自己的日志;每个Category可以添加多个Appender，每个Appender指定了一个日志的目的地，例如文件、字符流或者Windows日志，当Category记录一条日志时，该日志被写入所有附加到此Category的Appender;每个Append都包含一个Layout，该Layout定义了这个Appender上日志的格式。<br>　　现在重温前面的HelloWorld程序，可以发现其流程如下：</p>
+<ol>
+<li><p>创建一个Appender，并指定其包含的Layout；</p>
+</li>
+<li><p>从系统中得到Category的根，将Appender添加到该Category中；</p>
+</li>
+<li><p>设置Category的优先级；</p>
+</li>
+<li><p>记录日志；</p>
+</li>
+<li><p>关闭Category。</p>
+<p>　Log4cpp中有一个总是可用并实例化好的Category，即根Category。使用log4cpp::Category::getRoot()可以得到根Category。在大多数情况下，一个应用程序只需要一个日志种类(Category)，但是有时也会用到多个Category，此时可以使用根Category的getInstance方法来得到子Category。不同的子Category用于不同的场合。一个简单的例子CategoryExam如下所示：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> iostream&gt;</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> log4cpp/Category.hh&gt;</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> log4cpp/OstreamAppender.hh&gt;</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> log4cpp/FileAppender.hh&gt;</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> log4cpp/BasicLayout.hh&gt;</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> log4cpp/Priority.hh&gt;</span></span><br><span class="line">using namespace <span class="built_in">std</span>;</span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">(<span class="type">int</span> argc, <span class="type">char</span>* argv[])</span></span><br><span class="line">&#123;</span><br><span class="line">    log4cpp::OstreamAppender* osAppender1 = new log4cpp::OstreamAppender(<span class="string">&quot;osAppender1&quot;</span>, &amp;<span class="built_in">cout</span>);</span><br><span class="line">    osAppender1-&gt;setLayout(new log4cpp::BasicLayout());</span><br><span class="line">    log4cpp::OstreamAppender* osAppender2 = new log4cpp::OstreamAppender(<span class="string">&quot;osAppender2&quot;</span>, &amp;<span class="built_in">cout</span>);</span><br><span class="line">    osAppender2-&gt;setLayout(new log4cpp::BasicLayout());</span><br><span class="line">    log4cpp::Category&amp; root = log4cpp::Category::getRoot();</span><br><span class="line">    root.setPriority(log4cpp::Priority::DEBUG);</span><br><span class="line">    log4cpp::Category&amp; sub1 = root.getInstance(<span class="string">&quot;sub1&quot;</span>);</span><br><span class="line">    sub1.addAppender(osAppender1);</span><br><span class="line">    sub1.setPriority(log4cpp::Priority::DEBUG);</span><br><span class="line">    sub1.error(<span class="string">&quot;sub error&quot;</span>);</span><br><span class="line">    log4cpp::Category&amp; sub2 = root.getInstance(<span class="string">&quot;sub2&quot;</span>);</span><br><span class="line">    sub2.addAppender(osAppender2);</span><br><span class="line">    sub2.setPriority(<span class="number">101</span>);</span><br><span class="line">    sub2.warn(<span class="string">&quot;sub2 warning&quot;</span>);</span><br><span class="line">    sub2.fatal(<span class="string">&quot;sub2 fatal&quot;</span>);</span><br><span class="line">    sub2.alert(<span class="string">&quot;sub2 alert&quot;</span>);</span><br><span class="line">    sub2.crit(<span class="string">&quot;sub2 crit&quot;</span>);</span><br><span class="line">    log4cpp::Category::shutdown();</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>运行结果如下：</p>
+</li>
+</ol>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1248869982</span> ERROR sub1 : sub error</span><br><span class="line"><span class="number">1248869982</span> FATAL sub2 : sub2 fatal</span><br><span class="line"><span class="number">1248869982</span> ALERT sub2 : sub2 alert</span><br></pre></td></tr></table></figure>
+
+<p>这个例子中共有三个Category，分别是根、sub1和sub2，其中sub1记录了一条日志，sub2记录了两条日志。Sub2另外两个日志由于优先级不够未能记录。</p>
+<h2 id="3-2-Appender"><a href="#3-2-Appender" class="headerlink" title="3.2 Appender"></a>3.2 <strong>Appender</strong></h2><p>​	笔者认为Appender是log4cpp中最精彩的一个部分。我仔细阅读了大部分Appender的源代码并对设计者感到非常敬仰。<br>　　Log4cpp中所有可直接使用的Appender列表如下：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">　　log4cpp::IdsaAppender <span class="comment">// 发送到IDS或者</span></span><br><span class="line">　　log4cpp::FileAppender <span class="comment">// 输出到文件</span></span><br><span class="line">　　log4cpp::RollingFileAppender <span class="comment">// 输出到回卷文件，即当文件到达某个大小后回卷</span></span><br><span class="line">　　log4cpp::OstreamAppender <span class="comment">// 输出到一个ostream类</span></span><br><span class="line">　　log4cpp::RemoteSyslogAppender <span class="comment">// 输出到远程syslog服务器</span></span><br><span class="line">　　log4cpp::StringQueueAppender <span class="comment">// 内存队列</span></span><br><span class="line">　　log4cpp::SyslogAppender <span class="comment">// 本地syslog</span></span><br><span class="line">　　log4cpp::Win32DebugAppender <span class="comment">// 发送到缺省系统调试器</span></span><br><span class="line">　　log4cpp::NTEventLogAppender <span class="comment">// 发送到win 事件日志</span></span><br></pre></td></tr></table></figure>
+
+<p>　　其中SyslogAppender和RemoteSyslogAppender需要与Syslog配合使用，因此这里不介绍。顺便提一句，Syslog是类Unix系统的一个核心服务，用来提供日志服务，在Windows系统中并没有直接提供支持，当然可以用相关工具提供Windows系统中的syslog服务。<br>　　IdsaAppender的功能是将日志写入Idsa服务，这里也不介绍。因此主要介绍以下Appender：<br>　　log4cpp::FileAppender &#x2F;&#x2F; 输出到文件<br>　　log4cpp::RollingFileAppender &#x2F;&#x2F; 输出到回卷文件，即当文件到达某个大小后回卷<br>　　log4cpp::OstreamAppender &#x2F;&#x2F; 输出到一个ostream类<br>　　log4cpp::StringQueueAppender &#x2F;&#x2F; 内存队列<br>　　log4cpp::Win32DebugAppender &#x2F;&#x2F; 发送到缺省系统调试器<br>　　log4cpp::NTEventLogAppender &#x2F;&#x2F; 发送到win 事件日志</p>
+<h3 id="3-2-1-OstreamAppender"><a href="#3-2-1-OstreamAppender" class="headerlink" title="3.2.1.OstreamAppender"></a>3.2.1.OstreamAppender</h3><p>在我刚刚学习C&#x2F;C++编程时，一位老师告诉我，如果没有好用的调试工具，就在代码中加入printf语句，将调试信息打印出来(当时在linux下面，确实没有什么易用的c++调试工具)。现在有了OstreamAppender，一切都好办了，它可以将日志记入一个流，如果该流恰好是cout，则会在标准控制台上输出。比printf优越的是，除了输出消息外，还可以轻松的输出时间、时钟数、优先级等大量有用信息。<br>　　OstreamAppender的使用非常简单，在前面的HelloWorld程序中已经见过，创建一个OstreamAppender的具体方法如下：
+　　</p>
+<p>　　log4cpp::OstreamAppender* osAppender &#x3D; new log4cpp::OstreamAppender(“osAppender”, &amp;cout);</p>
+<p>　　第一个参数指定OstreamAppender的名称，第二个参数指定它关联的流的指针。</p>
+<h3 id="3-2-2-StringQueueAppender"><a href="#3-2-2-StringQueueAppender" class="headerlink" title="3.2.2.StringQueueAppender"></a>3.2.2.StringQueueAppender</h3><p>　后来一位高手又告诉我“在调试多线程程序时，不能随意使用printf”。因为printf导致IO中断，会使得本线程挂起，其花费的时间比一条普通指令多数千倍，若多个线程同时运行，则严重干扰了线程间的运行方式。所以调试多线程程序时，最好是将所有调试信息按顺序记入内存中，程序结束时依次打印出来。为此当时我们还写了一个小工具，没想到时隔多年，我碰上了StringQueueAppender。<br>　　我很怀疑StringQueueAppender被设计出来就是用于记录多线程程序或者实时程序的日志，虽然log4cpp的文档中并没有明确指出这一点。StringQueueAppender的功能是将日志记录到一个字符串队列中，该字符串队列使用了STL中的两个容器，即字符串容器std::string和队列容器std::queue，具体如下：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">std</span>::<span class="built_in">queue</span>&lt;<span class="built_in">std</span>::<span class="built_in">string</span>&gt; _queue;</span><br></pre></td></tr></table></figure>
+
+<p>　　_queue变量是StringQueueAppender类中用于具体存储日志的内存队列。StringQueueAppender的使用方法与OstreamAppender类似，其创建函数只接收一个参数“名称”，记录完成后需要程序员自己从队列中取出每条日志，例子程序StringQueueAppenderExam如下：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span> </span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;log4cpp/Category.hh&gt;</span> </span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;log4cpp/OstreamAppender.hh&gt;</span> </span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;log4cpp/BasicLayout.hh&gt;</span> </span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;log4cpp/Priority.hh&gt;</span> </span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;log4cpp/StringQueueAppender.hh&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">pragma</span> comment(lib,<span class="string">&quot;log4cppD.lib&quot;</span>)</span></span><br><span class="line"></span><br><span class="line">using namespace <span class="built_in">std</span>; </span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">(<span class="type">int</span> argc, <span class="type">char</span>* argv[])</span> &#123;</span><br><span class="line">    <span class="comment">//定义一个Appender，类型为内存字符串队列</span></span><br><span class="line">    log4cpp::StringQueueAppender* strQAppender = new 		log4cpp::StringQueueAppender(<span class="string">&quot;strQAppender&quot;</span>);</span><br><span class="line">    strQAppender-&gt;setLayout(new log4cpp::BasicLayout());</span><br><span class="line">    log4cpp::Category&amp; root = log4cpp::Category::getRoot();</span><br><span class="line">    root.addAppender(strQAppender);</span><br><span class="line">    root.setPriority(log4cpp::Priority::DEBUG);</span><br><span class="line">    root.error(<span class="string">&quot;Hello log4cpp in a Error Message!&quot;</span>);</span><br><span class="line">    root.warn(<span class="string">&quot;Hello log4cpp in a Warning Message!&quot;</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">//定义队列，将日志写入该队列中，即保存在内存中</span></span><br><span class="line">   <span class="built_in">queue</span>&lt;<span class="built_in">string</span>&gt;&amp; myStrQ = strQAppender-&gt;getQueue();</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;<span class="string">&quot;Get message from Memory Queue!\n&quot;</span> ;</span><br><span class="line">    <span class="keyword">while</span>(!myStrQ.empty())&#123;</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;myStrQ.front();</span><br><span class="line">        myStrQ.pop();</span><br><span class="line">    &#125;      </span><br><span class="line">    log4cpp::Category::shutdown();</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>程序输出为：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Get message from Memory Queue!</span><br><span class="line"><span class="number">1248839389</span> ERROR : Hello log4cpp in a Error Message!</span><br><span class="line"><span class="number">1248839389</span> WARN : Hello log4cpp in a Warning Message!</span><br></pre></td></tr></table></figure>
+
+<p>再来个全注释的程序</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span> </span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;log4cpp/Category.hh&quot;</span> </span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;log4cpp/Appender.hh&quot;</span> #<span class="keyword">include</span> <span class="string">&quot;log4cpp/StringQueueAppender.hh&quot;</span> #<span class="keyword">include</span> <span class="string">&quot;log4cpp/PatternLayout.hh&quot;</span> </span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;log4cpp/Priority.hh&quot;</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">pragma</span> comment(lib,<span class="string">&quot;log4cppD.lib&quot;</span>) </span></span><br><span class="line"><span class="comment">//using namespace std;</span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">(<span class="type">int</span> arg,<span class="type">char</span>* argv[])</span> &#123;</span><br><span class="line">    <span class="comment">//定义一个Appender，类型为输出到内存队列</span></span><br><span class="line">   log4cpp::StringQueueAppender* queueApp = new log4cpp::StringQueueAppender(<span class="string">&quot;queueApp&quot;</span>);</span><br><span class="line">    <span class="comment">//定义一个Layout，类型为PatternLayout</span></span><br><span class="line">    log4cpp::PatternLayout* ptnLayout = new log4cpp::PatternLayout();</span><br><span class="line">    <span class="comment">//设置该Layout的格式</span></span><br><span class="line">   ptnLayout-&gt;setConversionPattern(<span class="string">&quot;%d: %c%p%x:%m%n&quot;</span>);</span><br><span class="line">    <span class="comment">//将该Layout添加到定义的Appender中</span></span><br><span class="line">   queueApp-&gt;setLayout(ptnLayout);</span><br><span class="line">    <span class="comment">//定义一个Category的子类，名字为infoCategory</span></span><br><span class="line">    log4cpp::Category&amp; infoCategory = log4cpp::Category::getRoot().getInstance(<span class="string">&quot;infoCategory&quot;</span>);</span><br><span class="line">    <span class="comment">//将上述的Appender添加到该Category中</span></span><br><span class="line">   infoCategory.setAppender(queueApp);</span><br><span class="line">    <span class="comment">//设置该Category的优先级</span></span><br><span class="line">   infoCategory.setPriority(log4cpp::Priority::DEBUG);</span><br><span class="line">     <span class="comment">//记录日志，将日志写入内存队列中</span></span><br><span class="line">   infoCategory.error(<span class="string">&quot;a error occurred!!&quot;</span>);</span><br><span class="line">    infoCategory.debug(<span class="string">&quot;a progam is in debug&quot;</span>);</span><br><span class="line">    <span class="comment">//**************从队列中获取日志输出到控制台***************</span></span><br><span class="line">    <span class="built_in">std</span>::<span class="built_in">cout</span>&lt;&lt;<span class="string">&quot;Get Message From Queue Memory\n&quot;</span>;</span><br><span class="line">    <span class="comment">//获取该日志所在的内存队列</span></span><br><span class="line">   <span class="built_in">std</span>::<span class="built_in">queue</span>&lt;<span class="built_in">std</span>::<span class="built_in">string</span>&gt;&amp; queueMem = queueApp-&gt;getQueue();</span><br><span class="line">    <span class="keyword">while</span> (!queueMem.empty())</span><br><span class="line">    &#123;</span><br><span class="line">           <span class="comment">//输出队列最前面的元素</span></span><br><span class="line">        <span class="built_in">std</span>::<span class="built_in">cout</span>&lt;&lt;queueMem.front();</span><br><span class="line">           <span class="comment">//弹出当前队列最前面的元素</span></span><br><span class="line">        queueMem.pop();</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="comment">//关闭Category</span></span><br><span class="line">      infoCategory.shutdown();</span><br><span class="line">      <span class="keyword">return</span> <span class="number">0</span>; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-2-3-FileAppender和RollingFileAppender"><a href="#3-2-3-FileAppender和RollingFileAppender" class="headerlink" title="3.2.3.FileAppender和RollingFileAppender"></a>3.2.3.FileAppender和RollingFileAppender</h3><p>​	FileAppender和RollingFileAppender是log4cpp中最常用的两个Appender，其功能是将日志写入文件中。它们之间唯一的区别就是前者会一直在文件中记录日志(直到操作系统承受不了为止)，而后者会在文件长度到达指定值时循环记录日志，文件长度不会超过指定值(默认的指定值是10M byte)。</p>
+<p>　FileAppender的创建函数如下：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">　　Constructs a FileAppender.</span></span><br><span class="line"><span class="comment">　　@param name the name of the Appender.</span></span><br><span class="line"><span class="comment">　　@param fileName the name of the file to which the Appender has</span></span><br><span class="line"><span class="comment">　　to log.</span></span><br><span class="line"><span class="comment">　　@param append whether the Appender has to truncate the file or</span></span><br><span class="line"><span class="comment">　　just append to it if it already exists. Defaults to &quot;true&quot;.</span></span><br><span class="line"><span class="comment">　　@param mode file mode to open the logfile with. Defaults to 00644.</span></span><br><span class="line"><span class="comment">　　**/</span></span><br><span class="line">　　FileAppender(<span class="type">const</span> <span class="built_in">std</span>::<span class="built_in">string</span>&amp; name, <span class="type">const</span> <span class="built_in">std</span>::<span class="built_in">string</span>&amp; fileName,</span><br><span class="line">　　<span class="type">bool</span> append = <span class="literal">true</span>, <span class="type">mode_t</span> mode = <span class="number">00644</span>);</span><br><span class="line">　　一般仅使用前两个参数，即“名称”和“日志文件名”。</span><br><span class="line">　　第三个参数指示是否在日志文件后继续记入日志，还是清空原日志文件再记录。</span><br><span class="line">　　第四个参数说明文件的打开方式。</span><br><span class="line">　　</span><br><span class="line">　　RollingFileAppender的创建函数如下：</span><br><span class="line">　　RollingFileAppender(</span><br><span class="line">   <span class="type">const</span> <span class="built_in">std</span>::<span class="built_in">string</span>&amp; name,			 <span class="comment">//appender的名字</span></span><br><span class="line">　　<span class="type">const</span> <span class="built_in">std</span>::<span class="built_in">string</span>&amp; fileName,		<span class="comment">//文件的名字</span></span><br><span class="line">　　<span class="type">size_t</span> maxFileSize = <span class="number">10</span>*<span class="number">1024</span>*<span class="number">1024</span>,<span class="comment">//回滚文件的最大值</span></span><br><span class="line">　　<span class="type">unsigned</span> <span class="type">int</span> maxBackupIndex = <span class="number">1</span>,	<span class="comment">//回滚文件所用的备份文件的最大个数</span></span><br><span class="line">　　<span class="type">bool</span> append = <span class="literal">true</span>,</span><br><span class="line">　　<span class="type">mode_t</span> mode = <span class="number">00644</span>);</span><br></pre></td></tr></table></figure>
+
+<p>​	它与FileAppender的创建函数很类似，但是多了两个参数：maxFileSize指出了回滚文件的最大值;maxBackupIndex指出了回滚文件所用的备份文件的最大个数。所谓备份文件，是用来保存回滚文件中因为空间不足未能记录的日志，备份文件的大小仅比回滚文件的最大值大1kb。所以如果maxBackupIndex取值为3，则回滚文件(假设其名称是rollwxb.log，大小为100kb)会有三个备份文件，其名称分别是rollwxb.log.1，rollwxb.log.2和rollwxb.log.3，大小为101kb。另外要注意：如果maxBackupIndex取值为0或者小于0，则回滚文件功能会失效，其表现如同FileAppender一样，不会有大小的限制。这也许是一个bug。<br>　　例子程序FileAppenderExam如下：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> iostream&gt;</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> log4cpp/Category.hh&gt;</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> log4cpp/Appender.hh&gt;</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> log4cpp/FileAppender.hh&gt;</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> log4cpp/Priority.hh&gt;</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> log4cpp/PatternLayout.hh&gt;</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> log4cpp/RollingFileAppender.hh&gt;</span></span><br><span class="line">using namespace <span class="built_in">std</span>;</span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">(<span class="type">int</span> argc, <span class="type">char</span>* argv[])</span></span><br><span class="line">&#123;</span><br><span class="line">　　log4cpp::PatternLayout* pLayout1 = new log4cpp::PatternLayout();</span><br><span class="line">　　pLayout1-&gt;setConversionPattern(<span class="string">&quot;%d: %p %c %x: %m%n&quot;</span>);</span><br><span class="line">　　log4cpp::PatternLayout* pLayout2 = new log4cpp::PatternLayout();</span><br><span class="line">　　pLayout2-&gt;setConversionPattern(<span class="string">&quot;%d: %p %c %x: %m%n&quot;</span>);</span><br><span class="line">    <span class="comment">//创建fileAppender</span></span><br><span class="line">　　log4cpp::Appender* fileAppender = new log4cpp::FileAppender(<span class="string">&quot;fileAppender&quot;</span>,<span class="string">&quot;wxb.log&quot;</span>);</span><br><span class="line">　　fileAppender-&gt;setLayout(pLayout1);</span><br><span class="line">    <span class="comment">//创建rollingFileAppender</span></span><br><span class="line">　　log4cpp::RollingFileAppender* rollfileAppender = new log4cpp::RollingFileAppender(</span><br><span class="line">　　<span class="string">&quot;rollfileAppender&quot;</span>,<span class="string">&quot;rollwxb.log&quot;</span>,<span class="number">5</span>*<span class="number">1024</span>,<span class="number">1</span>);</span><br><span class="line">　　rollfileAppender-&gt;setLayout(pLayout2);</span><br><span class="line">　　log4cpp::Category&amp; root = log4cpp::Category::getRoot().getInstance(<span class="string">&quot;RootName&quot;</span>);</span><br><span class="line">　　root.addAppender(fileAppender);</span><br><span class="line">　　root.addAppender(rollfileAppender);</span><br><span class="line">　　root.setPriority(log4cpp::Priority::DEBUG);</span><br><span class="line">　　<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i <span class="number">100</span>; i++)</span><br><span class="line">　　&#123;</span><br><span class="line">         <span class="built_in">string</span> strError;</span><br><span class="line">        <span class="built_in">ostringstream</span> oss;</span><br><span class="line">        strError = oss.str();</span><br><span class="line">        root.error(strError);</span><br><span class="line">　　&#125;</span><br><span class="line">　　log4cpp::Category::shutdown();</span><br><span class="line">　　<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">　&#125;</span><br></pre></td></tr></table></figure>
+
+<p>​	程序运行后会产生两个日志文件wxb.log和rollwxb.log，以及一个备份文件rollwxb.log.1。wxb.log的大小为7kb，记录了所有100条日志;rollwxb.log大小为2kb，记录了最新的22条日志;rollwxb.log.1大小为6kb，记录了旧的78条日志（因为rollFileAppender设置了文件最大值5*1024,也就是5k）。</p>
+<h3 id="3-2-4-Win32DebugAppender"><a href="#3-2-4-Win32DebugAppender" class="headerlink" title="3.2.4.Win32DebugAppender"></a>3.2.4.Win32DebugAppender</h3><p>​	Win32DebugAppender是一个用于调试的Appender，其功能是向Windows的调试器中写入日志，目前支持MSVC和Borland中的调试器。创建Win32DebugAppender仅需要一个参数“名称”，其使用非常简单，下面是例子代码DebugAppenderExam：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;log4cpp/Category.hh&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;log4cpp/Appender.hh&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;log4cpp/Win32DebugAppender.hh&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;log4cpp/PatternLayout.hh&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;log4cpp/Priority.hh&quot;</span> </span></span><br><span class="line"><span class="meta">#<span class="keyword">pragma</span> comment(lib,<span class="string">&quot;log4cppD.lib&quot;</span>)</span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">(<span class="type">int</span> arg,<span class="type">char</span>* argv[])</span> &#123;</span><br><span class="line">     <span class="comment">//定义一个Appender，类型为输出Windows调试器</span></span><br><span class="line">    log4cpp::Win32DebugAppender* debugApp = new log4cpp::Win32DebugAppender(<span class="string">&quot;debugApp&quot;</span>);</span><br><span class="line">     <span class="comment">//定义一个Layout，类型为PatternLayout</span></span><br><span class="line">     log4cpp::PatternLayout* ptnLayout = new log4cpp::PatternLayout(); <span class="comment">//设置该Layout的格式</span></span><br><span class="line">    ptnLayout-&gt;setConversionPattern(<span class="string">&quot;%d: %c %p %x:%m%n&quot;</span>); <span class="comment">//将该Layout添加到定义的Appender中</span></span><br><span class="line">    debugApp-&gt;setLayout(ptnLayout); <span class="comment">//定义一个Category的子类，名字为infoCategory</span></span><br><span class="line">      log4cpp::Category&amp; infoCategory = log4cpp::Category::getRoot().getInstance(<span class="string">&quot;infoCategory&quot;</span>);</span><br><span class="line">     <span class="comment">//将上述的Appender添加到该Category中</span></span><br><span class="line">    infoCategory.setAppender(debugApp); <span class="comment">//设置该Category的优先级</span></span><br><span class="line">    infoCategory.setPriority(log4cpp::Priority::DEBUG); <span class="comment">//记录日志，将日志写入调试器中</span></span><br><span class="line">    infoCategory.error(<span class="string">&quot;a error occurred!!&quot;</span>);</span><br><span class="line">      infoCategory.warn(<span class="string">&quot;a progam is in debug&quot;</span>);</span><br><span class="line">      infoCategory.shutdown();</span><br><span class="line">      <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-2-5-NtEventLogAppender"><a href="#3-2-5-NtEventLogAppender" class="headerlink" title="3.2.5.NtEventLogAppender"></a>3.2.5.NtEventLogAppender</h3><p>该Appender可以将日志发送到windows的日志，在运行程序后可以打开windows的计算机管理?系统工具?事件查看器?应用程序，可以看到下图，注意图中第一行和第二行的两个日志。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;log4cpp/Category.hh&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;log4cpp/Appender.hh&quot;</span> #<span class="keyword">include</span> <span class="string">&quot;log4cpp/NTEventLogAppender.hh&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;log4cpp/PatternLayout.hh&quot;</span> </span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;log4cpp/Priority.hh&quot;</span> </span></span><br><span class="line"><span class="meta">#<span class="keyword">pragma</span> comment(lib,<span class="string">&quot;log4cppD.lib&quot;</span>) </span></span><br><span class="line"><span class="comment">//using namespace std; </span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">(<span class="type">int</span> arg,<span class="type">char</span>* argv[])</span> &#123; </span><br><span class="line">    <span class="comment">//定义一个Appender，类型为输出Windows系统日志 </span></span><br><span class="line">   log4cpp::Appender* ntEventApp = new log4cpp::NTEventLogAppender(<span class="string">&quot;ntEventApp&quot;</span>,<span class="string">&quot;wxbnt.log&quot;</span>); </span><br><span class="line">    <span class="comment">//定义一个Layout，类型为PatternLayout     </span></span><br><span class="line">    log4cpp::PatternLayout* ptnLayout = new log4cpp::PatternLayout(); <span class="comment">//设置该Layout的格式     </span></span><br><span class="line">   ptnLayout-&gt;setConversionPattern(<span class="string">&quot;%d: %c %p %x:%m%n&quot;</span>); <span class="comment">//将该Layout添加到定义的Appender中     </span></span><br><span class="line">   ntEventApp-&gt;setLayout(ptnLayout); <span class="comment">//定义一个Category的子类，名字为infoCategory     </span></span><br><span class="line">    log4cpp::Category&amp; infoCategory = log4cpp::Category::getRoot().getInstance(<span class="string">&quot;infoCategory&quot;</span>); <span class="comment">//将上述的Appender添加到该Category中</span></span><br><span class="line">   infoCategory.setAppender(ntEventApp); <span class="comment">//设置该Category的优先级</span></span><br><span class="line">   infoCategory.setPriority(log4cpp::Priority::DEBUG); <span class="comment">//记录日志，将日志写入Windows系统日志</span></span><br><span class="line">   infoCategory.error(<span class="string">&quot;a error occurred!!&quot;</span>);</span><br><span class="line">    infoCategory.warn(<span class="string">&quot;a progam is in debug&quot;</span>);</span><br><span class="line">    infoCategory.shutdown();</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="3-3-NDC"><a href="#3-3-NDC" class="headerlink" title="3.3 NDC"></a>3.3 NDC</h2><p>NDC是nested Diagnostic Context的缩写，意思是“嵌套的诊断上下文”。NDC是一种用来区分不同源代码中交替出现的日志的手段。当一个服务端程序同时记录好几个并行客户时，输出的日志会混杂在一起难以区分。但如果不同上下文的日志入口拥有一个特定的标识，则可以解决这个问题。NDC就是在这种情况下发挥作用。注意NDC是以线程为基础的，每个线程拥有一个NDC，每个NDC的操作仅对执行该操作的线程有效。<br>　　NDC的几个有用的方法是：push、pop、get和clear。注意它们都是静态函数：<br>　　Push可以让当前线程进入一个NDC，如果该NDC不存在，则根据push的参数创建一个NDC并进入;如果再调用一次push，则进入子NDC;<br>　　Pop可以让当前线程从上一级NDC中退出，但是一次只能退出一级。<br>　　Clear可以让当前线程从所有嵌套的NDC中退出。<br>　　Get可以得到当前NDC的名字，如果有嵌套，则不同级别之间的名字用空格隔开。</p>
+<p>在记录日志的时候，可以从NDC中得知当前线程的嵌套关系。</p>
+<p>　　一个简单的例子NDCExam如下：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span> </span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;log4cpp/NDC.hh&quot;</span> </span></span><br><span class="line"><span class="meta">#<span class="keyword">pragma</span> comment(lib,<span class="string">&quot;log4cppD.lib&quot;</span>)</span></span><br><span class="line"></span><br><span class="line">using namespace log4cpp; </span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">(<span class="type">int</span> argc, <span class="type">char</span>** argv)</span> </span><br><span class="line">&#123; </span><br><span class="line">    <span class="built_in">std</span>::<span class="built_in">cout</span>&lt;&lt;<span class="string">&quot;1. empty &quot;</span>&lt;&lt;NDC::get()&lt;&lt;<span class="built_in">std</span>::<span class="built_in">endl</span>; </span><br><span class="line">    NDC::push(<span class="string">&quot;context1&quot;</span>);  <span class="comment">//添加第一层 </span></span><br><span class="line">    <span class="built_in">std</span>::<span class="built_in">cout</span>&lt;&lt;<span class="string">&quot;2. push context1: &quot;</span>&lt;&lt;NDC::get()&lt;&lt;<span class="built_in">std</span>::<span class="built_in">endl</span>; NDC::push(<span class="string">&quot;context2&quot;</span>);<span class="comment">//添加第二层 </span></span><br><span class="line">    <span class="built_in">std</span>::<span class="built_in">cout</span>&lt;&lt;<span class="string">&quot;3. push context2: &quot;</span>&lt;&lt;NDC::get()&lt;&lt;<span class="built_in">std</span>::<span class="built_in">endl</span>; NDC::push(<span class="string">&quot;context3&quot;</span>);<span class="comment">//添加第三层 </span></span><br><span class="line">    <span class="built_in">std</span>::<span class="built_in">cout</span>&lt;&lt;<span class="string">&quot;4. push context3: &quot;</span>&lt;&lt;NDC::get()&lt;&lt;<span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">std</span>::<span class="built_in">cout</span>&lt;&lt;<span class="string">&quot;5. get depth: &quot;</span>&lt;&lt;NDC::getDepth()&lt;&lt;<span class="built_in">std</span>::<span class="built_in">endl</span>; <span class="comment">//显示层数，有3层 </span></span><br><span class="line">    <span class="built_in">std</span>::<span class="built_in">cout</span>&lt;&lt;<span class="string">&quot;6. pop: &quot;</span>&lt;&lt;NDC::pop()&lt;&lt;<span class="built_in">std</span>::<span class="built_in">endl</span>; <span class="comment">//弹出最上面的一层，这里是context3 </span></span><br><span class="line">    <span class="built_in">std</span>::<span class="built_in">cout</span>&lt;&lt;<span class="string">&quot;7. after pop: &quot;</span>&lt;&lt;NDC::get()&lt;&lt;<span class="built_in">std</span>::<span class="built_in">endl</span>;<span class="comment">//弹出后，显示剩下的层 </span></span><br><span class="line">    NDC::clear(); <span class="comment">//将所有的层都清除 </span></span><br><span class="line">    <span class="built_in">std</span>::<span class="built_in">cout</span>&lt;&lt;<span class="string">&quot;8. clear: &quot;</span>&lt;&lt;NDC::get()&lt;&lt;<span class="built_in">std</span>::<span class="built_in">endl</span>; </span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="4-自动内存管理"><a href="#4-自动内存管理" class="headerlink" title="4.自动内存管理"></a>4.自动内存管理</h1><h2 id="4-1-项目的多线程设置"><a href="#4-1-项目的多线程设置" class="headerlink" title="4.1 项目的多线程设置"></a>4.1 项目的多线程设置</h2><p>​	VC中必须将项目设置为Debug MultiThreaded DLL，总之这个设置必须与你使用的Log4cpp库一致。如果你使用的是Release版本的log4cpp.dll，则应该设置为MultiThreaded DLL。<br>　　否则在程序结束时会报错，报错处的调用堆栈为：
+　　</p>
+<p>log4cpp::BasicLayout::vector deleting destructor(unsigned int 1) + 122 bytes<br>　　log4cpp::LayoutAppender::<del>LayoutAppender() line 21 + 35 bytes<br>　　log4cpp::OstreamAppender::</del>OstreamAppender() line 28 + 15 bytes<br>　　log4cpp::OstreamAppender::vector deleting destructor”(unsigned int 1) + 103 bytes<br>　　log4cpp::Category::removeAllAppenders() line 159 + 39 bytes<br>　　log4cpp::HierarchyMaintainer::shutdown() line 101 + 27 bytes<br>　　log4cpp::HierarchyMaintainer::~HierarchyMaintainer() line 36</p>
+<h2 id="4-2-内存管理对象"><a href="#4-2-内存管理对象" class="headerlink" title="4.2 内存管理对象"></a>4.2 内存管理对象</h2><p>也许读者已经注意到，在前面的所有代码中，log4cpp中所有动态分配的对象都没有手动释放。<br>　　Log4cpp中new出来的Category、Appender和Layout都不需要手动释放，因为Log4cpp使用了一个内部类来管理这些对象。此类的名称是HierarchyMaintainer，它负责管理Category的继承关系，在程序结束时，HierarchyMaintainer会依次释放所有Category，而Category则会依次释放拥有的有效Appender，Appender则会释放所有附属的Layout。如果程序员手动释放这些对象，则会造成内存报错。<br>　　从下面的代码可以看出这个特征：</p>
+<p>​	<strong>appender-&gt;setLayout(new log4cpp::BasicLayout());</strong></p>
+<p>　　这个new出来的BasicLayout根本就没有保存其指针，所以它只能被log4cpp的内存管理类HierarchyMaintainer释放。<br>　　了解到HierarchyMaintainer的内存管理方法后，程序员在使用log4cpp时应该遵循以下几个使用原则：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span> 不要手动释放Category、Appender和Layout;</span><br><span class="line"><span class="number">2.</span> 同一个Appender不要加入多个Category，否则它会被释放多次从而导致程序崩溃;</span><br><span class="line"><span class="number">3.</span> 同一个Layout不要附着到多个Appender上，否则也会被释放多次导致程序崩溃;</span><br></pre></td></tr></table></figure>
+
+<h2 id="4-3-log4cpp-Category-shutdown"><a href="#4-3-log4cpp-Category-shutdown" class="headerlink" title="4.3 log4cpp::Category::shutdown()"></a>4.3 log4cpp::Category::shutdown()</h2><p>​	在不使用log4cpp时可调用log4cpp::Category::shutdown()，其功能如同ierarchyMaintainer的内存清理。但如果不手动调用，在程序结束时ierarchyMaintainer会调用Category的析构函数来释放所有Appender。</p>
+<h1 id="5-利用配置文件定制日志"><a href="#5-利用配置文件定制日志" class="headerlink" title="5.利用配置文件定制日志"></a>5.利用配置文件定制日志</h1><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">#log4cpp.conf</span><br><span class="line">#-------定义rootCategory的属性-------</span><br><span class="line"></span><br><span class="line">#指定rootCategory的<span class="built_in">log</span>优先级是ERROR，其Appenders有两个，分别是console,TESTAppender</span><br><span class="line">log4cpp.rootCategory=ERROR, console,TESTAppender</span><br><span class="line"></span><br><span class="line">#-------定义console属性-------</span><br><span class="line"></span><br><span class="line">#consoleAppender类型:控制台输出</span><br><span class="line">#下面这三条语句表示控制台输出的<span class="built_in">log</span>输出的布局按照指定的格式；输出格式是：[%p] %d&#123;%H:%M:%S.%l&#125; (%c): %m%n</span><br><span class="line">log4cpp.appender.console=ConsoleAppender</span><br><span class="line">log4cpp.appender.console.layout=PatternLayout</span><br><span class="line">log4cpp.appender.console.layout.ConversionPattern=[%p] %d&#123;%H:%M:%S.%l&#125; (%c): %m%n</span><br><span class="line"></span><br><span class="line">#-------定义TESTAppender的属性-------</span><br><span class="line"></span><br><span class="line">#RollingFileAppender类型：输出到回卷文件，即文件到达某个大小的时候产生一个新的文件</span><br><span class="line">#下面的语句表示文件输出到指定的<span class="built_in">log</span>文件，输出的布局按照指定的格式，输出的格式是：[%d&#123;%Y-%m-%d %H:%M:%S.%l&#125; - %p] (%c): %m%n</span><br><span class="line">log4cpp.appender.TESTAppender=RollingFileAppender</span><br><span class="line"></span><br><span class="line">#当日志文件到达maxFileSize大小时，将会自动滚动</span><br><span class="line">log4cpp.appender.TESTAppender.maxFileSize=<span class="number">400000</span></span><br><span class="line"></span><br><span class="line">#maxBackupIndex指定可以产生的滚动文件的最大数</span><br><span class="line">log4cpp.appender.TESTAppender.maxBackupIndex=<span class="number">3</span></span><br><span class="line"></span><br><span class="line">#fileName指定信息输出到logs/TESTAppender.txt文件</span><br><span class="line">log4cpp.appender.TESTAppender.fileName=logs/TESTAppender.txt</span><br><span class="line"></span><br><span class="line">#PatternLayout 表示可以灵活指定布局模式</span><br><span class="line">log4cpp.appender.TESTAppender.layout=PatternLayout</span><br><span class="line"></span><br><span class="line"><span class="meta">#append=true 信息追加到上面指定的日志文件中，false表示将信息覆盖指定文件内容</span></span><br><span class="line">log4cpp.appender.TESTAppender.append=<span class="literal">true</span></span><br><span class="line">log4cpp.appender.TESTAppender.layout.ConversionPattern=[%d&#123;%Y-%m-%d %H:%M:%S.%l&#125; - %p] (%c): %m%n</span><br></pre></td></tr></table></figure>
+
+<p><strong>ConversionPattern的参数含义：</strong></p>
+<ul>
+<li>%d 输出日志时间点的日期或时间，可以在其后指定格式，如上%d</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://github.com/damei6677/C++/log4cpp.html" data-id="clji7crpk00066s4l00e870qu" data-title="" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2023/06/">June 2023</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/blog/2023/06/30/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2023 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/blog/" class="mobile-nav-link">Home</a>
+  
+    <a href="/blog/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/blog/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/blog/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/blog/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

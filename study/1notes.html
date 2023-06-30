@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="first level:位运算，协议解析主要注意的问题 策略模式 完成qt_demo中例子QTcpSocket qtwebengine demo 智能指针 tips: std move  static   so  petalinux  linux BSP  mqtt  opengl  vs打包  shell  qt webengine B&#x2F;S  vs pro工程互转  QThread\Q">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="https://github.com/damei6677/study/1notes.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="first level:位运算，协议解析主要注意的问题 策略模式 完成qt_demo中例子QTcpSocket qtwebengine demo 智能指针 tips: std move  static   so  petalinux  linux BSP  mqtt  opengl  vs打包  shell  qt webengine B&#x2F;S  vs pro工程互转  QThread\Q">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2023-06-30T04:20:57.959Z">
+<meta property="article:modified_time" content="2022-10-08T06:25:41.114Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/blog/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/blog/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/blog/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/blog/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/blog/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/blog/">Home</a>
+        
+          <a class="main-nav-link" href="/blog/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/blog/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://github.com/damei6677"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="page-" class="h-entry article article-type-page" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/blog/study/1notes.html" class="article-date">
+  <time class="dt-published" datetime="2023-06-30T04:20:57.959Z" itemprop="datePublished">2023-06-30</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="first-level"><a href="#first-level" class="headerlink" title="first level:"></a>first level:</h1><p>位运算，协议解析主要注意的问题</p>
+<p>策略模式</p>
+<p>完成qt_demo中例子QTcpSocket</p>
+<p>qtwebengine demo</p>
+<p>智能指针</p>
+<h1 id="tips"><a href="#tips" class="headerlink" title="tips:"></a>tips:</h1><ul>
+<li><p>std move</p>
+</li>
+<li><p>static </p>
+</li>
+<li><p>so</p>
+</li>
+<li><p>petalinux</p>
+</li>
+<li><p>linux BSP</p>
+</li>
+<li><p>mqtt</p>
+</li>
+<li><p>opengl</p>
+</li>
+<li><p>vs打包</p>
+</li>
+<li><p>shell</p>
+</li>
+<li><p>qt webengine B&#x2F;S</p>
+</li>
+<li><p>vs pro工程互转</p>
+</li>
+<li><p>QThread\QThreadPool\QRunnable</p>
+</li>
+<li><p>QTcpSocket</p>
+</li>
+<li><p>线程池</p>
+</li>
+<li><p>回调函数</p>
+</li>
+<li><p>智能指针</p>
+</li>
+<li><p>类中类</p>
+</li>
+<li><p>类q\d指针</p>
+</li>
+<li><p>手写虚函数表</p>
+</li>
+<li><p>手写String类</p>
+</li>
+</ul>
+<h1 id="cpp"><a href="#cpp" class="headerlink" title="cpp"></a>cpp</h1><ul>
+<li><p>多线程例子cpp(线程池)</p>
+</li>
+<li><p>cpp11学习</p>
+</li>
+<li><p>cpp17（系统、文件操作）</p>
+</li>
+<li><p>libevent（hpsocket）</p>
+</li>
+<li><p>多进程(进程间通信)–socket</p>
+<ul>
+<li><p>socket</p>
+</li>
+<li><p>共享内存</p>
+<ul>
+<li>能够容易的控制容量，速度快，但要保持同步。比如一个进程在写的时候，另一个进程要注意读写问题，相当于线程中的线程安全。当然共享内存也可用于线程间通讯，不过没这个必要，线程间已经共享同一进程内的内存。</li>
+</ul>
+</li>
+<li><p>消息队列</p>
+<ul>
+<li>容量受到系统的限制，但要注意第一次读的时候，要考虑上次没有读完的数据。</li>
+</ul>
+</li>
+<li><p>管道（无名管道）</p>
+<ul>
+<li>特点：速度慢，容量有限，只有福字进程能够通讯。</li>
+</ul>
+</li>
+<li><p>FIFO：</p>
+<ul>
+<li>任何线程间都能通讯，但速度慢。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>日志库</p>
+<ul>
+<li><p>log4cpp 可以使用配置文件</p>
+<ul>
+<li>实现每天固定时间生成日志文件的功能。</li>
+</ul>
+</li>
+<li><p>spdlog每天生成日志文件</p>
+<ul>
+<li>实现读取配置文件的功能。配置文件中设置输出优先级。</li>
+</ul>
+</li>
+<li><p>easylog++</p>
+</li>
+</ul>
+</li>
+<li><p>mysql连接器（锁机制）</p>
+<ul>
+<li>mysql数据库知识的学习。</li>
+</ul>
+</li>
+<li><p>强制转化关键字</p>
+<ul>
+<li>static dynamic</li>
+</ul>
+</li>
+<li><p>std move</p>
+</li>
+</ul>
+<p>好习惯</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://github.com/damei6677/study/1notes.html" data-id="clji7crq1001p6s4l9ded089s" data-title="" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2023/06/">June 2023</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/blog/2023/06/30/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2023 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/blog/" class="mobile-nav-link">Home</a>
+  
+    <a href="/blog/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/blog/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/blog/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/blog/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
