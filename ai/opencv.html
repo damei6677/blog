@@ -13,20 +13,20 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="编译opencv 0.添加环境变量 1234C:\Qt\Qt5.10.1\5.10.1\mingw53_32\binC:\Qt\Qt5.10.1\5.10.1\mingw53_32\libC:\Qt\Qt5.10.1\Tools\mingw530_32\binC:\Program Files\CMake\bin    1.cmake-gui选择源码目录与编译生成目录 2.选择advanced 3.">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://github.com/blog/opencv.assets/1582900034614.png">
-<meta property="og:image" content="https://github.com/blog/opencv.assets/508489-20171211170434477-1356570089.png">
-<meta property="og:image" content="https://github.com/blog/opencv.assets/508489-20171211170434790-1156421554.png">
-<meta property="og:image" content="https://github.com/blog/opencv.assets/1582900463446.png">
+<meta property="og:image" content="https://github.com/opencv.assets/1582900034614.png">
+<meta property="og:image" content="https://github.com/opencv.assets/508489-20171211170434477-1356570089.png">
+<meta property="og:image" content="https://github.com/opencv.assets/508489-20171211170434790-1156421554.png">
+<meta property="og:image" content="https://github.com/opencv.assets/1582900463446.png">
 <meta property="article:published_time" content="2023-06-30T06:51:30.422Z">
 <meta property="article:modified_time" content="2022-10-08T06:25:41.155Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://github.com/blog/opencv.assets/1582900034614.png">
+<meta name="twitter:image" content="https://github.com/opencv.assets/1582900034614.png">
   
-    <link rel="alternate" href="/blog/atom.xml" title="Hexo" type="application/atom+xml">
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
   
-    <link rel="shortcut icon" href="/blog/favicon.png">
+    <link rel="shortcut icon" href="/favicon.png">
   
   
     
@@ -34,11 +34,11 @@
 
   
   
-<link rel="stylesheet" href="/blog/css/style.css">
+<link rel="stylesheet" href="/css/style.css">
 
   
     
-<link rel="stylesheet" href="/blog/fancybox/jquery.fancybox.min.css">
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
 
   
   
@@ -52,7 +52,7 @@
   <div id="header-outer" class="outer">
     <div id="header-title" class="inner">
       <h1 id="logo-wrap">
-        <a href="/blog/" id="logo">Hexo</a>
+        <a href="/" id="logo">Hexo</a>
       </h1>
       
     </div>
@@ -60,15 +60,15 @@
       <nav id="main-nav">
         <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
         
-          <a class="main-nav-link" href="/blog/">Home</a>
+          <a class="main-nav-link" href="/">Home</a>
         
-          <a class="main-nav-link" href="/blog/archives">Archives</a>
+          <a class="main-nav-link" href="/archives">Archives</a>
         
       </nav>
       <nav id="sub-nav">
         
         
-          <a class="nav-icon" href="/blog/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
         
         <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
       </nav>
@@ -82,7 +82,7 @@
       <div class="outer">
         <section id="main"><article id="page-" class="h-entry article article-type-page" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/blog/ai/opencv.html" class="article-date">
+    <a href="/ai/opencv.html" class="article-date">
   <time class="dt-published" datetime="2023-06-30T06:51:30.422Z" itemprop="datePublished">2023-06-30</time>
 </a>
     
@@ -92,7 +92,7 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <h1 id="编译opencv"><a href="#编译opencv" class="headerlink" title="编译opencv"></a>编译opencv</h1><p><img src="/blog/opencv.assets/1582900034614.png" alt="1582900034614"></p>
+        <h1 id="编译opencv"><a href="#编译opencv" class="headerlink" title="编译opencv"></a>编译opencv</h1><p><img src="/opencv.assets/1582900034614.png" alt="1582900034614"></p>
 <p>0.添加环境变量</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">C:\Qt\Qt5.10.1\5.10.1\mingw53_32\bin</span><br><span class="line">C:\Qt\Qt5.10.1\5.10.1\mingw53_32\lib</span><br><span class="line">C:\Qt\Qt5.10.1\Tools\mingw530_32\bin</span><br><span class="line">C:\Program Files\CMake\bin</span><br></pre></td></tr></table></figure>
 
@@ -101,8 +101,8 @@
 <p>1.cmake-gui选择源码目录与编译生成目录</p>
 <p>2.选择advanced</p>
 <p>3.选择编译器</p>
-<p><img src="/blog/opencv.assets/508489-20171211170434477-1356570089.png" alt="img"></p>
-<p><img src="/blog/opencv.assets/508489-20171211170434790-1156421554.png" alt="img"></p>
+<p><img src="/opencv.assets/508489-20171211170434477-1356570089.png" alt="img"></p>
+<p><img src="/opencv.assets/508489-20171211170434790-1156421554.png" alt="img"></p>
 <p>3.1 执行configure操作</p>
 <p>cmake工具会下载ffmpeg.dll库，由于服务器在国外下载很慢，经常下不下来。</p>
 <p>3.2.第三方库拷贝</p>
@@ -118,7 +118,7 @@
 
 <p>4.3 </p>
 <p>选择Qt库地址</p>
-<p><img src="/blog/opencv.assets/1582900463446.png" alt="1582900463446"></p>
+<p><img src="/opencv.assets/1582900463446.png" alt="1582900463446"></p>
 <p>4.4 再测点击configure,此时界面没有红色提醒。点击Generate按钮，生成makefile文件，成功后，底下会提示Generating done；</p>
 <p>5.在build按住shift并且点击右键，打开命令窗口。</p>
 <p>执行mingw32-make.exe进行编译。</p>
@@ -131,7 +131,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://github.com/damei6677/blog/ai/opencv.html" data-id="cljibdukt00031k4l11gx1oak" data-title="" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="https://github.com/damei6677/blog/ai/opencv.html" data-id="cljibjlce0003o04laok1d0z6" data-title="" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -159,7 +159,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2023/06/">June 2023</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/06/">June 2023</a></li></ul>
     </div>
   </div>
 
@@ -172,7 +172,7 @@
       <ul>
         
           <li>
-            <a href="/blog/2023/06/30/my-blog/">my blog</a>
+            <a href="/2023/06/30/my-blog/">my blog</a>
           </li>
         
       </ul>
@@ -197,25 +197,25 @@
     </div>
     <nav id="mobile-nav">
   
-    <a href="/blog/" class="mobile-nav-link">Home</a>
+    <a href="/" class="mobile-nav-link">Home</a>
   
-    <a href="/blog/archives" class="mobile-nav-link">Archives</a>
+    <a href="/archives" class="mobile-nav-link">Archives</a>
   
 </nav>
     
 
 
-<script src="/blog/js/jquery-3.6.4.min.js"></script>
+<script src="/js/jquery-3.6.4.min.js"></script>
 
 
 
   
-<script src="/blog/fancybox/jquery.fancybox.min.js"></script>
+<script src="/fancybox/jquery.fancybox.min.js"></script>
 
 
 
 
-<script src="/blog/js/script.js"></script>
+<script src="/js/script.js"></script>
 
 
 
